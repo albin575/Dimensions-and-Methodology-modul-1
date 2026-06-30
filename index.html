@@ -1,0 +1,1480 @@
+<!DOCTYPE html>
+<html lang="ml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ബിസിനസ് സ്റ്റഡീസ് - മോഡ്യൂൾ 1 | Business Studies Module 1</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manjari:wght@100;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        malayalam: ['Manjari', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: {
+                            50: '#eff6ff',
+                            100: '#dbeafe',
+                            500: '#3b82f6',
+                            600: '#2563eb',
+                            700: '#1d4ed8',
+                            900: '#1e3a8a',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { font-family: 'Manjaram', sans-serif; }
+        .font-malayalam { font-family: 'Manjari', sans-serif; line-height: 1.8; }
+        details > summary { list-style: none; }
+        details > summary::-webkit-details-marker { display: none; }
+        details[open] summary .chevron { transform: rotate(180deg); }
+        .search-highlight { background-color: #fef08a; color: #854d0e; padding: 0 2px; border-radius: 2px; }
+        .dark .search-highlight { background-color: #ca8a04; color: #1e1e1e; }
+        @media print {
+            .no-print { display: none !important; }
+            details { display: block !important; }
+            details summary { cursor: default; }
+            .page-break { page-break-before: always; }
+        }
+        .smooth-scroll { scroll-behavior: smooth; }
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #f1f5f9; }
+        .dark ::-webkit-scrollbar-track { background: #0f172a; }
+        ::-webkit-scrollbar-thumb { background: #94a3b8; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #64748b; }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 dark:bg-slate-900 dark:text-slate-100 transition-colors duration-300 font-malayalam">
+
+    <!-- Header -->
+    <header class="fixed top-0 left-0 right-0 bg-white/90 dark:bg-slate-900/90 backdrop-blur-md border-b border-slate-200 dark:border-slate-700 z-50 no-print">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between gap-4">
+            <div class="flex items-center gap-3 min-w-0">
+                <div class="w-10 h-10 bg-primary-600 rounded-lg flex items-center justify-center text-white shrink-0">
+                    <i class="fas fa-book-open"></i>
+                </div>
+                <div class="truncate">
+                    <h1 class="text-lg font-bold text-slate-900 dark:text-white truncate leading-tight">ബിസിനസ് സ്റ്റഡീസ്</h1>
+                    <p class="text-xs text-slate-500 dark:text-slate-400 truncate">മോഡ്യൂൾ 1 - വിശദീകരണങ്ങൾ</p>
+                </div>
+            </div>
+
+            <div class="flex items-center gap-2">
+                <div class="relative hidden sm:block">
+                    <i class="fas fa-search absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-sm"></i>
+                    <input type="text" id="searchInput" placeholder="ചോദ്യങ്ങൾ തിരയുക..." 
+                        class="pl-9 pr-4 py-2 w-64 rounded-full bg-slate-100 dark:bg-slate-800 border-0 text-sm focus:ring-2 focus:ring-primary-500 transition-all">
+                </div>
+                <button onclick="toggleDark()" class="w-10 h-10 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors">
+                    <i class="fas fa-moon dark:hidden text-slate-600"></i>
+                    <i class="fas fa-sun hidden dark:block text-amber-400"></i>
+                </button>
+                <button onclick="window.print()" class="w-10 h-10 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors hidden sm:flex">
+                    <i class="fas fa-print text-slate-600 dark:text-slate-300"></i>
+                </button>
+            </div>
+        </div>
+        <div class="sm:hidden px-4 pb-3">
+            <div class="relative">
+                <i class="fas fa-search absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-sm"></i>
+                <input type="text" id="searchInputMobile" placeholder="ചോദ്യങ്ങൾ തിരയുക..." 
+                    class="pl-9 pr-4 py-2 w-full rounded-full bg-slate-100 dark:bg-slate-800 border-0 text-sm focus:ring-2 focus:ring-primary-500">
+            </div>
+        </div>
+    </header>
+
+    <div class="max-w-7xl mx-auto pt-24 sm:pt-20 pb-12 px-4 sm:px-6 lg:px-8 flex gap-6">
+
+        <!-- Sidebar Navigation -->
+        <nav class="hidden lg:block w-64 shrink-0 no-print sticky top-24 h-[calc(100vh-6rem)] overflow-y-auto pr-2">
+            <div class="bg-white dark:bg-slate-800 rounded-xl shadow-sm border border-slate-200 dark:border-slate-700 p-4">
+                <h3 class="font-bold text-slate-900 dark:text-white mb-3 text-sm uppercase tracking-wider">വിഭാഗങ്ങൾ</h3>
+                <ul class="space-y-1">
+                    <li><a href="#section1" class="nav-link flex items-center gap-2 px-3 py-2 rounded-lg text-sm hover:bg-primary-50 dark:hover:bg-slate-700 text-slate-600 dark:text-slate-300 transition-colors">
+                        <span class="w-6 h-6 rounded bg-green-100 dark:bg-green-900/30 text-green-600 dark:text-green-400 text-xs flex items-center justify-center font-bold">2</span>
+                        ചെറിയ ഉത്തരങ്ങൾ
+                    </a></li>
+                    <li><a href="#section2" class="nav-link flex items-center gap-2 px-3 py-2 rounded-lg text-sm hover:bg-primary-50 dark:hover:bg-slate-700 text-slate-600 dark:text-slate-300 transition-colors">
+                        <span class="w-6 h-6 rounded bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 text-xs flex items-center justify-center font-bold">5</span>
+                        വിവരണാത്മക ഉത്തരങ്ങൾ
+                    </a></li>
+                    <li><a href="#section3" class="nav-link flex items-center gap-2 px-3 py-2 rounded-lg text-sm hover:bg-primary-50 dark:hover:bg-slate-700 text-slate-600 dark:text-slate-300 transition-colors">
+                        <span class="w-6 h-6 rounded bg-purple-100 dark:bg-purple-900/30 text-purple-600 dark:text-purple-400 text-xs flex items-center justify-center font-bold">15</span>
+                        നീണ്ട പ്രബന്ധങ്ങൾ
+                    </a></li>
+                </ul>
+
+                <div class="mt-6 pt-4 border-t border-slate-200 dark:border-slate-700">
+                    <div class="text-xs text-slate-500 dark:text-slate-400 mb-2">സ്ഥിതിവിവരക്കണക്ക്</div>
+                    <div class="flex justify-between text-sm mb-1">
+                        <span class="text-slate-600 dark:text-slate-300">മൊത്തം ചോദ്യങ്ങൾ</span>
+                        <span class="font-bold text-primary-600 dark:text-primary-400">50</span>
+                    </div>
+                    <div class="w-full bg-slate-200 dark:bg-slate-700 rounded-full h-2 mt-2">
+                        <div class="bg-primary-500 h-2 rounded-full" style="width: 100%"></div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="flex-1 min-w-0">
+
+            <!-- Hero -->
+            <div class="bg-gradient-to-r from-primary-600 to-primary-800 rounded-2xl p-6 sm:p-8 mb-8 text-white shadow-lg relative overflow-hidden">
+                <div class="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full -translate-y-1/2 translate-x-1/2 blur-3xl"></div>
+                <div class="relative z-10 flex flex-col sm:flex-row items-center gap-6">
+                    <div class="flex-1">
+                        <h2 class="text-2xl sm:text-3xl font-bold mb-2">ബിസിനസ് സ്റ്റഡീസ് - മോഡ്യൂൾ 1</h2>
+                        <p class="text-primary-100 text-sm sm:text-base max-w-2xl">മാർക്കിന് അനുസരിച്ചുള്ള വിശദീകരണങ്ങൾ. ചെറിയ ഉത്തരങ്ങൾ (2 മാർക്ക്), വിവരണാത്മക ഉത്തരങ്ങൾ (5 മാർക്ക്), നീണ്ട പ്രബന്ധങ്ങൾ (15 മാർക്ക്) എന്നിവ ഉൾപ്പെടുന്നു.</p>
+                    </div>
+                    <div class="shrink-0">
+                        <img src="3736373881.png" alt="Creator" class="w-28 h-28 sm:w-32 sm:h-32 rounded-full border-4 border-white/30 shadow-xl object-cover">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section I -->
+            <section id="section1" class="mb-10 scroll-mt-24">
+                <div class="flex items-center gap-3 mb-4">
+                    <span class="px-3 py-1 rounded-full bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300 text-sm font-bold">2 മാർക്ക്</span>
+                    <h2 class="text-xl font-bold text-slate-900 dark:text-white">ചെറിയ ഉത്തരങ്ങൾ</h2>
+                </div>
+                <div class="space-y-3" id="container1">
+
+                    <details class="group bg-white dark:bg-slate-800 rounded-xl shadow-sm border border-slate-200 dark:border-slate-700 overflow-hidden" data-search="what is business വ്യവസായം ലാഭം">
+                        <summary class="flex items-center gap-3 p-4 cursor-pointer hover:bg-slate-50 dark:hover:bg-slate-700/50 transition-colors select-none">
+                            <span class="w-8 h-8 rounded-full bg-green-100 dark:bg-green-900/30 text-green-600 dark:text-green-400 text-xs font-bold flex items-center justify-center shrink-0">1</span>
+                            <h3 class="font-bold text-slate-800 dark:text-slate-100 text-sm sm:text-base flex-1">What is Business?</h3>
+                            <i class="fas fa-chevron-down chevron text-slate-400 transition-transform duration-300"></i>
+                        </summary>
+                        <div class="px-4 pb-4 pt-0 text-slate-600 dark:text-slate-300 text-sm sm:text-base leading-relaxed border-t border-slate-100 dark:border-slate-700">
+                            <p class="mt-3">വ്യവസായം (Business) എന്നാൽ ലാഭം ലക്ഷ്യമാക്കി ചരക്കുകളും സേവനങ്ങളും നിരന്തരമായി ഉൽപാദിപ്പിക്കുകയും വിതരണം ചെയ്യുകയും ചെയ്യുന്ന പ്രവർത്തനമാണ്. ഇത് സാമ്പത്തിക പ്രവർത്തനങ്ങളുടെ ഒരു പ്രധാന ഭാഗമാണ്.</p>
+                        </div>
+                    </details>
+
+                    <details class="group bg-white dark:bg-slate-800 rounded-xl shadow-sm border border-slate-200 dark:border-slate-700 overflow-hidden" data-search="define business വ്യവസായം define">
+                        <summary class="flex items-center gap-3 p-4 cursor-pointer hover:bg-slate-50 dark:hover:bg-slate-700/50 transition-colors select-none">
+                            <span class="w-8 h-8 rounded-full bg-green-100 dark:bg-green-900/30 text-green-600 dark:text-green-400 text-xs font-bold flex items-center justify-center shrink-0">2</span>
+                            <h3 class="font-bold text-slate-800 dark:text-slate-100 text-sm sm:text-base flex-1">Define Business.</h3>
+                            <i class="fas fa-chevron-down chevron text-slate-400 transition-transform duration-300"></i>
+                        </summary>
+                        <div class="px-4 pb-4 pt-0 text-slate-600 dark:text-slate-300 text-sm sm:text-base leading-relaxed border-t border-slate-100 dark:border-slate-700">
+                            <p class="mt-3">വ്യവസായം എന്നത് ലാഭം നേടുന്നതിനായി ചരക്കുകളുടെയും സേവനങ്ങളുടെയും നിരന്തരമായ ഉൽപാദനവും വിതരണവും നടത്തുന്ന മനുഷ്യ പ്രവർത്തനമാണ്. ഇത് ഉപഭോക്താവിന്റെ ആവശ്യങ്ങൾ പൂർത്തീകരിക്കുകയും സമൂഹത്തിന് ക്ഷേമം നൽകുകയും ചെയ്യുന്നു.</p>
+                        </div>
+                    </details>
+
+                    <details class="group bg-white dark:bg-slate-800 rounded-xl shadow-sm border border-slate-200 dark:border-slate-700 overflow-hidden" data-search="genetic industry ജനന വ്യവസായം കൃഷി">
+                        <summary class="flex items-center gap-3 p-4 cursor-pointer hover:bg-slate-50 dark:hover:bg-slate-700/50 transition-colors select-none">
+                            <span class="w-8 h-8 rounded-full bg-green-100 dark:bg-green-900/30 text-green-600 dark:text-green-400 text-xs font-bold flex items-center justify-center shrink-0">3</span>
+                            <h3 class="font-bold text-slate-800 dark:text-slate-100 text-sm sm:text-base flex-1">What is genetic industry?</h3>
+                            <i class="fas fa-chevron-down chevron text-slate-400 transition-transform duration-300"></i>
+                        </summary>
+                        <div class="px-4 pb-4 pt-0 text-slate-600 dark:text-slate-300 text-sm sm:text-base leading-relaxed border-t border-slate-100 dark:border-slate-700">
+                            <p class="mt-3">ജനന വ്യവസായം (Genetic Industry) എന്നത് മനുഷ്യന്റെ സഹായത്തോടെ ജീവികളുടെയും സസ്യങ്ങളുടെയും വളർച്ചയും പ്രജനനവും പ്രോത്സാഹിപ്പിക്കുന്ന വ്യവസായമാണ്. ഉദാഹരണം: കൃഷി, മത്സ്യകൃഷി, കാലിത്തീറ്റ നിർമ്മാണം, കൃഷിത്തോട്ടങ്ങൾ.</p>
+                        </div>
+                    </details>
+
+                    <details class="group bg-white dark:bg-slate-800 rounded-xl shadow-sm border border-slate-200 dark:border-slate-700 overflow-hidden" data-search="extractive industry എക്സ്ട്രാക്ടീവ് ഖനനം">
+                        <summary class="flex items-center gap-3 p-4 cursor-pointer hover:bg-slate-50 dark:hover:bg-slate-700/50 transition-colors select-none">
+                            <span class="w-8 h-8 rounded-full bg-green-100 dark:bg-green-900/30 text-green-600 dark:text-green-400 text-xs font-bold flex items-center justify-center shrink-0">4</span>
+                            <h3 class="font-bold text-slate-800 dark:text-slate-100 text-sm sm:text-base flex-1">What is extractive industry?</h3>
+                            <i class="fas fa-chevron-down chevron text-slate-400 transition-transform duration-300"></i>
+                        </summary>
+                        <div class="px-4 pb-4 pt-0 text-slate-600 dark:text-slate-300 text-sm sm:text-base leading-relaxed border-t border-slate-100 dark:border-slate-700">
+                            <p class="mt-3">എക്‌സ്ട്രാക്ടീവ് വ്യവസായം (Extractive Industry) എന്നാൽ പ്രകൃതിയിൽ നിന്ന് നേരിട്ട് വസ്തുക്കൾ എടുക്കുന്ന വ്യവസായമാണ്. ഉദാഹരണം: ഖനനം (കൽക്കരി, ഇരുമ്പ്), വനവ്യവസായം, മത്സ്യബന്ധനം, എണ്ണയുല്പാദനം.</p>
+                        </div>
+                    </details>
+
+                    <details class="group bg-white dark:bg-slate-800 rounded-xl shadow-sm border border-slate-200 dark:border-slate-700 overflow-hidden" data-search="sole proprietorship ഏകമുടമാസ്വാമിത്വം">
+                        <summary class="flex items-center gap-3 p-4 cursor-pointer hover:bg-slate-50 dark:hover:bg-slate-700/50 transition-colors select-none">
+                            <span class="w-8 h-8 rounded-full bg-green-100 dark:bg-green-900/30 text-green-600 dark:text-green-400 text-xs font-bold flex items-center justify-center shrink-0">5</span>
+                            <h3 class="font-bold text-slate-800 dark:text-slate-100 text-sm sm:text-base flex-1">What is sole proprietorship?</h3>
+                            <i class="fas fa-chevron-down chevron text-slate-400 transition-transform duration-300"></i>
+                        </summary>
+                        <div class="px-4 pb-4 pt-0 text-slate-600 dark:text-slate-300 text-sm sm:text-base leading-relaxed border-t border-slate-100 dark:border-slate-700">
+                            <p class="mt-3">ഏകമുടമാസ്വാമിത്വം (Sole Proprietorship) എന്നാൽ ഒരു വ്യക്തി മാത്രം ഉടമസ്ഥനായും മാനേജറായും പ്രവർത്തിക്കുന്ന വ്യവസായ സംഘടനാരൂപമാണ്. ലാഭവും നഷ്ടവും മുഴുവൻ ആ ഒരാളുടേതായിരിക്കും.</p>
+                        </div>
+                    </details>
+
+                    <details class="group bg-white dark:bg-slate-800 rounded-xl shadow-sm border border-slate-200 dark:border-slate-700 overflow-hidden" data-search="partnership പങ്കാളിത്തം">
+                        <summary class="flex items-center gap-3 p-4 cursor-pointer hover:bg-slate-50 dark:hover:bg-slate-700/50 transition-colors select-none">
+                            <span class="w-8 h-8 rounded-full bg-green-100 dark:bg-green-900/30 text-green-600 dark:text-green-400 text-xs font-bold flex items-center justify-center shrink-0">6</span>
+                            <h3 class="font-bold text-slate-800 dark:text-slate-100 text-sm sm:text-base flex-1">What is partnership?</h3>
+                            <i class="fas fa-chevron-down chevron text-slate-400 transition-transform duration-300"></i>
+                        </summary>
+                        <div class="px-4 pb-4 pt-0 text-slate-600 dark:text-slate-300 text-sm sm:text-base leading-relaxed border-t border-slate-100 dark:border-slate-700">
+                            <p class="mt-3">പങ്കാളിത്തം (Partnership) എന്നാൽ രണ്ടോ അതിലധികമോ വ്യക്തികൾ ലാഭം നേടുന്നതിനായി ഒരു കരാർ പ്രകാരം സംയുക്തമായി വ്യവസായം നടത്തുന്ന സംഘടനാരൂപമാണ്. ഇവർ പങ്കാളികൾ (Partners) എന്ന് അറിയപ്പെടുന്നു.</p>
+                        </div>
+                    </details>
+
+                    <details class="group bg-white dark:bg-slate-800 rounded-xl shadow-sm border border-slate-200 dark:border-slate-700 overflow-hidden" data-search="HUF ഹിന്ദു അവിഭക്ത കുടുംബം">
+                        <summary class="flex items-center gap-3 p-4 cursor-pointer hover:bg-slate-50 dark:hover:bg-slate-700/50 transition-colors select-none">
+                            <span class="w-8 h-8 rounded-full bg-green-100 dark:bg-green-900/30 text-green-600 dark:text-green-400 text-xs font-bold flex items-center justify-center shrink-0">7</span>
+                            <h3 class="font-bold text-slate-800 dark:text-slate-100 text-sm sm:text-base flex-1">What is HUF?</h3>
+                            <i class="fas fa-chevron-down chevron text-slate-400 transition-transform duration-300"></i>
+                        </summary>
+                        <div class="px-4 pb-4 pt-0 text-slate-600 dark:text-slate-300 text-sm sm:text-base leading-relaxed border-t border-slate-100 dark:border-slate-700">
+                            <p class="mt-3">ഹിന്ദു അവിഭക്ത കുടുംബം (Hindu Undivided Family - HUF) എന്നാൽ ഹിന്ദു നിയമപ്രകാരം കുടുംബത്തിലെ അംഗങ്ങൾ സംയുക്തമായി വ്യവസായം നടത്തുന്ന സംഘടനാരൂപമാണ്. കർത്താവ് (Karta) വ്യവസായം നിയന്ത്രിക്കും, കുടുംബാംഗങ്ങൾ പങ്കാളികളായിരിക്കും.</p>
+                        </div>
+                    </details>
+
+                    <details class="group bg-white dark:bg-slate-800 rounded-xl shadow-sm border border-slate-200 dark:border-slate-700 overflow-hidden" data-search="LLP limited liability partnership">
+                        <summary class="flex items-center gap-3 p-4 cursor-pointer hover:bg-slate-50 dark:hover:bg-slate-700/50 transition-colors select-none">
+                            <span class="w-8 h-8 rounded-full bg-green-100 dark:bg-green-900/30 text-green-600 dark:text-green-400 text-xs font-bold flex items-center justify-center shrink-0">8</span>
+                            <h3 class="font-bold text-slate-800 dark:text-slate-100 text-sm sm:text-base flex-1">What is LLP?</h3>
+                            <i class="fas fa-chevron-down chevron text-slate-400 transition-transform duration-300"></i>
+                        </summary>
+                        <div class="px-4 pb-4 pt-0 text-slate-600 dark:text-slate-300 text-sm sm:text-base leading-relaxed border-t border-slate-100 dark:border-slate-700">
+                            <p class="mt-3">ലിമിറ്റഡ് ലയബിലിറ്റി പാർട്ണർഷിപ്പ് (LLP) എന്നാൽ പങ്കാളികളുടെ ഉത്തരവാദിത്തം പരിമിതപ്പെടുത്തിയ പങ്കാളിത്ത സംഘടനാരൂപമാണ്. ഇത് കമ്പനി നിയമപ്രകാരം രജിസ്റ്റർ ചെയ്യപ്പെടുന്നു. ഒരു പങ്കാളിയുടെ തെറ്റിന് മറ്റുള്ളവർ ഉത്തരവാദികളല്ല.</p>
+                        </div>
+                    </details>
+
+                    <details class="group bg-white dark:bg-slate-800 rounded-xl shadow-sm border border-slate-200 dark:border-slate-700 overflow-hidden" data-search="internal stakeholder ആന്തരിക ഹിതാധികാരി">
+                        <summary class="flex items-center gap-3 p-4 cursor-pointer hover:bg-slate-50 dark:hover:bg-slate-700/50 transition-colors select-none">
+                            <span class="w-8 h-8 rounded-full bg-green-100 dark:bg-green-900/30 text-green-600 dark:text-green-400 text-xs font-bold flex items-center justify-center shrink-0">9</span>
+                            <h3 class="font-bold text-slate-800 dark:text-slate-100 text-sm sm:text-base flex-1">Who is an internal stakeholder?</h3>
+                            <i class="fas fa-chevron-down chevron text-slate-400 transition-transform duration-300"></i>
+                        </summary>
+                        <div class="px-4 pb-4 pt-0 text-slate-600 dark:text-slate-300 text-sm sm:text-base leading-relaxed border-t border-slate-100 dark:border-slate-700">
+                            <p class="mt-3">ആന്തരിക ഹിതാധികാരി (Internal Stakeholder) എന്നാൽ സംഘടനയുടെ പ്രവർത്തനങ്ങളുമായി നേരിട്ട് ബന്ധപ്പെട്ടിരിക്കുന്ന വ്യക്തികളെയാണ്. ഉദാഹരണം: ഉടമകൾ, മാനേജ്മെന്റ്, തൊഴിലാളികൾ, ഡയറക്ടർമാർ.</p>
+                        </div>
+                    </details>
+
+                    <details class="group bg-white dark:bg-slate-800 rounded-xl shadow-sm border border-slate-200 dark:border-slate-700 overflow-hidden" data-search="external stakeholder ബാഹ്യ ഹിതാധികാരി">
+                        <summary class="flex items-center gap-3 p-4 cursor-pointer hover:bg-slate-50 dark:hover:bg-slate-700/50 transition-colors select-none">
+                            <span class="w-8 h-8 rounded-full bg-green-100 dark:bg-green-900/30 text-green-600 dark:text-green-400 text-xs font-bold flex items-center justify-center shrink-0">10</span>
+                            <h3 class="font-bold text-slate-800 dark:text-slate-100 text-sm sm:text-base flex-1">Who is an external stakeholder?</h3>
+                            <i class="fas fa-chevron-down chevron text-slate-400 transition-transform duration-300"></i>
+                        </summary>
+                        <div class="px-4 pb-4 pt-0 text-slate-600 dark:text-slate-300 text-sm sm:text-base leading-relaxed border-t border-slate-100 dark:border-slate-700">
+                            <p class="mt-3">ബാഹ്യ ഹിതാധികാരി (External Stakeholder) എന്നാൽ സംഘടനയുമായി നേരിട്ട് ബന്ധമില്ലാത്തെങ്കിലും അതിന്റെ പ്രവർത്തനങ്ങളിൽ താൽപ്പര്യമുള്ള വ്യക്തികളെയാണ്. ഉദാഹരണം: ഉപഭോക്താക്കൾ, സർക്കാർ, ബാങ്കുകൾ, പൊതുജനം, പരിസ്ഥിതി സംഘടനകൾ.</p>
+                        </div>
+                    </details>
+
+                    <details class="group bg-white dark:bg-slate-800 rounded-xl shadow-sm border border-slate-200 dark:border-slate-700 overflow-hidden" data-search="micro environment സൂക്ഷ്മ പരിസ്ഥിതി">
+                        <summary class="flex items-center gap-3 p-4 cursor-pointer hover:bg-slate-50 dark:hover:bg-slate-700/50 transition-colors select-none">
+                            <span class="w-8 h-8 rounded-full bg-green-100 dark:bg-green-900/30 text-green-600 dark:text-green-400 text-xs font-bold flex items-center justify-center shrink-0">11</span>
+                            <h3 class="font-bold text-slate-800 dark:text-slate-100 text-sm sm:text-base flex-1">What is micro environment?</h3>
+                            <i class="fas fa-chevron-down chevron text-slate-400 transition-transform duration-300"></i>
+                        </summary>
+                        <div class="px-4 pb-4 pt-0 text-slate-600 dark:text-slate-300 text-sm sm:text-base leading-relaxed border-t border-slate-100 dark:border-slate-700">
+                            <p class="mt-3">സൂക്ഷ്മ പരിസ്ഥിതി (Micro Environment) എന്നാൽ ഒരു ബിസിനസിന് നേരിട്ട് സ്വാധീനം ചെലുത്തുന്ന അടുത്തുള്ള ഘടകങ്ങളാണ്. ഉദാഹരണം: ഉപഭോക്താക്കൾ, എതിരാളികൾ, വിതരണക്കാർ, പങ്കാളികൾ, തൊഴിലാളികൾ.</p>
+                        </div>
+                    </details>
+
+                    <details class="group bg-white dark:bg-slate-800 rounded-xl shadow-sm border border-slate-200 dark:border-slate-700 overflow-hidden" data-search="macro environment സമഗ്ര പരിസ്ഥിതി PESTLE">
+                        <summary class="flex items-center gap-3 p-4 cursor-pointer hover:bg-slate-50 dark:hover:bg-slate-700/50 transition-colors select-none">
+                            <span class="w-8 h-8 rounded-full bg-green-100 dark:bg-green-900/30 text-green-600 dark:text-green-400 text-xs font-bold flex items-center justify-center shrink-0">12</span>
+                            <h3 class="font-bold text-slate-800 dark:text-slate-100 text-sm sm:text-base flex-1">What is macro environment?</h3>
+                            <i class="fas fa-chevron-down chevron text-slate-400 transition-transform duration-300"></i>
+                        </summary>
+                        <div class="px-4 pb-4 pt-0 text-slate-600 dark:text-slate-300 text-sm sm:text-base leading-relaxed border-t border-slate-100 dark:border-slate-700">
+                            <p class="mt-3">സമഗ്ര പരിസ്ഥിതി (Macro Environment) എന്നാൽ ബിസിനസിന് പരോക്ഷമായി സ്വാധീനം ചെലുത്തുന്ന വിശാലമായ ഘടകങ്ങളാണ്. ഉദാഹരണം: രാഷ്ട്രീയം, സാമ്പത്തികം, സാമൂഹികം, സാങ്കേതികം, നിയമപരം, പരിസ്ഥിതി (PESTLE).</p>
+                        </div>
+                    </details>
+
+                </div>
+            </section>
+
+            <!-- Section II -->
+            <section id="section2" class="mb-10 scroll-mt-24">
+                <div class="flex items-center gap-3 mb-4">
+                    <span class="px-3 py-1 rounded-full bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 text-sm font-bold">5 മാർക്ക്</span>
+                    <h2 class="text-xl font-bold text-slate-900 dark:text-white">വിവരണാത്മക ഉത്തരങ്ങൾ</h2>
+                </div>
+                <div class="space-y-3" id="container2">
+
+                    <details class="group bg-white dark:bg-slate-800 rounded-xl shadow-sm border border-slate-200 dark:border-slate-700 overflow-hidden" data-search="features of business സവിശേഷതകൾ ലാഭം">
+                        <summary class="flex items-center gap-3 p-4 cursor-pointer hover:bg-slate-50 dark:hover:bg-slate-700/50 transition-colors select-none">
+                            <span class="w-8 h-8 rounded-full bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 text-xs font-bold flex items-center justify-center shrink-0">1</span>
+                            <h3 class="font-bold text-slate-800 dark:text-slate-100 text-sm sm:text-base flex-1">What are the features of business?</h3>
+                            <i class="fas fa-chevron-down chevron text-slate-400 transition-transform duration-300"></i>
+                        </summary>
+                        <div class="px-4 pb-4 pt-0 text-slate-600 dark:text-slate-300 text-sm sm:text-base leading-relaxed border-t border-slate-100 dark:border-slate-700">
+                            <p class="mt-3 font-semibold text-slate-700 dark:text-slate-200">വ്യവസായത്തിന്റെ പ്രധാന സവിശേഷതകൾ:</p>
+                            <ol class="list-decimal list-inside mt-2 space-y-2 ml-1">
+                                <li><strong>ലാഭലക്ഷ്യം (Profit Motive):</strong> പ്രധാന ലക്ഷ്യം ലാഭം നേടുക എന്നതാണ്. ലാഭമില്ലാത്ത പ്രവർത്തനം വ്യവസായമല്ല.</li>
+                                <li><strong>നിരന്തരമായ പ്രവർത്തനം (Continuity):</strong> ഒറ്റത്തവണ പ്രവർത്തനമല്ല, തുടർച്ചയായിരിക്കണം.</li>
+                                <li><strong>ചരക്കുകളും സേവനങ്ങളും (Goods and Services):</strong> ഭൗതികമായ ചരക്കുകളോ അദൃശ്യമായ സേവനങ്ങളോ വിതരണം ചെയ്യണം.</li>
+                                <li><strong>ഉൽപാദനവും വിതരണവും (Production and Exchange):</strong> ചരക്കുകൾ ഉൽപാദിപ്പിക്കുകയോ വാങ്ങി വിൽക്കുകയോ ചെയ്യണം.</li>
+                                <li><strong>സാമ്പത്തിക പ്രവർത്തനം (Economic Activity):</strong> പണത്തിനായുള്ള പ്രവർത്തനമാണ്.</li>
+                                <li><strong>അനിശ്ചിതത്വവും അപകടസാധ്യതയും (Risk and Uncertainty):</strong> വ്യവസായത്തിൽ എപ്പോഴും അപകടസാധ്യത ഉണ്ടാകും.</li>
+                                <li><strong>നിയമപരമായ പ്രവർത്തനം (Legal Activity):</strong> നിയമപരമായ പ്രവർത്തനങ്ങൾ മാത്രമേ വ്യവസായമായി കണക്കാക്കൂ.</li>
+                            </ol>
+                        </div>
+                    </details>
+
+                    <details class="group bg-white dark:bg-slate-800 rounded-xl shadow-sm border border-slate-200 dark:border-slate-700 overflow-hidden" data-search="business profession employment വ്യവസായം തൊഴിൽ വൃത്തി">
+                        <summary class="flex items-center gap-3 p-4 cursor-pointer hover:bg-slate-50 dark:hover:bg-slate-700/50 transition-colors select-none">
+                            <span class="w-8 h-8 rounded-full bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 text-xs font-bold flex items-center justify-center shrink-0">2</span>
+                            <h3 class="font-bold text-slate-800 dark:text-slate-100 text-sm sm:text-base flex-1">Write a note on business, profession and employment.</h3>
+                            <i class="fas fa-chevron-down chevron text-slate-400 transition-transform duration-300"></i>
+                        </summary>
+                        <div class="px-4 pb-4 pt-0 text-slate-600 dark:text-slate-300 text-sm sm:text-base leading-relaxed border-t border-slate-100 dark:border-slate-700">
+                            <div class="mt-3 space-y-3">
+                                <div>
+                                    <p class="font-bold text-slate-700 dark:text-slate-200">വ്യവസായം (Business):</p>
+                                    <ul class="list-disc list-inside ml-2 mt-1 space-y-1"><li>ലാഭം ലക്ഷ്യമാക്കി ചരക്കുകളും സേവനങ്ങളും നിരന്തരമായി നടത്തുന്ന പ്രവർത്തനം</li><li>സ്വന്തം മുതൽ മുടക്ക്, സ്വന്തം അപകടസാധ്യത</li><li>ഉദാഹരണം: കട, ഫാക്ടറി</li></ul>
+                                </div>
+                                <div>
+                                    <p class="font-bold text-slate-700 dark:text-slate-200">തൊഴിൽ/വൃത്തി (Profession):</p>
+                                    <ul class="list-disc list-inside ml-2 mt-1 space-y-1"><li>പ്രത്യേക വിദ്യാഭ്യാസവും പരിശീലനവും ആവശ്യമായ പ്രവർത്തനം</li><li>സേവനത്തിന് ഫീസ്/പ്രൊഫഷണൽ ചാർജ് ലഭിക്കും</li><li>നിയമപരമായ മാനദണ്ഡങ്ങൾ പാലിക്കണം</li><li>ഉദാഹരണം: ഡോക്ടർ, അഭിഭാഷകൻ, എഞ്ചിനീയർ</li></ul>
+                                </div>
+                                <div>
+                                    <p class="font-bold text-slate-700 dark:text-slate-200">തൊഴിലാളിത്വം (Employment):</p>
+                                    <ul class="list-disc list-inside ml-2 mt-1 space-y-1"><li>മറ്റൊരാളുടെ കീഴിൽ ജോലി ചെയ്ത് വേതനം ലഭിക്കുന്നത്</li><li>തൊഴിലുടമയും തൊഴിലാളിയും തമ്മിലുള്ള ബന്ധം</li><li>ഉദാഹരണം: സർക്കാർ ജീവനക്കാർ, ബാങ്ക് ഉദ്യോഗസ്ഥർ</li></ul>
+                                </div>
+                                <div class="overflow-x-auto mt-2">
+                                    <table class="min-w-full text-xs sm:text-sm border border-slate-200 dark:border-slate-600">
+                                        <thead class="bg-slate-100 dark:bg-slate-700"><tr><th class="border p-2 text-left">ഘടകം</th><th class="border p-2 text-left">വ്യവസായം</th><th class="border p-2 text-left">വൃത്തി</th><th class="border p-2 text-left">തൊഴിലാളിത്വം</th></tr></thead>
+                                        <tbody>
+                                            <tr><td class="border p-2 font-semibold">ലക്ഷ്യം</td><td class="border p-2">ലാഭം</td><td class="border p-2">സേവനം</td><td class="border p-2">വേതനം</td></tr>
+                                            <tr class="bg-slate-50 dark:bg-slate-800/50"><td class="border p-2 font-semibold">മുതൽ</td><td class="border p-2">സ്വന്തം</td><td class="border p-2">-</td><td class="border p-2">-</td></tr>
+                                            <tr><td class="border p-2 font-semibold">അപകടം</td><td class="border p-2">ഉണ്ട്</td><td class="border p-2">കുറവ്</td><td class="border p-2">ഇല്ല</td></tr>
+                                            <tr class="bg-slate-50 dark:bg-slate-800/50"><td class="border p-2 font-semibold">വിദ്യാഭ്യാസം</td><td class="border p-2">അവശ്യമല്ല</td><td class="border p-2">അവശ്യം</td><td class="border p-2">ആവശ്യമനുസരിച്ച്</td></tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </details>
+
+                    <details class="group bg-white dark:bg-slate-800 rounded-xl shadow-sm border border-slate-200 dark:border-slate-700 overflow-hidden" data-search="internal functions of business ആന്തരിക പ്രവർത്തനങ്ങൾ planning organizing">
+                        <summary class="flex items-center gap-3 p-4 cursor-pointer hover:bg-slate-50 dark:hover:bg-slate-700/50 transition-colors select-none">
+                            <span class="w-8 h-8 rounded-full bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 text-xs font-bold flex items-center justify-center shrink-0">3</span>
+                            <h3 class="font-bold text-slate-800 dark:text-slate-100 text-sm sm:text-base flex-1">Which are the internal functions of business?</h3>
+                            <i class="fas fa-chevron-down chevron text-slate-400 transition-transform duration-300"></i>
+                        </summary>
+                        <div class="px-4 pb-4 pt-0 text-slate-600 dark:text-slate-300 text-sm sm:text-base leading-relaxed border-t border-slate-100 dark:border-slate-700">
+                            <p class="mt-3 font-semibold text-slate-700 dark:text-slate-200">ബിസിനസിന്റെ ആന്തരിക പ്രവർത്തനങ്ങൾ:</p>
+                            <ol class="list-decimal list-inside mt-2 space-y-2 ml-1">
+                                <li><strong>ആസൂത്രണം (Planning):</strong> ലക്ഷ്യങ്ങൾ നിർണയിക്കുകയും അവ നേടാനുള്ള മാർഗ്ഗങ്ങൾ തയ്യാറാക്കുകയും ചെയ്യൽ.</li>
+                                <li><strong>സംഘടന (Organizing):</strong> വിവിധ വഭാഗങ്ങളും അധികാരബന്ധങ്ങളും സ്ഥാപിക്കൽ.</li>
+                                <li><strong>നിയന്ത്രണം (Controlling):</strong> പ്രവർത്തനങ്ങൾ നിരീക്ഷിക്കുകയും തെറ്റുകൾ തിരുത്തുകയും ചെയ്യൽ.</li>
+                                <li><strong>സ്റ്റാഫിംഗ് (Staffing):</strong> യോഗ്യരായ ജീവനക്കാരെ നിയമിക്കുകയും പരിശീലിപ്പിക്കുകയും ചെയ്യൽ.</li>
+                                <li><strong>ധനകാര്യം (Financing):</strong> മൂലധനം നേടുകയും ഫലപ്രദമായി വിനിയോഗിക്കുകയും ചെയ്യൽ.</li>
+                                <li><strong>ഉൽപാദനം (Production):</strong> ചരക്കുകളും സേവനങ്ങളും ഉൽപാദിപ്പിക്കൽ.</li>
+                                <li><strong>വിപണനം (Marketing):</strong> ഉൽപന്നങ്ങൾ വിൽക്കുകയും പ്രോമോട്ട് ചെയ്യുകയും ചെയ്യൽ.</li>
+                            </ol>
+                        </div>
+                    </details>
+
+                    <details class="group bg-white dark:bg-slate-800 rounded-xl shadow-sm border border-slate-200 dark:border-slate-700 overflow-hidden" data-search="external functions of business ബാഹ്യ പ്രവർത്തനങ്ങൾ distribution">
+                        <summary class="flex items-center gap-3 p-4 cursor-pointer hover:bg-slate-50 dark:hover:bg-slate-700/50 transition-colors select-none">
+                            <span class="w-8 h-8 rounded-full bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 text-xs font-bold flex items-center justify-center shrink-0">4</span>
+                            <h3 class="font-bold text-slate-800 dark:text-slate-100 text-sm sm:text-base flex-1">Which are the external functions of business?</h3>
+                            <i class="fas fa-chevron-down chevron text-slate-400 transition-transform duration-300"></i>
+                        </summary>
+                        <div class="px-4 pb-4 pt-0 text-slate-600 dark:text-slate-300 text-sm sm:text-base leading-relaxed border-t border-slate-100 dark:border-slate-700">
+                            <p class="mt-3 font-semibold text-slate-700 dark:text-slate-200">ബിസിനസിന്റെ ബാഹ്യ പ്രവർത്തനങ്ങൾ:</p>
+                            <ol class="list-decimal list-inside mt-2 space-y-2 ml-1">
+                                <li><strong>വിതരണം (Distribution):</strong> ഉൽപന്നങ്ങൾ ഉപഭോക്താക്കളിലേക്ക് എത്തിക്കൽ.</li>
+                                <li><strong>വ്യാപാരസഹായങ്ങൾ (Aids to Trade):</strong> വ്യാപാരത്തിന് സഹായകമായ പ്രവർത്തനങ്ങൾ - ബാങ്കിംഗ്, ഇൻഷുറൻസ്, ഗോഡൗൺ, ഗതാഗതം, പബ്ലിസിറ്റി.</li>
+                                <li><strong>പൊതുസമ്പർക്കം (Public Relations):</strong> പൊതുജനങ്ങളുമായി നല്ല ബന്ധം പാലിക്കൽ.</li>
+                                <li><strong>സാമൂഹിക ഉത്തരവാദിത്തം (Social Responsibility):</strong> സമൂഹത്തിന് ക്ഷേമപ്രവർത്തനങ്ങൾ നടത്തൽ.</li>
+                                <li><strong>സർക്കാർ ബന്ധം (Government Relations):</strong> നികുതി അടയ്ക്കൽ, നിയമങ്ങൾ പാലിക്കൽ.</li>
+                                <li><strong>പരിസ്ഥിതി സംരക്ഷണം (Environmental Protection):</strong> പരിസ്ഥിതി മലിനീകരണം കുറയ്ക്കൽ.</li>
+                            </ol>
+                        </div>
+                    </details>
+
+                    <details class="group bg-white dark:bg-slate-800 rounded-xl shadow-sm border border-slate-200 dark:border-slate-700 overflow-hidden" data-search="different types of industries വ്യവസായങ്ങൾ primary secondary tertiary">
+                        <summary class="flex items-center gap-3 p-4 cursor-pointer hover:bg-slate-50 dark:hover:bg-slate-700/50 transition-colors select-none">
+                            <span class="w-8 h-8 rounded-full bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 text-xs font-bold flex items-center justify-center shrink-0">5</span>
+                            <h3 class="font-bold text-slate-800 dark:text-slate-100 text-sm sm:text-base flex-1">Explain the different types of industries.</h3>
+                            <i class="fas fa-chevron-down chevron text-slate-400 transition-transform duration-300"></i>
+                        </summary>
+                        <div class="px-4 pb-4 pt-0 text-slate-600 dark:text-slate-300 text-sm sm:text-base leading-relaxed border-t border-slate-100 dark:border-slate-700">
+                            <p class="mt-3 font-semibold text-slate-700 dark:text-slate-200">വ്യവസായങ്ങളുടെ വിവിധ തരങ്ങൾ:</p>
+                            <div class="mt-2 space-y-3">
+                                <div>
+                                    <p class="font-bold text-slate-700 dark:text-slate-200">1. പ്രാഥമിക വ്യവസായങ്ങൾ (Primary Industries)</p>
+                                    <p class="ml-4 mt-1">പ്രകൃതിയിൽ നിന്ന് നേരിട്ട് വസ്തുക്കൾ എടുക്കുന്നവ:</p>
+                                    <ul class="list-disc list-inside ml-6 mt-1 space-y-1">
+                                        <li><strong>എക്‌സ്ട്രാക്ടീവ് വ്യവസായം:</strong> പ്രകൃതിയിൽ നിന്ന് വസ്തുക്കൾ എടുക്കുന്നു. ഉദാ: ഖനനം, മത്സ്യബന്ധനം, വനവ്യവസായം.</li>
+                                        <li><strong>ജനന വ്യവസായം:</strong> ജീവികളുടെയും സസ്യങ്ങളുടെയും വളർച്ച പ്രോത്സാഹിപ്പിക്കുന്നു. ഉദാ: കൃഷി, മത്സ്യകൃഷി, കാലിത്തീറ്റ.</li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <p class="font-bold text-slate-700 dark:text-slate-200">2. ദ്വിതീയക വ്യവസായങ്ങൾ (Secondary Industries)</p>
+                                    <p class="ml-4 mt-1">പ്രാഥമിക വ്യവസായങ്ങളിൽ നിന്ന് ലഭിക്കുന്ന വസ്തുക്കൾ മാറ്റി വിലയേറിയ ഉൽപന്നങ്ങളാക്കി മാറ്റുന്നു:</p>
+                                    <ul class="list-disc list-inside ml-6 mt-1 space-y-1">
+                                        <li><strong>നിർമ്മാണ വ്യവസായം (Manufacturing):</strong> കച്ചവടയോഗ്യമായ ഉൽപന്നങ്ങൾ നിർമ്മിക്കുന്നു. ഉദാ: ടെക്‌സ്റ്റൈൽ, ഇലക്ട്രോണിക്‌സ്.</li>
+                                        <li><strong>നിർമ്മാണ വ്യവസായം (Construction):</strong> കെട്ടിടങ്ങൾ, പാലങ്ങൾ, റോഡുകൾ നിർമ്മിക്കുന്നു.</li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <p class="font-bold text-slate-700 dark:text-slate-200">3. തൃതീയക വ്യവസായങ്ങൾ (Tertiary Industries)</p>
+                                    <p class="ml-4 mt-1">ചരക്കുകളുടെയും സേവനങ്ങളുടെയും വിതരണവും വ്യാപാരസഹായങ്ങളും നൽകുന്നു. ഉദാ: ബാങ്കിംഗ്, ഗതാഗതം, ഇൻഷുറൻസ്, വ്യാപാരം.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </details>
+
+                    <details class="group bg-white dark:bg-slate-800 rounded-xl shadow-sm border border-slate-200 dark:border-slate-700 overflow-hidden" data-search="aids to trade വ്യാപാരസഹായങ്ങൾ transportation warehousing banking">
+                        <summary class="flex items-center gap-3 p-4 cursor-pointer hover:bg-slate-50 dark:hover:bg-slate-700/50 transition-colors select-none">
+                            <span class="w-8 h-8 rounded-full bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 text-xs font-bold flex items-center justify-center shrink-0">6</span>
+                            <h3 class="font-bold text-slate-800 dark:text-slate-100 text-sm sm:text-base flex-1">What do you mean by 'aids to trade'?</h3>
+                            <i class="fas fa-chevron-down chevron text-slate-400 transition-transform duration-300"></i>
+                        </summary>
+                        <div class="px-4 pb-4 pt-0 text-slate-600 dark:text-slate-300 text-sm sm:text-base leading-relaxed border-t border-slate-100 dark:border-slate-700">
+                            <p class="mt-3">വ്യാപാരസഹായങ്ങൾ (Aids to Trade) എന്നാൽ വ്യാപാര പ്രവർത്തനങ്ങൾ സുഗമമാക്കാൻ സഹായിക്കുന്ന സേവനങ്ങളെയാണ്. ഇവ ചരക്കുകളുടെ ഉൽപാദനത്തിൽ നിന്ന് ഉപഭോക്താവിലേക്കുള്ള എത്തിച്ചേരലിന് സഹായകമാണ്.</p>
+                            <p class="mt-2 font-semibold text-slate-700 dark:text-slate-200">പ്രധാന വ്യാപാരസഹായങ്ങൾ:</p>
+                            <ol class="list-decimal list-inside mt-2 space-y-2 ml-1">
+                                <li><strong>ഗതാഗതം (Transportation):</strong> ചരക്കുകൾ ഒരു സ്ഥലത്ത് നിന്ന് മറ്റൊരു സ്ഥലത്തേക്ക് കൊണ്ടുപോകൽ. റോഡ്, റെയിൽ, വായു, ജല ഗതാഗതം.</li>
+                                <li><strong>ഗോഡൗൺ (Warehousing):</strong> ചരക്കുകൾ സുരക്ഷിതമായി സൂക്ഷിക്കൽ. സീസണൽ ചരക്കുകൾ സംഭരിക്കാൻ സഹായകം.</li>
+                                <li><strong>ബാങ്കിംഗ്:</strong> വ്യാപാരത്തിന് ധനസഹായം നൽകൽ. വായ്പ, ക്രെഡിറ്റ് സൗകര്യങ്ങൾ.</li>
+                                <li><strong>ഇൻഷുറൻസ്:</strong> ചരക്കുകളുടെയും വ്യാപാരത്തിന്റെയും അപകടസാധ്യത കുറയ്ക്കൽ.</li>
+                                <li><strong>പബ്ലിസിറ്റി/വിപണന സഹായം:</strong> ഉൽപന്നങ്ങൾ പ്രോമോട്ട് ചെയ്യൽ, പരസ്യം.</li>
+                                <li><strong>കമ്യൂണിക്കേഷൻ:</strong> വിവരങ്ങൾ കൈമാറ്റം ചെയ്യൽ - ടെലഫോൺ, ഇന്റർനെറ്റ്.</li>
+                            </ol>
+                        </div>
+                    </details>
+
+                    <details class="group bg-white dark:bg-slate-800 rounded-xl shadow-sm border border-slate-200 dark:border-slate-700 overflow-hidden" data-search="significance of business പ്രാധാന്യം സാമ്പത്തിക വളർച്ച">
+                        <summary class="flex items-center gap-3 p-4 cursor-pointer hover:bg-slate-50 dark:hover:bg-slate-700/50 transition-colors select-none">
+                            <span class="w-8 h-8 rounded-full bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 text-xs font-bold flex items-center justify-center shrink-0">7</span>
+                            <h3 class="font-bold text-slate-800 dark:text-slate-100 text-sm sm:text-base flex-1">What is the significance of business?</h3>
+                            <i class="fas fa-chevron-down chevron text-slate-400 transition-transform duration-300"></i>
+                        </summary>
+                        <div class="px-4 pb-4 pt-0 text-slate-600 dark:text-slate-300 text-sm sm:text-base leading-relaxed border-t border-slate-100 dark:border-slate-700">
+                            <p class="mt-3 font-semibold text-slate-700 dark:text-slate-200">വ്യവസായത്തിന്റെ പ്രാധാന്യം:</p>
+                            <ol class="list-decimal list-inside mt-2 space-y-2 ml-1">
+                                <li><strong>സാമ്പത്തിക വളർച്ച:</strong> രാജ്യത്തിന്റെ GDP വർദ്ധിപ്പിക്കുന്നു. തൊഴിലവസരങ്ങൾ സൃഷ്ടിക്കുന്നു.</li>
+                                <li><strong>ഉപഭോക്തൃ ആവശ്യങ്ങൾ പൂർത്തീകരണം:</strong> ആവശ്യമായ ചരക്കുകളും സേവനങ്ങളും നൽകുന്നു.</li>
+                                <li><strong>മൂലധന സൃഷ്ടി:</strong> ലാഭം വീണ്ടും മുതൽ മുടക്കുന്നു. ദേശീയ സമ്പത്ത് വർദ്ധിപ്പിക്കുന്നു.</li>
+                                <li><strong>സാമൂഹിക ക്ഷേമം:</strong> വിദ്യാഭ്യാസം, ആരോഗ്യം, പൊതുക്ഷേമ പ്രവർത്തനങ്ങൾ. സാമൂഹിക ഉത്തരവാദിത്തം നിർവഹിക്കുന്നു.</li>
+                                <li><strong>സാങ്കേതിക പുരോഗതി:</strong> പുതിയ സാങ്കേതികവിദ്യകൾ കണ്ടെത്തുന്നു. ഗവേഷണ-വികസന പ്രവർത്തനങ്ങൾ.</li>
+                                <li><strong>അടിസ്ഥാന സൗകര്യ വികസനം:</strong> റോഡുകൾ, തുറമുഖങ്ങൾ, വൈദ്യുതി എന്നിവയ്ക്ക് സംഭാവന.</li>
+                                <li><strong>നികുതി വരുമാനം:</strong> സർക്കാരിന് നികുതി വരുമാനം നൽകുന്നു.</li>
+                                <li><strong>വിദേശനാണ്യ നേട്ടം:</strong> കയറ്റുമതി വഴി രാജ്യത്തിന് വിദേശനാണ്യം നേടിക്കൊടുക്കുന്നു.</li>
+                            </ol>
+                        </div>
+                    </details>
+
+                    <details class="group bg-white dark:bg-slate-800 rounded-xl shadow-sm border border-slate-200 dark:border-slate-700 overflow-hidden" data-search="economic objectives of business സാമ്പത്തിക ലക്ഷ്യങ്ങൾ profit">
+                        <summary class="flex items-center gap-3 p-4 cursor-pointer hover:bg-slate-50 dark:hover:bg-slate-700/50 transition-colors select-none">
+                            <span class="w-8 h-8 rounded-full bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 text-xs font-bold flex items-center justify-center shrink-0">8</span>
+                            <h3 class="font-bold text-slate-800 dark:text-slate-100 text-sm sm:text-base flex-1">Write a note on economic objectives of business.</h3>
+                            <i class="fas fa-chevron-down chevron text-slate-400 transition-transform duration-300"></i>
+                        </summary>
+                        <div class="px-4 pb-4 pt-0 text-slate-600 dark:text-slate-300 text-sm sm:text-base leading-relaxed border-t border-slate-100 dark:border-slate-700">
+                            <p class="mt-3 font-semibold text-slate-700 dark:text-slate-200">ബിസിനസിന്റെ സാമ്പത്തിക ലക്ഷ്യങ്ങൾ:</p>
+                            <ol class="list-decimal list-inside mt-2 space-y-2 ml-1">
+                                <li><strong>ലാഭം നേടുക (Profit Making):</strong> പ്രധാന സാമ്പത്തിക ലക്ഷ്യം. വ്യവസായത്തിന്റെ നിലനിൽപ്പിനും വളർച്ചയ്ക്കും അവശ്യം.</li>
+                                <li><strong>മൂലധന വളർച്ച (Capital Growth):</strong> മൂലധനം വർദ്ധിപ്പിക്കുക. വിപുലീകരണത്തിന് പണം കണ്ടെത്തുക.</li>
+                                <li><strong>വിപണി വിഹിതം വർദ്ധിപ്പിക്കുക (Market Share):</strong> വിപണിയിൽ കൂടുതൽ വിഹിതം നേടുക. ബ്രാൻഡ് വില വർദ്ധിപ്പിക്കുക.</li>
+                                <li><strong>ഉൽപാദനക്ഷമത (Productivity):</strong> കുറഞ്ഞ ചെലവിൽ കൂടുതൽ ഉൽപാദനം. വിഭവങ്ങളുടെ ഫലപ്രദമായ ഉപയോഗം.</li>
+                                <li><strong>ചെലവ് കുറയ്ക്കൽ (Cost Reduction):</strong> ഉൽപാദനച്ചെലവ് കുറയ്ക്കുക. മത്സരക്ഷമത നേടുക.</li>
+                                <li><strong>വരുമാനം വർദ്ധിപ്പിക്കുക (Revenue Growth):</strong> വിൽപ്പന വരുമാനം വർദ്ധിപ്പിക്കുക. പുതിയ വിപണികൾ കണ്ടെത്തുക.</li>
+                                <li><strong>ഓഹരി ഉടമകൾക്ക് ഡിവിഡന്റ് (Dividend to Shareholders):</strong> ഓഹരി ഉടമകൾക്ക് നല്ല ഡിവിഡന്റ് നൽകുക.</li>
+                            </ol>
+                        </div>
+                    </details>
+
+                    <details class="group bg-white dark:bg-slate-800 rounded-xl shadow-sm border border-slate-200 dark:border-slate-700 overflow-hidden" data-search="social objectives of business സാമൂഹിക ലക്ഷ്യങ്ങൾ quality employment">
+                        <summary class="flex items-center gap-3 p-4 cursor-pointer hover:bg-slate-50 dark:hover:bg-slate-700/50 transition-colors select-none">
+                            <span class="w-8 h-8 rounded-full bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 text-xs font-bold flex items-center justify-center shrink-0">9</span>
+                            <h3 class="font-bold text-slate-800 dark:text-slate-100 text-sm sm:text-base flex-1">Explain the social objectives of business.</h3>
+                            <i class="fas fa-chevron-down chevron text-slate-400 transition-transform duration-300"></i>
+                        </summary>
+                        <div class="px-4 pb-4 pt-0 text-slate-600 dark:text-slate-300 text-sm sm:text-base leading-relaxed border-t border-slate-100 dark:border-slate-700">
+                            <p class="mt-3 font-semibold text-slate-700 dark:text-slate-200">ബിസിനസിന്റെ സാമൂഹിക ലക്ഷ്യങ്ങൾ:</p>
+                            <ol class="list-decimal list-inside mt-2 space-y-2 ml-1">
+                                <li><strong>നല്ല നിലവാരമുള്ള ഉൽപന്നങ്ങൾ (Quality Products):</strong> ഉയർന്ന നിലവാരമുള്ള ചരക്കുകളും സേവനങ്ങളും നൽകുക. വിലകുറവായ ഉൽപന്നങ്ങൾ നൽകുക.</li>
+                                <li><strong>തൊഴിലവസരങ്ങൾ (Employment Generation):</strong> തൊഴിലില്ലായ്മ കുറയ്ക്കാൻ സഹായിക്കുക. വിവിധ മേഖലകളിൽ തൊഴിലവസരങ്ങൾ സൃഷ്ടിക്കുക.</li>
+                                <li><strong>തൊഴിലാളികളുടെ ക്ഷേമം (Employee Welfare):</strong> നല്ല വേതനം, തൊഴിൽസുരക്ഷ, ആരോഗ്യസൗകര്യങ്ങൾ. തൊഴിലാളികളുടെ വ്യക്തിത്വ വികസനം.</li>
+                                <li><strong>ഉപഭോക്തൃ സംരക്ഷണം (Consumer Protection):</strong> ഉപഭോക്താവിന് ശരിയായ വിവരങ്ങൾ നൽകുക. കൃത്രിമ വസ്തുക്കൾ വിൽക്കാതിരിക്കുക.</li>
+                                <li><strong>പരിസ്ഥിതി സംരക്ഷണം (Environmental Protection):</strong> മലിനീകരണം കുറയ്ക്കുക. പച്ചവ്യവസായ പ്രവർത്തനങ്ങൾ.</li>
+                                <li><strong>സാമൂഹിക ക്ഷേമപ്രവർത്തനങ്ങൾ (Social Welfare):</strong> വിദ്യാഭ്യാസം, ആരോഗ്യം, പൊതുക്ഷേമം. ദുരന്തസമയത്ത് സഹായം.</li>
+                                <li><strong>പ്രാദേശിക വികസനം (Local Development):</strong> പ്രവർത്തന മേഖലയുടെ വികസനം. അടിസ്ഥാന സൗകര്യങ്ങൾ മെച്ചപ്പെടുത്തൽ.</li>
+                            </ol>
+                        </div>
+                    </details>
+
+                    <details class="group bg-white dark:bg-slate-800 rounded-xl shadow-sm border border-slate-200 dark:border-slate-700 overflow-hidden" data-search="national objectives of business ദേശീയ ലക്ഷ്യങ്ങൾ self-sufficiency export">
+                        <summary class="flex items-center gap-3 p-4 cursor-pointer hover:bg-slate-50 dark:hover:bg-slate-700/50 transition-colors select-none">
+                            <span class="w-8 h-8 rounded-full bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 text-xs font-bold flex items-center justify-center shrink-0">10</span>
+                            <h3 class="font-bold text-slate-800 dark:text-slate-100 text-sm sm:text-base flex-1">Explain the national objectives of business.</h3>
+                            <i class="fas fa-chevron-down chevron text-slate-400 transition-transform duration-300"></i>
+                        </summary>
+                        <div class="px-4 pb-4 pt-0 text-slate-600 dark:text-slate-300 text-sm sm:text-base leading-relaxed border-t border-slate-100 dark:border-slate-700">
+                            <p class="mt-3 font-semibold text-slate-700 dark:text-slate-200">ബിസിനസിന്റെ ദേശീയ ലക്ഷ്യങ്ങൾ:</p>
+                            <ol class="list-decimal list-inside mt-2 space-y-2 ml-1">
+                                <li><strong>സ്വയംപര്യാപ്തത (Self-Sufficiency):</strong> രാജ്യത്തിന്റെ സ്വയംപര്യാപ്തത നേടാൻ സഹായിക്കുക. ആവശ്യമായ ചരക്കുകൾ ഉൾനാട്ട് ഉൽപാദിപ്പിക്കുക.</li>
+                                <li><strong>കയറ്റുമതി വർദ്ധന (Export Promotion):</strong> വിദേശനാണ്യം നേടാൻ കയറ്റുമതി വർദ്ധിപ്പിക്കുക. "Make in India" പോലുള്ള പദ്ധതികൾക്ക് സഹായം.</li>
+                                <li><strong>ഇറക്കുമതി കുറയ്ക്കൽ (Import Substitution):</strong> വിദേശ ചരക്കുകൾക്ക് പകരം ഉൾനാടൻ ഉൽപന്നങ്ങൾ പ്രോത്സാഹിപ്പിക്കുക.</li>
+                                <li><strong>സമ്പദ്‌വ്യവസ്ഥയുടെ വളർച്ച (Economic Growth):</strong> ദേശീയ വരുമാനം വർദ്ധിപ്പിക്കുക. വ്യവസായവൽക്കരണം പ്രോത്സാഹിപ്പിക്കുക.</li>
+                                <li><strong>നികുതി വരുമാനം (Tax Revenue):</strong> സർക്കാരിന് നികുതി അടയ്ക്കുക. പൊതുക്ഷേമ പദ്ധതികൾക്ക് ധനസഹായം.</li>
+                                <li><strong>പ്രാദേശിക സന്തുലിതാവസ്ഥ (Balanced Regional Development):</strong> പിന്നോക്ക മേഖലകളിൽ വ്യവസായങ്ങൾ സ്ഥാപിക്കുക. പ്രാദേശിക അസമത്വം കുറയ്ക്കുക.</li>
+                                <li><strong>സാമൂഹിക-സാമ്പത്തിക പുരോഗതി:</strong> ജീവിതനിലവാരം മെച്ചപ്പെടുത്തുക. ദാരിദ്ര്യം ഇല്ലാതാക്കാൻ സഹായിക്കുക.</li>
+                            </ol>
+                        </div>
+                    </details>
+
+                    <details class="group bg-white dark:bg-slate-800 rounded-xl shadow-sm border border-slate-200 dark:border-slate-700 overflow-hidden" data-search="global objectives of business ആഗോള ലക്ഷ്യങ്ങൾ international trade">
+                        <summary class="flex items-center gap-3 p-4 cursor-pointer hover:bg-slate-50 dark:hover:bg-slate-700/50 transition-colors select-none">
+                            <span class="w-8 h-8 rounded-full bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 text-xs font-bold flex items-center justify-center shrink-0">11</span>
+                            <h3 class="font-bold text-slate-800 dark:text-slate-100 text-sm sm:text-base flex-1">Write a note on the global objectives of business.</h3>
+                            <i class="fas fa-chevron-down chevron text-slate-400 transition-transform duration-300"></i>
+                        </summary>
+                        <div class="px-4 pb-4 pt-0 text-slate-600 dark:text-slate-300 text-sm sm:text-base leading-relaxed border-t border-slate-100 dark:border-slate-700">
+                            <p class="mt-3 font-semibold text-slate-700 dark:text-slate-200">ബിസിനസിന്റെ ആഗോള ലക്ഷ്യങ്ങൾ:</p>
+                            <ol class="list-decimal list-inside mt-2 space-y-2 ml-1">
+                                <li><strong>അന്താരാഷ്ട്ര വ്യാപാരം (International Trade):</strong> വിദേശ വിപണികളിൽ പ്രവേശിക്കുക. ആഗോള വ്യാപാരത്തിൽ പങ്കെടുക്കുക.</li>
+                                <li><strong>ആഗോള മത്സരക്ഷമത (Global Competitiveness):</strong> അന്താരാഷ്ട്ര നിലവാരത്തിൽ ഉൽപന്നങ്ങൾ നൽകുക. ലോകത്തിലെ മികച്ച കമ്പനികളുമായി മത്സരിക്കുക.</li>
+                                <li><strong>വിദേശനാണ്യ നേട്ടം (Foreign Exchange Earnings):</strong> കയറ്റുമതി വഴി രാജ്യത്തിന് വിദേശനാണ്യം നേടിക്കൊടുക്കുക.</li>
+                                <li><strong>സാങ്കേതിക പരിജ്ഞാനം (Technology Transfer):</strong> വിദേശ സാങ്കേതികവിദ്യകൾ രാജ്യത്തേക്ക് കൊണ്ടുവരിക. ആഗോള മികവിന് അനുസരിച്ച് പ്രവർത്തിക്കുക.</li>
+                                <li><strong>ആഗോള ബ്രാൻഡ് നിർമ്മാണം (Global Brand Building):</strong> ലോകമെമ്പാടും അറിയപ്പെടുന്ന ബ്രാൻഡുകൾ സൃഷ്ടിക്കുക.</li>
+                                <li><strong>അന്താരാഷ്ട്ര സഹകരണം (International Cooperation):</strong> വിദേശ കമ്പനികളുമായി സംയുക്ത സംരംഭങ്ങൾ. വ്യവസായ കരാറുകൾ.</li>
+                                <li><strong>ലോക സമ്പദ്‌വ്യവസ്ഥയിൽ സംഭാവന:</strong> ആഗോള സമ്പദ്‌വ്യവസ്ഥയുടെ വളർച്ചയ്ക്ക് സംഭാവന. അന്താരാഷ്ട്ര തൊഴിലവസരങ്ങൾ സൃഷ്ടിക്കുക.</li>
+                            </ol>
+                        </div>
+                    </details>
+
+                    <details class="group bg-white dark:bg-slate-800 rounded-xl shadow-sm border border-slate-200 dark:border-slate-700 overflow-hidden" data-search="business and development വ്യവസായവും വികസനവും sustainable">
+                        <summary class="flex items-center gap-3 p-4 cursor-pointer hover:bg-slate-50 dark:hover:bg-slate-700/50 transition-colors select-none">
+                            <span class="w-8 h-8 rounded-full bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 text-xs font-bold flex items-center justify-center shrink-0">12</span>
+                            <h3 class="font-bold text-slate-800 dark:text-slate-100 text-sm sm:text-base flex-1">Explain the concept of business and development.</h3>
+                            <i class="fas fa-chevron-down chevron text-slate-400 transition-transform duration-300"></i>
+                        </summary>
+                        <div class="px-4 pb-4 pt-0 text-slate-600 dark:text-slate-300 text-sm sm:text-base leading-relaxed border-t border-slate-100 dark:border-slate-700">
+                            <p class="mt-3">വ്യവസായവും വികസനവും (Business and Development) പരസ്പരം ബന്ധപ്പെട്ടിരിക്കുന്നു. വ്യവസായം സാമൂഹിക-സാമ്പത്തിക വികസനത്തിന്റെ പ്രധാന ഘടകമാണ്.</p>
+                            <p class="mt-2 font-semibold text-slate-700 dark:text-slate-200">വ്യവസായത്തിന്റെ വികസന സംഭാവനകൾ:</p>
+                            <ol class="list-decimal list-inside mt-2 space-y-2 ml-1">
+                                <li><strong>സാമ്പത്തിക വികസനം:</strong> ദേശീയ വരുമാനം വർദ്ധിപ്പിക്കുന്നു. മൂലധന സൃഷ്ടി നടത്തുന്നു. വ്യവസായവൽക്കരണം പ്രോത്സാഹിപ്പിക്കുന്നു.</li>
+                                <li><strong>സാമൂഹിക വികസനം:</strong> തൊഴിലവസരങ്ങൾ സൃഷ്ടിക്കുന്നു. ജീവിതനിലവാരം മെച്ചപ്പെടുത്തുന്നു. വിദ്യാഭ്യാസവും ആരോഗ്യവും പ്രോത്സാഹിപ്പിക്കുന്നു.</li>
+                                <li><strong>മാനവ വികസനം:</strong> തൊഴിലാളികളുടെ കഴിവുകൾ വികസിപ്പിക്കുന്നു. പരിശീലനം നൽകുന്നു. വ്യക്തിത്വ വികസനം.</li>
+                                <li><strong>പ്രാദേശിക വികസനം:</strong> പിന്നോക്ക മേഖലകളിൽ വികസനം. അടിസ്ഥാന സൗകര്യ വികസനം.</li>
+                                <li><strong>സustainable വികസനം:</strong> പരിസ്ഥിതി സൗഹാർദ ഉൽപന്നങ്ങൾ. പച്ചവ്യവസായം. ഭാവി തലമുറയ്ക്ക് സുരക്ഷിതമായ ഭാവി.</li>
+                                <li><strong>സാങ്കേതിക വികസനം:</strong> ഗവേഷണ-വികസന പ്രവർത്തനങ്ങൾ. പുതിയ സാങ്കേതികവിദ്യകൾ.</li>
+                                <li><strong>സാംസ്കാരിക വികസനം:</strong> വിവിധ സംസ്കാരങ്ങളുമായുള്ള സമ്പർക്കം. ആഗോള കാഴ്ചപ്പാട്.</li>
+                            </ol>
+                        </div>
+                    </details>
+
+                    <details class="group bg-white dark:bg-slate-800 rounded-xl shadow-sm border border-slate-200 dark:border-slate-700 overflow-hidden" data-search="features of sole proprietorship ഏകമുടമാസ്വാമിത്വം">
+                        <summary class="flex items-center gap-3 p-4 cursor-pointer hover:bg-slate-50 dark:hover:bg-slate-700/50 transition-colors select-none">
+                            <span class="w-8 h-8 rounded-full bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 text-xs font-bold flex items-center justify-center shrink-0">13</span>
+                            <h3 class="font-bold text-slate-800 dark:text-slate-100 text-sm sm:text-base flex-1">What are the features of sole proprietorship organisations?</h3>
+                            <i class="fas fa-chevron-down chevron text-slate-400 transition-transform duration-300"></i>
+                        </summary>
+                        <div class="px-4 pb-4 pt-0 text-slate-600 dark:text-slate-300 text-sm sm:text-base leading-relaxed border-t border-slate-100 dark:border-slate-700">
+                            <p class="mt-3 font-semibold text-slate-700 dark:text-slate-200">ഏകമുടമാസ്വാമിത്വത്തിന്റെ സവിശേഷതകൾ:</p>
+                            <ol class="list-decimal list-inside mt-2 space-y-2 ml-1">
+                                <li><strong>ഏക ഉടമ (Single Ownership):</strong> ഒരു വ്യക്തി മാത്രമേ ഉടമയായിരിക്കൂ. എല്ലാ അധികാരവും അയാളുടേതാണ്.</li>
+                                <li><strong>എളിമ (Simplicity):</strong> രജിസ്ട്രേഷൻ ആവശ്യമില്ല. നിയമപരമായ ഔപചാരികതകൾ കുറവ്.</li>
+                                <li><strong>നേരിട്ടുള്ള നിയന്ത്രണം (Direct Control):</strong> ഉടമ തന്നെ മാനേജർ. വേഗത്തിലുള്ള തീരുമാനങ്ങൾ.</li>
+                                <li><strong>അപരിമിതമായ ഉത്തരവാദിത്തം (Unlimited Liability):</strong> വ്യക്തിഗത സ്വത്തുകൾ വരെ ഉത്തരവാദിത്തം. നഷ്ടം ഉണ്ടായാൽ സ്വന്തം സ്വത്ത് നഷ്ടപ്പെടാം.</li>
+                                <li><strong>ലാഭം-നഷ്ടം (Profit and Loss):</strong> ലാഭം മുഴുവൻ ഉടമയ്ക്ക്. നഷ്ടവും മുഴുവൻ ഉടമയുടേതാണ്.</li>
+                                <li><strong>നിയമപരമായ സ്ഥാനം (No Separate Legal Entity):</strong> ബിസിനസിനും ഉടമയ്ക്കും വേർതിരിവില്ല. ഉടമ മരിച്ചാൽ ബിസിനസ് അവസാനിക്കും.</li>
+                                <li><strong>രഹസ്യസ്വഭാവം (Secrecy):</strong> ബിസിനസ് രഹസ്യങ്ങൾ പരിമിതമായവർക്ക് മാത്രം അറിയാം.</li>
+                                <li><strong>തുടർച്ചയില്ലാത്ത പ്രകൃതം (Lack of Continuity):</strong> ഉടമയുടെ മരണം, അസ്വസ്ഥത എന്നിവയാൽ അവസാനിക്കാം.</li>
+                            </ol>
+                        </div>
+                    </details>
+
+                    <details class="group bg-white dark:bg-slate-800 rounded-xl shadow-sm border border-slate-200 dark:border-slate-700 overflow-hidden" data-search="advantages of sole proprietorship ഗുണങ്ങൾ">
+                        <summary class="flex items-center gap-3 p-4 cursor-pointer hover:bg-slate-50 dark:hover:bg-slate-700/50 transition-colors select-none">
+                            <span class="w-8 h-8 rounded-full bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 text-xs font-bold flex items-center justify-center shrink-0">14</span>
+                            <h3 class="font-bold text-slate-800 dark:text-slate-100 text-sm sm:text-base flex-1">What are the advantages of sole proprietorship?</h3>
+                            <i class="fas fa-chevron-down chevron text-slate-400 transition-transform duration-300"></i>
+                        </summary>
+                        <div class="px-4 pb-4 pt-0 text-slate-600 dark:text-slate-300 text-sm sm:text-base leading-relaxed border-t border-slate-100 dark:border-slate-700">
+                            <p class="mt-3 font-semibold text-slate-700 dark:text-slate-200">ഏകമുടമാസ്വാമിത്വത്തിന്റെ ഗുണങ്ങൾ:</p>
+                            <ol class="list-decimal list-inside mt-2 space-y-2 ml-1">
+                                <li><strong>എളിമയുള്ള ആരംഭം (Easy to Start):</strong> രജിസ്ട്രേഷൻ ആവശ്യമില്ല. കുറഞ്ഞ മൂലധനം മതി.</li>
+                                <li><strong>സ്വതന്ത്ര തീരുമാനം (Independent Decision Making):</strong> ആരുടെയും അനുമതി വേണ്ട. വേഗത്തിലുള്ള തീരുമാനങ്ങൾ.</li>
+                                <li><strong>നേരിട്ടുള്ള പ്രചോദനം (Direct Incentive):</strong> ലാഭം മുഴുവൻ സ്വന്തം. കഠിനാധ്വാനത്തിന് പ്രേരണ.</li>
+                                <li><strong>രഹസ്യസ്വഭാവം (Business Secrecy):</strong> ബിസിനസ് രഹസ്യങ്ങൾ സംരക്ഷിക്കാം. എതിരാളികൾക്ക് അറിയാൻ കഴിയില്ല.</li>
+                                <li><strong>വ്യക്തിഗത ബന്ധം (Personal Touch):</strong> ഉപഭോക്താക്കളുമായി നേരിട്ട് ബന്ധം. അവരുടെ ആവശ്യങ്ങൾ മനസ്സിലാക്കാം.</li>
+                                <li><strong>സാമ്പത്തിക രഹസ്യം (Financial Privacy):</strong> കണക്കുകൾ പരിശോധിക്കേണ്ടതില്ല. സ്വന്തം രീതിയിൽ കണക്ക് വയ്ക്കാം.</li>
+                                <li><strong>സാമൂഹിക പ്രാധാന്യം (Social Utility):</strong> ചെറുകിട വ്യവസായങ്ങൾ പ്രോത്സാഹിപ്പിക്കുന്നു. സ്വയം തൊഴിൽ അവസരങ്ങൾ.</li>
+                                <li><strong>നികുതി നേട്ടം (Tax Benefits):</strong> വ്യക്തിഗത നികുതി നിരകൾ. കോർപ്പറേറ്റ് നികുതിയേക്കാൾ കുറവ്.</li>
+                            </ol>
+                        </div>
+                    </details>
+
+                    <details class="group bg-white dark:bg-slate-800 rounded-xl shadow-sm border border-slate-200 dark:border-slate-700 overflow-hidden" data-search="limitations of sole proprietorship പരിമിതികൾ">
+                        <summary class="flex items-center gap-3 p-4 cursor-pointer hover:bg-slate-50 dark:hover:bg-slate-700/50 transition-colors select-none">
+                            <span class="w-8 h-8 rounded-full bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 text-xs font-bold flex items-center justify-center shrink-0">15</span>
+                            <h3 class="font-bold text-slate-800 dark:text-slate-100 text-sm sm:text-base flex-1">Explain the limitations of sole proprietorship.</h3>
+                            <i class="fas fa-chevron-down chevron text-slate-400 transition-transform duration-300"></i>
+                        </summary>
+                        <div class="px-4 pb-4 pt-0 text-slate-600 dark:text-slate-300 text-sm sm:text-base leading-relaxed border-t border-slate-100 dark:border-slate-700">
+                            <p class="mt-3 font-semibold text-slate-700 dark:text-slate-200">ഏകമുടമാസ്വാമിത്വത്തിന്റെ പരിമിതികൾ:</p>
+                            <ol class="list-decimal list-inside mt-2 space-y-2 ml-1">
+                                <li><strong>പരിമിതമായ മൂലധനം (Limited Capital):</strong> ഒരു വ്യക്തിയുടെ മൂലധനം മാത്രം. വിപുലീകരണം പ്രയാസം.</li>
+                                <li><strong>അപരിമിതമായ ഉത്തരവാദിത്തം (Unlimited Liability):</strong> വ്യക്തിഗത സ്വത്തുകൾ വരെ ഉത്തരവാദിത്തം. അപകടസാധ്യത കൂടുതൽ.</li>
+                                <li><strong>പരിമിതമായ കഴിവുകൾ (Limited Managerial Ability):</strong> ഒരു വ്യക്തിയുടെ കഴിവ് മാത്രം. എല്ലാ മേഖലകളിലും വിദഗ്ധത ലഭിക്കില്ല.</li>
+                                <li><strong>തുടർച്ചയില്ലാത്ത പ്രകൃതം (Lack of Continuity):</strong> ഉടമയുടെ മരണത്താൽ അവസാനിക്കാം. സ്ഥിരത ഇല്ല.</li>
+                                <li><strong>അപകടസാധ്യത (Risk Element):</strong> എല്ലാ അപകടവും ഒരാളുടേതാണ്. വലിയ അപകടങ്ങൾ സഹിക്കാൻ പ്രയാസം.</li>
+                                <li><strong>വിപുലീകരണത്തിന് പ്രയാസം (Difficulty in Expansion):</strong> മൂലധനക്കുറവ്. മാനേജ്മെന്റ് പരിമിതി.</li>
+                                <li><strong>തൊഴിലാളികളുടെ പ്രചോദനക്കുറവ്:</strong> തൊഴിലാളികൾക്ക് ലാഭത്തിൽ പങ്കില്ല. കഠിനാധ്വാനത്തിന് പ്രേരണ കുറവ്.</li>
+                                <li><strong>ക്രെഡിറ്റ് കുറവ് (Limited Credit):</strong> ബാങ്കുകൾ കുറഞ്ഞ വായ്പ നൽകും. ധനസമാഹരണം പ്രയാസം.</li>
+                            </ol>
+                        </div>
+                    </details>
+
+                    <details class="group bg-white dark:bg-slate-800 rounded-xl shadow-sm border border-slate-200 dark:border-slate-700 overflow-hidden" data-search="features of partnership പങ്കാളിത്തം agreement">
+                        <summary class="flex items-center gap-3 p-4 cursor-pointer hover:bg-slate-50 dark:hover:bg-slate-700/50 transition-colors select-none">
+                            <span class="w-8 h-8 rounded-full bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 text-xs font-bold flex items-center justify-center shrink-0">16</span>
+                            <h3 class="font-bold text-slate-800 dark:text-slate-100 text-sm sm:text-base flex-1">What are the features of partnership?</h3>
+                            <i class="fas fa-chevron-down chevron text-slate-400 transition-transform duration-300"></i>
+                        </summary>
+                        <div class="px-4 pb-4 pt-0 text-slate-600 dark:text-slate-300 text-sm sm:text-base leading-relaxed border-t border-slate-100 dark:border-slate-700">
+                            <p class="mt-3 font-semibold text-slate-700 dark:text-slate-200">പങ്കാളിത്തത്തിന്റെ സവിശേഷതകൾ:</p>
+                            <ol class="list-decimal list-inside mt-2 space-y-2 ml-1">
+                                <li><strong>കരാർ (Agreement):</strong> എഴുതിയതോ വാക്കാലോ ആയ കരാർ. പങ്കാളികളുടെ അവകാശങ്ങളും കടമുകളും നിർണയിക്കുന്നു.</li>
+                                <li><strong>രണ്ടോ അതിലധികമോ പങ്കാളികൾ (Minimum Two Partners):</strong> കുറഞ്ഞത് രണ്ട് പങ്കാളികൾ വേണം. പരമാവധി 50 വരെ (LLP-യിൽ).</li>
+                                <li><strong>ലാഭലക്ഷ്യം (Profit Motive):</strong> ലാഭം നേടുന്നതിനായുള്ള പ്രവർത്തനം. ലാഭം പങ്കുവയ്ക്കുന്നു.</li>
+                                <li><strong>പരസ്പര വിശ്വാസം (Mutual Trust and Confidence):</strong> പങ്കാളികൾ തമ്മിൽ വിശ്വാസം അവശ്യം. ഏജന്റ്-പ്രിൻസിപ്പൽ ബന്ധം.</li>
+                                <li><strong>അപരിമിതമായ ഉത്തരവാദിത്തം (Unlimited Liability - General Partners):</strong> പങ്കാളികളുടെ സ്വത്തുകൾ വരെ ഉത്തരവാദിത്തം. (LLP-യിൽ പരിമിതമാണ്).</li>
+                                <li><strong>നിയമപരമായ സ്ഥാനം (No Separate Legal Entity - Traditional):</strong> പങ്കാളികളും ബിസിനസും വേർതിരിവില്ല. (LLP-യിൽ വേർതിരിവുണ്ട്).</li>
+                                <li><strong>തുടർച്ച (Continuity):</strong> പങ്കാളിയുടെ മരണത്താൽ പങ്കാളിത്തം അവസാനിക്കാം. (LLP-യിൽ തുടർന്നുപോകും).</li>
+                                <li><strong>പങ്കാളികളുടെ ഏജൻസി (Agency Relationship):</strong> ഓരോ പങ്കാളിയും മറ്റുള്ളവരുടെ ഏജന്റ്. ഒരാളുടെ പ്രവർത്തനം എല്ലാവരെയും ബാധിക്കും.</li>
+                            </ol>
+                        </div>
+                    </details>
+
+                    <details class="group bg-white dark:bg-slate-800 rounded-xl shadow-sm border border-slate-200 dark:border-slate-700 overflow-hidden" data-search="merits of partnership ഗുണങ്ങൾ">
+                        <summary class="flex items-center gap-3 p-4 cursor-pointer hover:bg-slate-50 dark:hover:bg-slate-700/50 transition-colors select-none">
+                            <span class="w-8 h-8 rounded-full bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 text-xs font-bold flex items-center justify-center shrink-0">17</span>
+                            <h3 class="font-bold text-slate-800 dark:text-slate-100 text-sm sm:text-base flex-1">Explain the merits of partnership.</h3>
+                            <i class="fas fa-chevron-down chevron text-slate-400 transition-transform duration-300"></i>
+                        </summary>
+                        <div class="px-4 pb-4 pt-0 text-slate-600 dark:text-slate-300 text-sm sm:text-base leading-relaxed border-t border-slate-100 dark:border-slate-700">
+                            <p class="mt-3 font-semibold text-slate-700 dark:text-slate-200">പങ്കാളിത്തത്തിന്റെ ഗുണങ്ങൾ:</p>
+                            <ol class="list-decimal list-inside mt-2 space-y-2 ml-1">
+                                <li><strong>എളിമയുള്ള രൂപീകരണം (Easy Formation):</strong> രജിസ്ട്രേഷൻ നിർബന്ധമല്ല. കുറഞ്ഞ ഔപചാരികതകൾ.</li>
+                                <li><strong>കൂടുതൽ മൂലധനം (More Capital):</strong> പലരുടെ മൂലധനം സംയുക്തമായി. വിപുലീകരണം സാധ്യം.</li>
+                                <li><strong>വിഭജിതമായ ഉത്തരവാദിത്തം (Division of Labour):</strong> ഓരോരുത്തരും വ്യത്യസ്ത മേഖലകൾ നോക്കുന്നു. കാര്യക്ഷമത വർദ്ധിക്കുന്നു.</li>
+                                <li><strong>വിഭജിതമായ അപകടസാധ്യത (Sharing of Risk):</strong> അപകടം പലരിൽ പങ്കുവയ്ക്കുന്നു. ഒരാളുടെ ഭാരം കുറയുന്നു.</li>
+                                <li><strong>രഹസ്യസ്വഭാവം (Secrecy):</strong> പങ്കാളികൾ മാത്രം അറിയുന്നു. പൊതുജനങ്ങൾക്ക് അറിയാൻ കഴിയില്ല.</li>
+                                <li><strong>വേഗത്തിലുള്ള തീരുമാനങ്ങൾ (Quick Decisions):</strong> ചെറിയ സംഘം, വേഗത്തിലുള്ള ചർച്ച. ആവശ്യമായ മാറ്റങ്ങൾ വേഗത്തിൽ.</li>
+                                <li><strong>നേരിട്ടുള്ള പ്രചോദനം (Direct Incentive):</strong> ലാഭത്തിൽ പങ്കുണ്ട്. കഠിനാധ്വാനത്തിന് പ്രേരണ.</li>
+                                <li><strong>സാമൂഹിക ബന്ധം (Personal Relations):</strong> പങ്കാളികൾ തമ്മിൽ നല്ല ബന്ധം. തൊഴിലാളികളുമായി നേരിട്ട് ബന്ധം.</li>
+                                <li><strong>നികുതി നേട്ടം (Tax Advantage):</strong> പങ്കാളികളുടെ വ്യക്തിഗത നികുതി നിരകൾ. കോർപ്പറേറ്റ് നികുതിയേക്കാൾ കുറവ്.</li>
+                            </ol>
+                        </div>
+                    </details>
+
+                    <details class="group bg-white dark:bg-slate-800 rounded-xl shadow-sm border border-slate-200 dark:border-slate-700 overflow-hidden" data-search="limitations of partnership പരിമിതികൾ">
+                        <summary class="flex items-center gap-3 p-4 cursor-pointer hover:bg-slate-50 dark:hover:bg-slate-700/50 transition-colors select-none">
+                            <span class="w-8 h-8 rounded-full bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 text-xs font-bold flex items-center justify-center shrink-0">18</span>
+                            <h3 class="font-bold text-slate-800 dark:text-slate-100 text-sm sm:text-base flex-1">What are the limitations of partnership?</h3>
+                            <i class="fas fa-chevron-down chevron text-slate-400 transition-transform duration-300"></i>
+                        </summary>
+                        <div class="px-4 pb-4 pt-0 text-slate-600 dark:text-slate-300 text-sm sm:text-base leading-relaxed border-t border-slate-100 dark:border-slate-700">
+                            <p class="mt-3 font-semibold text-slate-700 dark:text-slate-200">പങ്കാളിത്തത്തിന്റെ പരിമിതികൾ:</p>
+                            <ol class="list-decimal list-inside mt-2 space-y-2 ml-1">
+                                <li><strong>അപരിമിതമായ ഉത്തരവാദിത്തം (Unlimited Liability):</strong> പങ്കാളികളുടെ സ്വത്തുകൾ വരെ ഉത്തരവാദിത്തം. അപകടസാധ്യത കൂടുതൽ.</li>
+                                <li><strong>പരിമിതമായ മൂലധനം (Limited Capital):</strong> കമ്പനിയേക്കാൾ കുറവ്. വലിയ പദ്ധതികൾക്ക് പ്രയാസം.</li>
+                                <li><strong>തുടർച്ചയില്ലാത്ത പ്രകൃതം (Lack of Continuity):</strong> പങ്കാളിയുടെ മരണം, അസ്വസ്ഥത, പിൻവാങ്ങൽ എന്നിവയാൽ അവസാനിക്കാം.</li>
+                                <li><strong>പരസ്പര വിശ്വാസത്തിന്റെ അഭാവം (Lack of Mutual Trust):</strong> പങ്കാളികൾ തമ്മിൽ തർക്കം. ബിസിനസ് തകരാറിലാകാം.</li>
+                                <li><strong>പരിമിതമായ മാനേജ്മെന്റ് കഴിവ് (Limited Managerial Skill):</strong> പങ്കാളികളുടെ എണ്ണം പരിമിതം. എല്ലാ മേഖലകളിലും വിദഗ്ധത ലഭിക്കില്ല.</li>
+                                <li><strong>അപകടസാധ്യത (Risk):</strong> ഒരു പങ്കാളിയുടെ തെറ്റിന് എല്ലാവരും ഉത്തരവാദികൾ. ഏജന്റ്-പ്രിൻസിപ്പൽ ബന്ധം.</li>
+                                <li><strong>ക്രെഡിറ്റ് പരിമിതി (Limited Credit):</strong> ബാങ്കുകൾ കുറഞ്ഞ വായ്പ നൽകും. മൂലധനക്കുറവ്.</li>
+                                <li><strong>പങ്കാളികളുടെ തർക്കങ്ങൾ (Partner Disputes):</strong> ലാഭവിഹിതത്തിൽ തർക്കം. തീരുമാനങ്ങളിൽ അഭിപ്രായവ്യത്യാസം.</li>
+                            </ol>
+                        </div>
+                    </details>
+
+                    <details class="group bg-white dark:bg-slate-800 rounded-xl shadow-sm border border-slate-200 dark:border-slate-700 overflow-hidden" data-search="features of HUF കർത്താവ് കോപാർസനർ">
+                        <summary class="flex items-center gap-3 p-4 cursor-pointer hover:bg-slate-50 dark:hover:bg-slate-700/50 transition-colors select-none">
+                            <span class="w-8 h-8 rounded-full bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 text-xs font-bold flex items-center justify-center shrink-0">19</span>
+                            <h3 class="font-bold text-slate-800 dark:text-slate-100 text-sm sm:text-base flex-1">What are the features of HUF?</h3>
+                            <i class="fas fa-chevron-down chevron text-slate-400 transition-transform duration-300"></i>
+                        </summary>
+                        <div class="px-4 pb-4 pt-0 text-slate-600 dark:text-slate-300 text-sm sm:text-base leading-relaxed border-t border-slate-100 dark:border-slate-700">
+                            <p class="mt-3 font-semibold text-slate-700 dark:text-slate-200">ഹിന്ദു അവിഭക്ത കുടുംബത്തിന്റെ സവിശേഷതകൾ:</p>
+                            <ol class="list-decimal list-inside mt-2 space-y-2 ml-1">
+                                <li><strong>ഹിന്ദു നിയമപ്രകാരം (Hindu Law):</strong> ഹിന്ദു നിയമപ്രകാരം രൂപീകരിക്കപ്പെടുന്നു. ഹിന്ദു, ജൈന, സിഖ് കുടുംബങ്ങൾക്ക് ബാധകം.</li>
+                                <li><strong>കുടുംബത്തിന്റെ സ്വത്ത് (Joint Family Property):</strong> അവിഭക്ത കുടുംബ സ്വത്ത്. അംഗങ്ങൾക്ക് പിറവിയാൽ അവകാശം.</li>
+                                <li><strong>കർത്താവ് (Karta):</strong> കുടുംബത്തിലെ മൂത്ത പുരുഷൻ/സ്ത്രീ. ബിസിനസ് നിയന്ത്രിക്കുന്നു. പരിമിതമായ ഉത്തരവാദിത്തം.</li>
+                                <li><strong>കോപാർസനർമാർ (Coparceners):</strong> കുടുംബാംഗങ്ങൾ പങ്കാളികൾ. പിറവിയാൽ അവകാശം. മൂന്ന് തലമുറ വരെ അവകാശം.</li>
+                                <li><strong>അപരിമിതമായ ഉത്തരവാദിത്തം (Unlimited Liability of Karta):</strong> കർത്താവിന് അപരിമിത ഉത്തരവാദിത്തം. കോപാർസനർമാർക്ക് പരിമിതം.</li>
+                                <li><strong>തുടർച്ച (Continuity):</strong> കർത്താവിന്റെ മരണത്താൽ അവസാനിക്കില്ല. അടുത്ത കർത്താവ് തുടരും.</li>
+                                <li><strong>നിയമപരമായ സ്ഥാനം (No Separate Legal Entity):</strong> കുടുംബവും ബിസിനസും വേർതിരിവില്ല.</li>
+                                <li><strong>ലാഭവിഹിതം (Profit Sharing):</strong> കുടുംബാംഗങ്ങൾക്ക് തുല്യ അവകാശം. കർത്താവിന് പ്രത്യേക അവകാശമില്ല.</li>
+                            </ol>
+                        </div>
+                    </details>
+
+                    <details class="group bg-white dark:bg-slate-800 rounded-xl shadow-sm border border-slate-200 dark:border-slate-700 overflow-hidden" data-search="features of cooperative society സഹകരണ സംഘം democratic">
+                        <summary class="flex items-center gap-3 p-4 cursor-pointer hover:bg-slate-50 dark:hover:bg-slate-700/50 transition-colors select-none">
+                            <span class="w-8 h-8 rounded-full bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 text-xs font-bold flex items-center justify-center shrink-0">20</span>
+                            <h3 class="font-bold text-slate-800 dark:text-slate-100 text-sm sm:text-base flex-1">What are the features of a cooperative society?</h3>
+                            <i class="fas fa-chevron-down chevron text-slate-400 transition-transform duration-300"></i>
+                        </summary>
+                        <div class="px-4 pb-4 pt-0 text-slate-600 dark:text-slate-300 text-sm sm:text-base leading-relaxed border-t border-slate-100 dark:border-slate-700">
+                            <p class="mt-3 font-semibold text-slate-700 dark:text-slate-200">സഹകരണ സംഘത്തിന്റെ സവിശേഷതകൾ:</p>
+                            <ol class="list-decimal list-inside mt-2 space-y-2 ml-1">
+                                <li><strong>സ്വയംപ്രേരിതമായ സംഘടന (Voluntary Association):</strong> ആരും സ്വമേധയാ ചേരാം. വിട്ടുപോകാം.</li>
+                                <li><strong>തുറന്ന അംഗത്വം (Open Membership):</strong> വംശം, മതം, ലിംഗഭേദമില്ലാതെ ചേരാം. അംഗത്വം തുറന്നതാണ്.</li>
+                                <li><strong>ഡെമോക്രാറ്റിക് നിയന്ത്രണം (Democratic Control):</strong> "ഒരാൾ, ഒരു വോട്ട്" എന്ന തത്വം. തിരഞ്ഞെടുപ്പ് വഴി ഭരണം.</li>
+                                <li><strong>പരിമിതമായ ഉത്തരവാദിത്തം (Limited Liability):</strong> അംഗങ്ങളുടെ സ്വത്തുകൾ സുരക്ഷിതം. വായ്പയ്ക്ക് മാത്രം ഉത്തരവാദിത്തം.</li>
+                                <li><strong>സേവന ലക്ഷ്യം (Service Motive):</strong> ലാഭം ലക്ഷ്യമല്ല. അംഗങ്ങളുടെ ക്ഷേമം ലക്ഷ്യം.</li>
+                                <li><strong>മൂലധനം (Capital):</strong> അംഗങ്ങളുടെ ഓഹരി മൂലധനം. സർക്കാർ സഹായം ലഭിക്കും.</li>
+                                <li><strong>നിയമപരമായ സ്ഥാനം (Separate Legal Entity):</strong> രജിസ്ട്രേഷനുശേഷം വേർതിരിവ്. സ്വന്തം പേരിൽ കരാറുകൾ.</li>
+                                <li><strong>ലാഭവിഹിതം (Profit Distribution):</strong> ഓഹരി മൂലധനത്തിന് പരിമിതമായ ലാഭം. ബോണസ്, ഡിവിഡന്റ് എന്നിവ.</li>
+                                <li><strong>സർക്കാർ നിയന്ത്രണം (Government Control):</strong> സഹകരണ നിയമപ്രകാരം രജിസ്ട്രേഷൻ. സർക്കാർ പരിശീലനം, സഹായം.</li>
+                            </ol>
+                        </div>
+                    </details>
+
+                    <details class="group bg-white dark:bg-slate-800 rounded-xl shadow-sm border border-slate-200 dark:border-slate-700 overflow-hidden" data-search="merits of cooperative society ഗുണങ്ങൾ">
+                        <summary class="flex items-center gap-3 p-4 cursor-pointer hover:bg-slate-50 dark:hover:bg-slate-700/50 transition-colors select-none">
+                            <span class="w-8 h-8 rounded-full bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 text-xs font-bold flex items-center justify-center shrink-0">21</span>
+                            <h3 class="font-bold text-slate-800 dark:text-slate-100 text-sm sm:text-base flex-1">What are the merits of a cooperative society?</h3>
+                            <i class="fas fa-chevron-down chevron text-slate-400 transition-transform duration-300"></i>
+                        </summary>
+                        <div class="px-4 pb-4 pt-0 text-slate-600 dark:text-slate-300 text-sm sm:text-base leading-relaxed border-t border-slate-100 dark:border-slate-700">
+                            <p class="mt-3 font-semibold text-slate-700 dark:text-slate-200">സഹകരണ സംഘത്തിന്റെ ഗുണങ്ങൾ:</p>
+                            <ol class="list-decimal list-inside mt-2 space-y-2 ml-1">
+                                <li><strong>എളിമയുള്ള രൂപീകരണം (Easy Formation):</strong> കുറഞ്ഞ ഔപചാരികതകൾ. 10 അംഗങ്ങൾ മതി.</li>
+                                <li><strong>തുറന്ന അംഗത്വം (Open Membership):</strong> ആരും ചേരാം. വംശ-മതഭേദമില്ല.</li>
+                                <li><strong>ഡെമോക്രാറ്റിക് ഭരണം (Democratic Management):</strong> തിരഞ്ഞെടുപ്പ് വഴി ഭരണം. അംഗങ്ങളുടെ പങ്കാളിത്തം.</li>
+                                <li><strong>പരിമിതമായ ഉത്തരവാദിത്തം (Limited Liability):</strong> അംഗങ്ങളുടെ സ്വത്ത് സുരക്ഷിതം. അപകടസാധ്യത കുറവ്.</li>
+                                <li><strong>സ്ഥിരത (Continuity):</strong> അംഗങ്ങളുടെ മരണത്താൽ അവസാനിക്കില്ല. നിയമപരമായ വേർതിരിവ്.</li>
+                                <li><strong>സാമ്പത്തിക നേട്ടം (Economic Benefits):</strong> ഇടനിലക്കാരില്ലാതെ ചരക്കുകൾ ലഭിക്കുന്നു. കുറഞ്ഞ വിലയിൽ നല്ല നിലവാരം.</li>
+                                <li><strong>സർക്കാർ സഹായം (Government Support):</strong> നികുതി ഇളവുകൾ. വായ്പാ സൗകര്യങ്ങൾ.</li>
+                                <li><strong>സാമൂഹിക പ്രാധാന്യം (Social Utility):</strong> ചെറുകിട വ്യവസായങ്ങൾ പ്രോത്സാഹിപ്പിക്കുന്നു. സാമൂഹിക ഐക്യം വർദ്ധിപ്പിക്കുന്നു.</li>
+                                <li><strong>സ്വയംപര്യാപ്തത (Self-Reliance):</strong> സ്വന്തം പ്രശ്നങ്ങൾ പരിഹരിക്കുന്നു. സ്വയംഭരണം.</li>
+                            </ol>
+                        </div>
+                    </details>
+
+                    <details class="group bg-white dark:bg-slate-800 rounded-xl shadow-sm border border-slate-200 dark:border-slate-700 overflow-hidden" data-search="limitations of cooperative society പരിമിതികൾ">
+                        <summary class="flex items-center gap-3 p-4 cursor-pointer hover:bg-slate-50 dark:hover:bg-slate-700/50 transition-colors select-none">
+                            <span class="w-8 h-8 rounded-full bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 text-xs font-bold flex items-center justify-center shrink-0">22</span>
+                            <h3 class="font-bold text-slate-800 dark:text-slate-100 text-sm sm:text-base flex-1">What are the limitations of a cooperative society?</h3>
+                            <i class="fas fa-chevron-down chevron text-slate-400 transition-transform duration-300"></i>
+                        </summary>
+                        <div class="px-4 pb-4 pt-0 text-slate-600 dark:text-slate-300 text-sm sm:text-base leading-relaxed border-t border-slate-100 dark:border-slate-700">
+                            <p class="mt-3 font-semibold text-slate-700 dark:text-slate-200">സഹകരണ സംഘത്തിന്റെ പരിമിതികൾ:</p>
+                            <ol class="list-decimal list-inside mt-2 space-y-2 ml-1">
+                                <li><strong>പരിമിതമായ മൂലധനം (Limited Capital):</strong> അംഗങ്ങളുടെ ഓഹരി മാത്രം. വിപുലീകരണം പ്രയാസം.</li>
+                                <li><strong>മാനേജ്മെന്റ് പരിമിതി (Inefficient Management):</strong> പ്രൊഫഷണൽ മാനേജ്മെന്റ് ഇല്ല. അംഗങ്ങൾക്ക് വിദ്യാഭ്യാസക്കുറവ്.</li>
+                                <li><strong>രാഷ്ട്രീയ ഇടപെടൽ (Political Interference):</strong> രാഷ്ട്രീയ നേതാക്കളുടെ ഇടപെടൽ. സ്വയംപ്രേരിത പ്രവർത്തനം നഷ്ടപ്പെടുന്നു.</li>
+                                <li><strong>അംഗങ്ങളുടെ അനാസക്തി (Lack of Interest):</strong> ലാഭം കുറവ്. അംഗങ്ങൾ പങ്കെടുക്കാറില്ല.</li>
+                                <li><strong>സർക്കാർ നിയന്ത്രണം (Government Control):</strong> അധിക നിയന്ത്രണം. തീരുമാന സ്വാതന്ത്ര്യം കുറവ്.</li>
+                                <li><strong>തർക്കങ്ങൾ (Internal Disputes):</strong> അംഗങ്ങൾ തമ്മിൽ തർക്കം. വ്യക്തിപരമായ അഭിപ്രായവ്യത്യാസം.</li>
+                                <li><strong>ക്രെഡിറ്റ് പരിമിതി (Limited Credit):</strong> ബാങ്കുകൾ കുറഞ്ഞ വായ്പ നൽകും. മൂലധനക്കുറവ്.</li>
+                                <li><strong>പരിമിതമായ വിപണി (Limited Market):</strong> അംഗങ്ങളുടെ ആവശ്യങ്ങൾ മാത്രം. വിപണി വിപുലീകരണം പ്രയാസം.</li>
+                            </ol>
+                        </div>
+                    </details>
+
+                    <details class="group bg-white dark:bg-slate-800 rounded-xl shadow-sm border border-slate-200 dark:border-slate-700 overflow-hidden" data-search="features of company കമ്പനി separate legal entity">
+                        <summary class="flex items-center gap-3 p-4 cursor-pointer hover:bg-slate-50 dark:hover:bg-slate-700/50 transition-colors select-none">
+                            <span class="w-8 h-8 rounded-full bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 text-xs font-bold flex items-center justify-center shrink-0">23</span>
+                            <h3 class="font-bold text-slate-800 dark:text-slate-100 text-sm sm:text-base flex-1">What are the features of a company?</h3>
+                            <i class="fas fa-chevron-down chevron text-slate-400 transition-transform duration-300"></i>
+                        </summary>
+                        <div class="px-4 pb-4 pt-0 text-slate-600 dark:text-slate-300 text-sm sm:text-base leading-relaxed border-t border-slate-100 dark:border-slate-700">
+                            <p class="mt-3 font-semibold text-slate-700 dark:text-slate-200">കമ്പനിയുടെ സവിശേഷതകൾ:</p>
+                            <ol class="list-decimal list-inside mt-2 space-y-2 ml-1">
+                                <li><strong>വേർതിരിഞ്ഞ നിയമപരമായ സ്ഥാനം (Separate Legal Entity):</strong> കമ്പനിക്ക് സ്വന്തം പേരും അവകാശവും. ഓഹരി ഉടമകളിൽ നിന്ന് വേർതിരിവ്.</li>
+                                <li><strong>അപരിമിതമായ അംഗങ്ങൾ (Unlimited Members):</strong> പബ്ലിക് കമ്പനിക്ക് പരിമിതിയില്ല. പ്രൈവറ്റ് കമ്പനിക്ക് 200 വരെ.</li>
+                                <li><strong>അപരിമിതമായ ഉത്തരവാദിത്തം (Limited Liability):</strong> ഓഹരി മൂല്യം വരെ മാത്രം. വ്യക്തിഗത സ്വത്ത് സുരക്ഷിതം.</li>
+                                <li><strong>ട്രാൻസ്ഫറബിൾ ഓഹരികൾ (Transferable Shares):</strong> ഓഹരികൾ വിൽക്കാം/കൈമാറാം. പ്രൈവറ്റ് കമ്പനിയിൽ പരിമിതം.</li>
+                                <li><strong>തുടർച്ച (Perpetual Succession):</strong> ഓഹരി ഉടമകളുടെ മരണത്താൽ അവസാനിക്കില്ല. "കമ്പനി മരിക്കുന്നില്ല".</li>
+                                <li><strong>സാധാരണ മുദ്ര (Common Seal):</strong> സ്വന്തം മുദ്ര. രേഖകൾ സാധുവാക്കാൻ.</li>
+                                <li><strong>വേർതിരിഞ്ഞ സ്വത്ത് (Separate Property):</strong> കമ്പനിയുടെ സ്വന്തം സ്വത്ത്. ഓഹരി ഉടമകൾക്ക് അവകാശമില്ല.</li>
+                                <li><strong>പ്രൊഫഷണൽ മാനേജ്മെന്റ് (Professional Management):</strong> ഡയറക്ടർമാർ, മാനേജർമാർ. വിദഗ്ധ ഭരണം.</li>
+                                <li><strong>കോർപ്പറേറ്റ് നികുതി (Corporate Tax):</strong> കമ്പനി നികുതി അടയ്ക്കുന്നു. ഡബിൾ ടാക്സേഷൻ (ഡിവിഡന്റിൽ).</li>
+                            </ol>
+                        </div>
+                    </details>
+
+                    <details class="group bg-white dark:bg-slate-800 rounded-xl shadow-sm border border-slate-200 dark:border-slate-700 overflow-hidden" data-search="merits of company കമ്പനിയുടെ ഗുണങ്ങൾ">
+                        <summary class="flex items-center gap-3 p-4 cursor-pointer hover:bg-slate-50 dark:hover:bg-slate-700/50 transition-colors select-none">
+                            <span class="w-8 h-8 rounded-full bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 text-xs font-bold flex items-center justify-center shrink-0">24</span>
+                            <h3 class="font-bold text-slate-800 dark:text-slate-100 text-sm sm:text-base flex-1">Explain the merits of a company?</h3>
+                            <i class="fas fa-chevron-down chevron text-slate-400 transition-transform duration-300"></i>
+                        </summary>
+                        <div class="px-4 pb-4 pt-0 text-slate-600 dark:text-slate-300 text-sm sm:text-base leading-relaxed border-t border-slate-100 dark:border-slate-700">
+                            <p class="mt-3 font-semibold text-slate-700 dark:text-slate-200">കമ്പനിയുടെ ഗുണങ്ങൾ:</p>
+                            <ol class="list-decimal list-inside mt-2 space-y-2 ml-1">
+                                <li><strong>വലിയ മൂലധനം (Huge Capital):</strong> പൊതുജനങ്ങളിൽ നിന്ന് മൂലധനം. വലിയ പദ്ധതികൾ സാധ്യം.</li>
+                                <li><strong>അപരിമിതമായ ഉത്തരവാദിത്തം (Limited Liability):</strong> ഓഹരി മൂല്യം വരെ മാത്രം. നിക്ഷേപകർക്ക് സുരക്ഷ.</li>
+                                <li><strong>തുടർച്ച (Perpetual Existence):</strong> ഓഹരി ഉടമകളുടെ മരണത്താൽ അവസാനിക്കില്ല. സ്ഥിരത.</li>
+                                <li><strong>ഓഹരി കൈമാറ്റം (Transferability of Shares):</strong> ഓഹരികൾ വിൽക്കാം. ദ്രവത്വം (Liquidity).</li>
+                                <li><strong>പ്രൊഫഷണൽ മാനേജ്മെന്റ് (Professional Management):</strong> വിദഗ്ധർ ഭരിക്കുന്നു. കാര്യക്ഷമത.</li>
+                                <li><strong>വിപുലമായ വിപണി (Large Scale Operations):</strong> വലിയ തോതിൽ ഉൽപാദനം. സാമ്പത്തികത.</li>
+                                <li><strong>പൊതുജന വിശ്വാസം (Public Confidence):</strong> നിയമപരമായ നിയന്ത്രണം. കണക്കുകൾ പരിശോധിക്കുന്നു.</li>
+                                <li><strong>സാമൂഹിക പ്രാധാന്യം (Social Benefits):</strong> തൊഴിലവസരങ്ങൾ. സാമ്പത്തിക വളർച്ച.</li>
+                                <li><strong>ഗവേഷണ-വികസനം (R&D):</strong> പുതിയ സാങ്കേതികവിദ്യകൾ. മത്സരക്ഷമത.</li>
+                            </ol>
+                        </div>
+                    </details>
+
+                    <details class="group bg-white dark:bg-slate-800 rounded-xl shadow-sm border border-slate-200 dark:border-slate-700 overflow-hidden" data-search="limitations of company കമ്പനിയുടെ പരിമിതികൾ double taxation">
+                        <summary class="flex items-center gap-3 p-4 cursor-pointer hover:bg-slate-50 dark:hover:bg-slate-700/50 transition-colors select-none">
+                            <span class="w-8 h-8 rounded-full bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 text-xs font-bold flex items-center justify-center shrink-0">25</span>
+                            <h3 class="font-bold text-slate-800 dark:text-slate-100 text-sm sm:text-base flex-1">What are the limitations of a company?</h3>
+                            <i class="fas fa-chevron-down chevron text-slate-400 transition-transform duration-300"></i>
+                        </summary>
+                        <div class="px-4 pb-4 pt-0 text-slate-600 dark:text-slate-300 text-sm sm:text-base leading-relaxed border-t border-slate-100 dark:border-slate-700">
+                            <p class="mt-3 font-semibold text-slate-700 dark:text-slate-200">കമ്പനിയുടെ പരിമിതികൾ:</p>
+                            <ol class="list-decimal list-inside mt-2 space-y-2 ml-1">
+                                <li><strong>കഠിനമായ രൂപീകരണം (Difficult Formation):</strong> നിയമപരമായ ഔപചാരികതകൾ കൂടുതൽ. ചെലവേറിയത്.</li>
+                                <li><strong>കഠിനമായ നിയന്ത്രണം (Excessive Government Control):</strong> കമ്പനി നിയമപ്രകാരം കഠിന നിയന്ത്രണം. റിപ്പോർട്ടിംഗ് ആവശ്യകതകൾ.</li>
+                                <li><strong>ഡബിൾ ടാക്സേഷൻ (Double Taxation):</strong> കമ്പനി നികുതി + ഡിവിഡന്റ് നികുതി. ലാഭത്തിൽ ഇരട്ട നികുതി.</li>
+                                <li><strong>അമിതമായ ഔപചാരികതകൾ (Too Many Formalities):</strong> AGM, ബാലൻസ് ഷീറ്റ്, ഓഡിറ്റ്. സമയവും പണവും നഷ്ടം.</li>
+                                <li><strong>മാനേജ്മെന്റും ഉടമസ്ഥതയും വേർതിരിവ് (Separation of Ownership and Management):</strong> ഓഹരി ഉടമകൾക്ക് നിയന്ത്രണമില്ല. ഏജൻസി പ്രശ്നം.</li>
+                                <li><strong>അസ്വാസ്ഥ്യം (Lack of Secrecy):</strong> കണക്കുകൾ പൊതുവിൽ പ്രസിദ്ധീകരിക്കണം. രഹസ്യങ്ങൾ പുറത്തുപോകും.</li>
+                                <li><strong>സാമൂഹിക ദുരുപയോഗം (Social Evils):</strong> കാർട്ടലുകൾ, മോണോപോളി. ഉപഭോക്തൃ ചൂഷണം.</li>
+                                <li><strong>തുടക്കത്തിൽ പ്രയാസം (Delay in Decision Making):</strong> പല തലങ്ങളിലുള്ള അനുമതി. വേഗത്തിലുള്ള തീരുമാനങ്ങൾ പ്രയാസം.</li>
+                            </ol>
+                        </div>
+                    </details>
+
+                    <details class="group bg-white dark:bg-slate-800 rounded-xl shadow-sm border border-slate-200 dark:border-slate-700 overflow-hidden" data-search="features of LLP limited liability partnership">
+                        <summary class="flex items-center gap-3 p-4 cursor-pointer hover:bg-slate-50 dark:hover:bg-slate-700/50 transition-colors select-none">
+                            <span class="w-8 h-8 rounded-full bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 text-xs font-bold flex items-center justify-center shrink-0">26</span>
+                            <h3 class="font-bold text-slate-800 dark:text-slate-100 text-sm sm:text-base flex-1">What are the features of LLP?</h3>
+                            <i class="fas fa-chevron-down chevron text-slate-400 transition-transform duration-300"></i>
+                        </summary>
+                        <div class="px-4 pb-4 pt-0 text-slate-600 dark:text-slate-300 text-sm sm:text-base leading-relaxed border-t border-slate-100 dark:border-slate-700">
+                            <p class="mt-3 font-semibold text-slate-700 dark:text-slate-200">LLP-യുടെ സവിശേഷതകൾ:</p>
+                            <ol class="list-decimal list-inside mt-2 space-y-2 ml-1">
+                                <li><strong>വേർതിരിഞ്ഞ നിയമപരമായ സ്ഥാനം (Separate Legal Entity):</strong> പങ്കാളികളിൽ നിന്ന് വേർതിരിവ്. സ്വന്തം പേരിൽ കരാറുകൾ.</li>
+                                <li><strong>പരിമിതമായ ഉത്തരവാദിത്തം (Limited Liability):</strong> പങ്കാളികളുടെ ഉത്തരവാദിത്തം പരിമിതം. ഒരു പങ്കാളിയുടെ തെറ്റിന് മറ്റുള്ളവർ ഉത്തരവാദികളല്ല.</li>
+                                <li><strong>പങ്കാളികളുടെ എണ്ണം (Minimum Partners):</strong> കുറഞ്ഞത് രണ്ട് പങ്കാളികൾ. പരമാവധി പരിമിതിയില്ല.</li>
+                                <li><strong>തുടർച്ച (Perpetual Succession):</strong> പങ്കാളിയുടെ മരണത്താൽ അവസാനിക്കില്ല. നിയമപരമായ വേർതിരിവ്.</li>
+                                <li><strong>LLPIN (LLP Identification Number):</strong> രജിസ്ട്രേഷന് ശേഷം ലഭിക്കുന്ന സംഖ്യ. തിരിച്ചറിയൽ നമ്പർ.</li>
+                                <li><strong>അപരിമിതമായ പങ്കാളികൾ (Unlimited Partners):</strong> പങ്കാളികളുടെ എണ്ണത്തിൽ പരിമിതിയില്ല.</li>
+                                <li><strong>സാധാരണ മുദ്ര (Common Seal):</strong> സ്വന്തം മുദ്ര. രേഖകൾ സാധുവാക്കാൻ.</li>
+                                <li><strong>LLPA പ്രകാരം രൂപീകരണം (LLP Act 2008):</strong> LLP Act, 2008 പ്രകാരം. MCA-യിൽ രജിസ്ട്രേഷൻ.</li>
+                                <li><strong>പങ്കാളികളുടെ ഏജൻസി (Agency):</strong> ഓരോ പങ്കാളിയും LLP-യുടെ ഏജന്റ്. തെറ്റിന് LLP ഉത്തരവാദി.</li>
+                            </ol>
+                        </div>
+                    </details>
+
+                    <details class="group bg-white dark:bg-slate-800 rounded-xl shadow-sm border border-slate-200 dark:border-slate-700 overflow-hidden" data-search="features of business environment പരിസ്ഥിതി external nature">
+                        <summary class="flex items-center gap-3 p-4 cursor-pointer hover:bg-slate-50 dark:hover:bg-slate-700/50 transition-colors select-none">
+                            <span class="w-8 h-8 rounded-full bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 text-xs font-bold flex items-center justify-center shrink-0">27</span>
+                            <h3 class="font-bold text-slate-800 dark:text-slate-100 text-sm sm:text-base flex-1">What are the features of business environment?</h3>
+                            <i class="fas fa-chevron-down chevron text-slate-400 transition-transform duration-300"></i>
+                        </summary>
+                        <div class="px-4 pb-4 pt-0 text-slate-600 dark:text-slate-300 text-sm sm:text-base leading-relaxed border-t border-slate-100 dark:border-slate-700">
+                            <p class="mt-3 font-semibold text-slate-700 dark:text-slate-200">ബിസിനസ് പരിസ്ഥിതിയുടെ സവിശേഷതകൾ:</p>
+                            <ol class="list-decimal list-inside mt-2 space-y-2 ml-1">
+                                <li><strong>ബാഹ്യ സ്വഭാവം (External Nature):</strong> ബിസിനസിന് പുറത്തുള്ള ഘടകങ്ങൾ. നിയന്ത്രിക്കാൻ കഴിയില്ല.</li>
+                                <li><strong>അനിശ്ചിതത്വം (Uncertainty):</strong> മാറ്റങ്ങൾ പ്രവചിക്കാൻ പ്രയാസം. അപകടസാധ്യതയും അവസരവും ഒരേപോലെ.</li>
+                                <li><strong>ബഹുമുഖത (Multi-faceted):</strong> വിവിധ ഘടകങ്ങൾ - സാമ്പത്തികം, സാമൂഹികം, രാഷ്ട്രീയം. പരസ്പര ബന്ധം.</li>
+                                <li><strong>സങ്കീർണ്ണത (Complexity):</strong> പല ഘടകങ്ങൾ ഒരേസമയം പ്രവർത്തിക്കുന്നു. മനസ്സിലാക്കാൻ പ്രയാസം.</li>
+                                <li><strong>ഡൈനാമിക് സ്വഭാവം (Dynamic Nature):</strong> നിരന്തരം മാറുന്നു. പുതിയ പ്രവണതകൾ.</li>
+                                <li><strong>പരസ്പര ബന്ധം (Inter-related):</strong> ഓരോ ഘടകവും മറ്റുള്ളവയെ ബാധിക്കുന്നു. ഒന്ന് മാറിയാൽ മറ്റുള്ളവയും മാറും.</li>
+                                <li><strong>ദീർഘകാല സ്വാധീനം (Long-term Impact):</strong> പരിസ്ഥിതിയുടെ മാറ്റങ്ങൾ ദീർഘകാലം നിലനിൽക്കും.</li>
+                                <li><strong>പ്രത്യേകതയും സാർവത്രികതയും (Specific and General):</strong> സൂക്ഷ്മ പരിസ്ഥിതി - പ്രത്യേകം. സമഗ്ര പരിസ്ഥിതി - സാർവത്രികം.</li>
+                            </ol>
+                        </div>
+                    </details>
+
+                    <details class="group bg-white dark:bg-slate-800 rounded-xl shadow-sm border border-slate-200 dark:border-slate-700 overflow-hidden" data-search="importance of business environment പ്രാധാന്യം opportunities threats">
+                        <summary class="flex items-center gap-3 p-4 cursor-pointer hover:bg-slate-50 dark:hover:bg-slate-700/50 transition-colors select-none">
+                            <span class="w-8 h-8 rounded-full bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 text-xs font-bold flex items-center justify-center shrink-0">28</span>
+                            <h3 class="font-bold text-slate-800 dark:text-slate-100 text-sm sm:text-base flex-1">Explain the importance of business environment.</h3>
+                            <i class="fas fa-chevron-down chevron text-slate-400 transition-transform duration-300"></i>
+                        </summary>
+                        <div class="px-4 pb-4 pt-0 text-slate-600 dark:text-slate-300 text-sm sm:text-base leading-relaxed border-t border-slate-100 dark:border-slate-700">
+                            <p class="mt-3 font-semibold text-slate-700 dark:text-slate-200">ബിസിനസ് പരിസ്ഥിതിയുടെ പ്രാധാന്യം:</p>
+                            <ol class="list-decimal list-inside mt-2 space-y-2 ml-1">
+                                <li><strong>അവസരങ്ങൾ കണ്ടെത്തൽ (Identifying Opportunities):</strong> പുതിയ വിപണികൾ, ഉൽപന്നങ്ങൾ, സാങ്കേതികവിദ്യകൾ. വളർച്ചയ്ക്കുള്ള അവസരങ്ങൾ.</li>
+                                <li><strong>അപകടസാധ്യതകൾ തിരിച്ചറിയൽ (Identifying Threats):</strong> എതിരാളികളുടെ നീക്കങ്ങൾ. മാറ്റങ്ങളുടെ പ്രതികൂല ഫലങ്ങൾ. മുൻകരുതൽ.</li>
+                                <li><strong>ആസൂത്രണം (Planning):</strong> ഭാവി ആസൂത്രണത്തിന് സഹായകം. ലക്ഷ്യങ്ങൾ നിർണയിക്കൽ. തന്ത്രങ്ങൾ തയ്യാറാക്കൽ.</li>
+                                <li><strong>കാര്യക്ഷമമായ പ്രവർത്തനം (Efficient Performance):</strong> പരിസ്ഥിതിയനുസരിച്ച് പ്രവർത്തനങ്ങൾ ക്രമീകരിക്കൽ. കാര്യക്ഷമത വർദ്ധിപ്പിക്കൽ.</li>
+                                <li><strong>മത്സരക്ഷമത (Competitive Advantage):</strong> പരിസ്ഥിതി മനസ്സിലാക്കി മുന്നേറൽ. മത്സരത്തിൽ മികവ്.</li>
+                                <li><strong>ചലനാത്മകത (Dynamism):</strong> മാറ്റങ്ങളോട് അനുസരിക്കൽ. പുതുമ നിലനിർത്തൽ.</li>
+                                <li><strong>ചിത്രീകരണം (Image Building):</strong> സാമൂഹിക-സാംസ്കാരിക പരിസ്ഥിതി മനസ്സിലാക്കി. നല്ല പൊതുചിത്രം.</li>
+                                <li><strong>പരിസ്ഥിതി സൗഹാർദ പ്രവർത്തനങ്ങൾ:</strong> പരിസ്ഥിതി മാറ്റങ്ങൾ മനസ്സിലാക്കി. sustainable പ്രവർത്തനങ്ങൾ.</li>
+                            </ol>
+                        </div>
+                    </details>
+
+                </div>
+            </section>
+
+            <!-- Section III -->
+            <section id="section3" class="mb-10 scroll-mt-24">
+                <div class="flex items-center gap-3 mb-4">
+                    <span class="px-3 py-1 rounded-full bg-purple-100 dark:bg-purple-900/30 text-purple-700 dark:text-purple-300 text-sm font-bold">15 മാർക്ക്</span>
+                    <h2 class="text-xl font-bold text-slate-900 dark:text-white">നീണ്ട പ്രബന്ധങ്ങൾ</h2>
+                </div>
+                <div class="space-y-3" id="container3">
+
+                    <details class="group bg-white dark:bg-slate-800 rounded-xl shadow-sm border border-slate-200 dark:border-slate-700 overflow-hidden" data-search="what is business functions of business internal external">
+                        <summary class="flex items-center gap-3 p-4 cursor-pointer hover:bg-slate-50 dark:hover:bg-slate-700/50 transition-colors select-none">
+                            <span class="w-8 h-8 rounded-full bg-purple-100 dark:bg-purple-900/30 text-purple-600 dark:text-purple-400 text-xs font-bold flex items-center justify-center shrink-0">1</span>
+                            <h3 class="font-bold text-slate-800 dark:text-slate-100 text-sm sm:text-base flex-1">What is business? Explain the functions of business.</h3>
+                            <i class="fas fa-chevron-down chevron text-slate-400 transition-transform duration-300"></i>
+                        </summary>
+                        <div class="px-4 pb-4 pt-0 text-slate-600 dark:text-slate-300 text-sm sm:text-base leading-relaxed border-t border-slate-100 dark:border-slate-700">
+                            <p class="mt-3 font-semibold text-slate-700 dark:text-slate-200">വ്യവസായം (Business):</p>
+                            <p class="mt-1">വ്യവസായം (Business) എന്നാൽ ലാഭം ലക്ഷ്യമാക്കി ചരക്കുകളുടെയും സേവനങ്ങളുടെയും നിരന്തരമായ ഉൽപാദനവും വിതരണവും നടത്തുന്ന മനുഷ്യ പ്രവർത്തനമാണ്. വ്യവസായം സാമ്പത്തിക പ്രവർത്തനങ്ങളുടെ ഒരു പ്രധാന ഭാഗമാണ്. ഇത് ഉപഭോക്താവിന്റെ ആവശ്യങ്ങൾ പൂർത്തീകരിക്കുകയും സമൂഹത്തിന് ക്ഷേമം നൽകുകയും ചെയ്യുന്നു.</p>
+                            <p class="mt-2 font-semibold text-slate-700 dark:text-slate-200">വ്യവസായത്തിന്റെ പ്രധാന സവിശേഷതകൾ:</p>
+                            <ul class="list-disc list-inside ml-2 mt-1 space-y-1"><li>ലാഭലക്ഷ്യം, നിരന്തരമായ പ്രവർത്തനം, ചരക്കുകളും സേവനങ്ങളും, അനിശ്ചിതത്വവും അപകടസാധ്യതയും, നിയമപരമായ പ്രവർത്തനം.</li></ul>
+
+                            <p class="mt-3 font-semibold text-slate-700 dark:text-slate-200">വ്യവസായത്തിന്റെ പ്രവർത്തനങ്ങൾ:</p>
+                            <p class="mt-1 font-bold text-slate-700 dark:text-slate-200">ആന്തരിക പ്രവർത്തനങ്ങൾ (Internal Functions):</p>
+                            <ol class="list-decimal list-inside mt-2 space-y-2 ml-1">
+                                <li><strong>ആസൂത്രണം (Planning):</strong> വ്യവസായത്തിന്റെ ഭാവി ലക്ഷ്യങ്ങൾ നിർണയിക്കുകയും അവ നേടാനുള്ള മാർഗ്ഗങ്ങൾ തയ്യാറാക്കുകയും ചെയ്യുന്ന പ്രവർത്തനമാണ്. ഇത് ബിസിനസിന്റെ വഴികാട്ടിയാണ്. ഹ്രസ്വകാല, ദീർഘകാല ആസൂത്രണം എന്നിവ ഉൾപ്പെടുന്നു.</li>
+                                <li><strong>സംഘടന (Organizing):</strong> വ്യവസായത്തിന്റെ വിവിധ പ്രവർത്തനങ്ങൾ ക്രമീകരിക്കുകയും അധികാരബന്ധങ്ങൾ സ്ഥാപിക്കുകയും ചെയ്യുന്നു. വിഭാഗങ്ങൾ രൂപീകരിക്കുക, ഉത്തരവാദിത്തങ്ങൾ നൽകുക, സംവിധാനങ്ങൾ ഒരുക്കുക എന്നിവ ഉൾപ്പെടുന്നു.</li>
+                                <li><strong>സ്റ്റാഫിംഗ് (Staffing):</strong> യോഗ്യരായ ജീവനക്കാരെ നിയമിക്കുകയും പരിശീലിപ്പിക്കുകയും വികസിപ്പിക്കുകയും ചെയ്യുന്നു. മനുഷ്യ വിഭവശേഷിയുടെ ഫലപ്രദമായ ഉപയോഗമാണ്.</li>
+                                <li><strong>നിയന്ത്രണം (Controlling):</strong> പ്രവർത്തനങ്ങൾ നിരീക്ഷിക്കുകയും ലക്ഷ്യങ്ങളുമായി താരതമ്യപ്പെടുത്തുകയും തെറ്റുകൾ തിരുത്തുകയും ചെയ്യുന്നു. മാനദണ്ഡങ്ങൾ, അളവെടുപ്പ്, തിരുത്തൽ എന്നിവ ഉൾപ്പെടുന്നു.</li>
+                                <li><strong>ധനകാര്യം (Financing):</strong> വ്യവസായത്തിന് ആവശ്യമായ മൂലധനം നേടുകയും ഫലപ്രദമായി വിനിയോഗിക്കുകയും ചെയ്യുന്നു. ഓഹരികൾ, വായ്പ, റിസർവ് എന്നിവ വഴി മൂലധനം സമാഹരിക്കുന്നു.</li>
+                                <li><strong>ഉൽപാദനം (Production):</strong> ചരക്കുകളും സേവനങ്ങളും ഉൽപാദിപ്പിക്കുന്നു. ക്രമീകരണം, നിയന്ത്രണം, ഗുണനിലവാരം എന്നിവ ഉറപ്പാക്കുന്നു.</li>
+                                <li><strong>വിപണനം (Marketing):</strong> ഉൽപന്നങ്ങൾ ഉപഭോക്താക്കളിലേക്ക് എത്തിക്കുന്നു. പരിശോധന, വിലനിർണയം, വിതരണം, പ്രോമോഷൻ എന്നിവ ഉൾപ്പെടുന്നു.</li>
+                            </ol>
+                            <p class="mt-2 font-bold text-slate-700 dark:text-slate-200">ബാഹ്യ പ്രവർത്തനങ്ങൾ (External Functions):</p>
+                            <ol class="list-decimal list-inside mt-2 space-y-2 ml-1">
+                                <li><strong>വിതരണം (Distribution):</strong> ചരക്കുകൾ ഉപഭോക്താക്കളിലേക്ക് എത്തിക്കൽ. ഗതാഗതം, ഗോഡൗൺ, വിതരണക്കാർ എന്നിവ ഉൾപ്പെടുന്നു.</li>
+                                <li><strong>വ്യാപാരസഹായങ്ങൾ (Aids to Trade):</strong> ബാങ്കിംഗ്, ഇൻഷുറൻസ്, ഗതാഗതം, ഗോഡൗൺ, പബ്ലിസിറ്റി എന്നിവ വ്യാപാരത്തിന് സഹായകമാണ്.</li>
+                                <li><strong>പൊതുസമ്പർക്കം (Public Relations):</strong> പൊതുജനങ്ങളുമായി നല്ല ബന്ധം പാലിക്കൽ. ബിസിനസിന്റെ ചിത്രം മെച്ചപ്പെടുത്തൽ.</li>
+                                <li><strong>സാമൂഹിക ഉത്തരവാദിത്തം (Social Responsibility):</strong> സമൂഹത്തിന് ക്ഷേമപ്രവർത്തനങ്ങൾ, പരിസ്ഥിതി സംരക്ഷണം, ഉപഭോക്തൃ സംരക്ഷണം.</li>
+                                <li><strong>സർക്കാർ ബന്ധം (Government Relations):</strong> നികുതി അടയ്ക്കൽ, നിയമങ്ങൾ പാലിക്കൽ, സർക്കാർ പദ്ധതികളിൽ പങ്കെടുക്കൽ.</li>
+                            </ol>
+                            <p class="mt-3 font-semibold text-slate-700 dark:text-slate-200">ഉപസംഹാരം:</p>
+                            <p>വ്യവസായത്തിന്റെ പ്രവർത്തനങ്ങൾ ആന്തരികവും ബാഹ്യവുമായ രണ്ട് തലങ്ങളിലാണ് നടക്കുന്നത്. ഇവ പരസ്പരം ബന്ധപ്പെട്ടിരിക്കുന്നു. ഫലപ്രദമായ പ്രവർത്തനങ്ങൾ വഴി മാത്രമേ വ്യവസായം ലക്ഷ്യങ്ങൾ നേടാനും ദീർഘകാലം നിലനിൽക്കാനും കഴിയൂ.</p>
+                        </div>
+                    </details>
+
+                    <details class="group bg-white dark:bg-slate-800 rounded-xl shadow-sm border border-slate-200 dark:border-slate-700 overflow-hidden" data-search="scope of business പരിധി industries commerce service sector">
+                        <summary class="flex items-center gap-3 p-4 cursor-pointer hover:bg-slate-50 dark:hover:bg-slate-700/50 transition-colors select-none">
+                            <span class="w-8 h-8 rounded-full bg-purple-100 dark:bg-purple-900/30 text-purple-600 dark:text-purple-400 text-xs font-bold flex items-center justify-center shrink-0">2</span>
+                            <h3 class="font-bold text-slate-800 dark:text-slate-100 text-sm sm:text-base flex-1">Explain the scope of business.</h3>
+                            <i class="fas fa-chevron-down chevron text-slate-400 transition-transform duration-300"></i>
+                        </summary>
+                        <div class="px-4 pb-4 pt-0 text-slate-600 dark:text-slate-300 text-sm sm:text-base leading-relaxed border-t border-slate-100 dark:border-slate-700">
+                            <p class="mt-3">വ്യവസായത്തിന്റെ പരിധി (Scope of Business) എന്നാൽ വ്യവസായ പ്രവർത്തനങ്ങൾ ഉൾക്കൊള്ളുന്ന വ്യാപ്തിയെയാണ്. വ്യവസായം വളരെ വിശാലമായ ഒരു മേഖലയാണ്.</p>
+                            <p class="mt-2 font-semibold text-slate-700 dark:text-slate-200">വ്യവസായത്തിന്റെ പ്രധാന മേഖലകൾ:</p>
+                            <div class="mt-2 space-y-3">
+                                <div>
+                                    <p class="font-bold text-slate-700 dark:text-slate-200">1. വ്യവസായങ്ങൾ (Industries)</p>
+                                    <p class="ml-4 mt-1">ചരക്കുകൾ ഉൽപാദിപ്പിക്കുന്ന പ്രവർത്തനങ്ങൾ:</p>
+                                    <ul class="list-disc list-inside ml-6 mt-1 space-y-1">
+                                        <li><strong>പ്രാഥമിക വ്യവസായങ്ങൾ (Primary Industries):</strong> എക്‌സ്ട്രാക്ടീവ്: ഖനനം, മത്സ്യബന്ധനം, വനവ്യവസായം. ജനന വ്യവസായം: കൃഷി, മത്സ്യകൃഷി, കാലിത്തീറ്റ.</li>
+                                        <li><strong>ദ്വിതീയക വ്യവസായങ്ങൾ (Secondary Industries):</strong> നിർമ്മാണ വ്യവസായം: ടെക്‌സ്റ്റൈൽ, ഇലക്ട്രോണിക്‌സ്, ഭക്ഷ്യപദാർത്ഥങ്ങൾ. നിർമ്മാണ വ്യവസായം: കെട്ടിട നിർമ്മാണം, റോഡ് നിർമ്മാണം.</li>
+                                        <li><strong>തൃതീയക വ്യവസായങ്ങൾ (Tertiary Industries):</strong> വ്യാപാരം, ബാങ്കിംഗ്, ഗതാഗതം, ഇൻഷുറൻസ്, വ്യാപാരസഹായങ്ങൾ.</li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <p class="font-bold text-slate-700 dark:text-slate-200">2. വ്യാപാരം (Commerce)</p>
+                                    <p class="ml-4 mt-1">ചരക്കുകളുടെയും സേവനങ്ങളുടെയും വിതരണ പ്രവർത്തനങ്ങൾ:</p>
+                                    <ul class="list-disc list-inside ml-6 mt-1 space-y-1">
+                                        <li><strong>വ്യാപാരം (Trade):</strong> ആഭ്യന്തര വ്യാപാരം (Wholesale, Retail). അന്താരാഷ്ട്ര വ്യാപാരം (കയറ്റുമതി, ഇറക്കുമതി).</li>
+                                        <li><strong>വ്യാപാരസഹായങ്ങൾ (Aids to Trade):</strong> ഗതാഗതം, ഗോഡൗൺ, ബാങ്കിംഗ്, ഇൻഷുറൻസ്, പബ്ലിസിറ്റി, കമ്യൂണിക്കേഷൻ.</li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <p class="font-bold text-slate-700 dark:text-slate-200">3. സേവന മേഖല (Service Sector)</p>
+                                    <p class="ml-4 mt-1">അദൃശ്യമായ സേവനങ്ങൾ നൽകുന്ന പ്രവർത്തനങ്ങൾ: ബാങ്കിംഗ്, ഇൻഷുറൻസ്, ഗതാഗതം, ടൂറിസം, ആരോഗ്യം, വിദ്യാഭ്യാസം, ഐടി, ടെലികമ്യൂണിക്കേഷൻ.</p>
+                                </div>
+                                <div>
+                                    <p class="font-bold text-slate-700 dark:text-slate-200">4. വ്യവസായ സംഘടനകൾ (Forms of Business Organizations)</p>
+                                    <p class="ml-4 mt-1">ഏകമുടമാസ്വാമിത്വം, പങ്കാളിത്തം, HUF, സഹകരണ സംഘം, കമ്പനി, LLP.</p>
+                                </div>
+                                <div>
+                                    <p class="font-bold text-slate-700 dark:text-slate-200">5. ബിസിനസ് പരിസ്ഥിതി (Business Environment)</p>
+                                    <p class="ml-4 mt-1">സൂക്ഷ്മ പരിസ്ഥിതി: ഉപഭോക്താക്കൾ, എതിരാളികൾ, വിതരണക്കാർ. സമഗ്ര പരിസ്ഥിതി: രാഷ്ട്രീയം, സാമ്പത്തികം, സാമൂഹികം, സാങ്കേതികം, നിയമപരം, പരിസ്ഥിതി.</p>
+                                </div>
+                                <div>
+                                    <p class="font-bold text-slate-700 dark:text-slate-200">6. ബിസിനസ് ലക്ഷ്യങ്ങൾ (Business Objectives)</p>
+                                    <p class="ml-4 mt-1">സാമ്പത്തിക ലക്ഷ്യങ്ങൾ, സാമൂഹിക ലക്ഷ്യങ്ങൾ, ദേശീയ ലക്ഷ്യങ്ങൾ, ആഗോള ലക്ഷ്യങ്ങൾ.</p>
+                                </div>
+                                <div>
+                                    <p class="font-bold text-slate-700 dark:text-slate-200">7. ബിസിനസ് പ്രവർത്തനങ്ങൾ (Business Functions)</p>
+                                    <p class="ml-4 mt-1">ഉൽപാദനം, വിപണനം, ധനകാര്യം, മാനവ വിഭവശേഷി, ഗവേഷണ-വികസനം.</p>
+                                </div>
+                                <div>
+                                    <p class="font-bold text-slate-700 dark:text-slate-200">8. ബിസിനസ് എതിക്സ് (Business Ethics)</p>
+                                    <p class="ml-4 mt-1">നിയമപരമായ പ്രവർത്തനം, സാമൂഹിക ഉത്തരവാദിത്തം, പരിസ്ഥിതി സൗഹാർദം.</p>
+                                </div>
+                            </div>
+                            <p class="mt-3 font-semibold text-slate-700 dark:text-slate-200">ഉപസംഹാരം:</p>
+                            <p>വ്യവസായത്തിന്റെ പരിധി വളരെ വിശാലമാണ്. ഇത് ഉൽപാദനം മുതൽ വിതരണം വരെയും, ആഭ്യന്തര വ്യാപാരം മുതൽ അന്താരാഷ്ട്ര വ്യാപാരം വരെയും, ചെറുകിട സംഘടനകൾ മുതൽ ബഹുരാഷ്ട്ര കമ്പനികൾ വരെയും വ്യാപിച്ചിരിക്കുന്നു. സാങ്കേതിക പുരോഗതിയും ആഗോളവൽക്കരണവും വ്യവസായത്തിന്റെ പരിധി കൂടുതൽ വിപുലമാക്കുന്നു.</p>
+                        </div>
+                    </details>
+
+                    <details class="group bg-white dark:bg-slate-800 rounded-xl shadow-sm border border-slate-200 dark:border-slate-700 overflow-hidden" data-search="objectives of business ലക്ഷ്യങ്ങൾ economic social national global">
+                        <summary class="flex items-center gap-3 p-4 cursor-pointer hover:bg-slate-50 dark:hover:bg-slate-700/50 transition-colors select-none">
+                            <span class="w-8 h-8 rounded-full bg-purple-100 dark:bg-purple-900/30 text-purple-600 dark:text-purple-400 text-xs font-bold flex items-center justify-center shrink-0">3</span>
+                            <h3 class="font-bold text-slate-800 dark:text-slate-100 text-sm sm:text-base flex-1">Explain the objectives of business.</h3>
+                            <i class="fas fa-chevron-down chevron text-slate-400 transition-transform duration-300"></i>
+                        </summary>
+                        <div class="px-4 pb-4 pt-0 text-slate-600 dark:text-slate-300 text-sm sm:text-base leading-relaxed border-t border-slate-100 dark:border-slate-700">
+                            <p class="mt-3">വ്യവസായത്തിന്റെ ലക്ഷ്യങ്ങൾ (Objectives of Business) എന്നാൽ വ്യവസായം നേടാൻ ലക്ഷ്യമിടുന്ന ഫലങ്ങളെയാണ്. ഇവ സാമ്പത്തികവും സാമൂഹികവും ദേശീയവും ആഗോളവുമായ തലങ്ങളിൽ വിഭജിക്കാം.</p>
+
+                            <div class="mt-3 space-y-3">
+                                <div>
+                                    <p class="font-bold text-slate-700 dark:text-slate-200">ഒന്ന്. സാമ്പത്തിക ലക്ഷ്യങ്ങൾ (Economic Objectives):</p>
+                                    <ol class="list-decimal list-inside ml-4 mt-1 space-y-1">
+                                        <li><strong>ലാഭം നേടുക (Profit Making):</strong> വ്യവസായത്തിന്റെ പ്രധാന ലക്ഷ്യം. ലാഭം മൂലധന വളർച്ചയ്ക്കും തുടർച്ചയ്ക്കും അവശ്യം.</li>
+                                        <li><strong>മൂലധന വളർച്ച (Capital Growth):</strong> മൂലധനം വർദ്ധിപ്പിക്കുക, വിപുലീകരണത്തിന് പണം കണ്ടെത്തുക.</li>
+                                        <li><strong>വിപണി വിഹിതം വർദ്ധിപ്പിക്കുക (Market Share):</strong> വിപണിയിൽ കൂടുതൽ വിഹിതം നേടുക, ബ്രാൻഡ് വില വർദ്ധിപ്പിക്കുക.</li>
+                                        <li><strong>ഉൽപാദനക്ഷമത (Productivity):</strong> കുറഞ്ഞ ചെലവിൽ കൂടുതൽ ഉൽപാദനം, വിഭവങ്ങളുടെ ഫലപ്രദമായ ഉപയോഗം.</li>
+                                        <li><strong>ചെലവ് കുറയ്ക്കൽ (Cost Reduction):</strong> ഉൽപാദനച്ചെലവ് കുറയ്ക്കുക, മത്സരക്ഷമത നേടുക.</li>
+                                        <li><strong>ഓഹരി ഉടമകൾക്ക് ഡിവിഡന്റ് (Dividend):</strong> നിക്ഷേപകർക്ക് നല്ല തിരിച്ചുനൽകൽ.</li>
+                                    </ol>
+                                </div>
+                                <div>
+                                    <p class="font-bold text-slate-700 dark:text-slate-200">രണ്ട്. സാമൂഹിക ലക്ഷ്യങ്ങൾ (Social Objectives):</p>
+                                    <ol class="list-decimal list-inside ml-4 mt-1 space-y-1">
+                                        <li><strong>നല്ല നിലവാരമുള്ള ഉൽപന്നങ്ങൾ:</strong> ഉയർന്ന നിലവാരവും കുറഞ്ഞ വിലയും ഉറപ്പാക്കുക.</li>
+                                        <li><strong>തൊഴിലവസരങ്ങൾ:</strong> തൊഴിലില്ലായ്മ കുറയ്ക്കാൻ സഹായിക്കുക.</li>
+                                        <li><strong>തൊഴിലാളികളുടെ ക്ഷേമം:</strong> നല്ല വേതനം, തൊഴിൽസുരക്ഷ, ആരോഗ്യസൗകര്യങ്ങൾ.</li>
+                                        <li><strong>ഉപഭോക്തൃ സംരക്ഷണം:</strong> ശരിയായ വിവരങ്ങൾ, കൃത്രിമ വസ്തുക്കൾ ഇല്ലാതിരിക്കൽ.</li>
+                                        <li><strong>പരിസ്ഥിതി സംരക്ഷണം:</strong> മലിനീകരണം കുറയ്ക്കുക, പച്ചവ്യവസായം.</li>
+                                        <li><strong>സാമൂഹിക ക്ഷേമപ്രവർത്തനങ്ങൾ:</strong> വിദ്യാഭ്യാസം, ആരോഗ്യം, പൊതുക്ഷേമം.</li>
+                                    </ol>
+                                </div>
+                                <div>
+                                    <p class="font-bold text-slate-700 dark:text-slate-200">മൂന്ന്. ദേശീയ ലക്ഷ്യങ്ങൾ (National Objectives):</p>
+                                    <ol class="list-decimal list-inside ml-4 mt-1 space-y-1">
+                                        <li><strong>സ്വയംപര്യാപ്തത:</strong> രാജ്യത്തിന്റെ സ്വയംപര്യാപ്തത നേടാൻ സഹായിക്കുക.</li>
+                                        <li><strong>കയറ്റുമതി വർദ്ധന:</strong> വിദേശനാണ്യം നേടാൻ കയറ്റുമതി വർദ്ധിപ്പിക്കുക.</li>
+                                        <li><strong>ഇറക്കുമതി കുറയ്ക്കൽ:</strong> വിദേശ ചരക്കുകൾക്ക് പകരം ഉൾനാടൻ ഉൽപന്നങ്ങൾ.</li>
+                                        <li><strong>സമ്പദ്‌വ്യവസ്ഥയുടെ വളർച്ച:</strong> ദേശീയ വരുമാനം വർദ്ധിപ്പിക്കുക.</li>
+                                        <li><strong>നികുതി വരുമാനം:</strong> സർക്കാരിന് നികുതി അടയ്ക്കുക.</li>
+                                        <li><strong>പ്രാദേശിക സന്തുലിതാവസ്ഥ:</strong> പിന്നോക്ക മേഖലകളിൽ വികസനം.</li>
+                                    </ol>
+                                </div>
+                                <div>
+                                    <p class="font-bold text-slate-700 dark:text-slate-200">നാല്. ആഗോള ലക്ഷ്യങ്ങൾ (Global Objectives):</p>
+                                    <ol class="list-decimal list-inside ml-4 mt-1 space-y-1">
+                                        <li><strong>അന്താരാഷ്ട്ര വ്യാപാരം:</strong> വിദേശ വിപണികളിൽ പ്രവേശിക്കുക.</li>
+                                        <li><strong>ആഗോള മത്സരക്ഷമത:</strong> അന്താരാഷ്ട്ര നിലവാരത്തിൽ ഉൽപന്നങ്ങൾ.</li>
+                                        <li><strong>വിദേശനാണ്യ നേട്ടം:</strong> കയറ്റുമതി വഴി രാജ്യത്തിന് വിദേശനാണ്യം.</li>
+                                        <li><strong>സാങ്കേതിക പരിജ്ഞാനം:</strong> വിദേശ സാങ്കേതികവിദ്യകൾ കൊണ്ടുവരിക.</li>
+                                        <li><strong>ആഗോള ബ്രാൻഡ് നിർമ്മാണം:</strong> ലോകമെമ്പാടും അറിയപ്പെടുന്ന ബ്രാൻഡുകൾ.</li>
+                                    </ol>
+                                </div>
+                            </div>
+                            <p class="mt-3 font-semibold text-slate-700 dark:text-slate-200">ഉപസംഹാരം:</p>
+                            <p>വ്യവസായത്തിന്റെ ലക്ഷ്യങ്ങൾ പരസ്പരം ബന്ധപ്പെട്ടിരിക്കുന്നു. സാമ്പത്തിക ലാഭം മാത്രം ലക്ഷ്യമാക്കുന്ന വ്യവസായം ദീർഘകാലം നിലനിൽക്കില്ല. സാമൂഹിക, ദേശീയ, ആഗോള ലക്ഷ്യങ്ങളും നേടിയാൽ മാത്രമേ ഒരു വ്യവസായം സമഗ്രമായ വിജയം കൈവരിക്കൂ.</p>
+                        </div>
+                    </details>
+
+                    <details class="group bg-white dark:bg-slate-800 rounded-xl shadow-sm border border-slate-200 dark:border-slate-700 overflow-hidden" data-search="different forms of business organisations ഏകമുടമ പങ്കാളിത്തം HUF cooperative company LLP">
+                        <summary class="flex items-center gap-3 p-4 cursor-pointer hover:bg-slate-50 dark:hover:bg-slate-700/50 transition-colors select-none">
+                            <span class="w-8 h-8 rounded-full bg-purple-100 dark:bg-purple-900/30 text-purple-600 dark:text-purple-400 text-xs font-bold flex items-center justify-center shrink-0">4</span>
+                            <h3 class="font-bold text-slate-800 dark:text-slate-100 text-sm sm:text-base flex-1">What is business? Explain the different forms of business organisations.</h3>
+                            <i class="fas fa-chevron-down chevron text-slate-400 transition-transform duration-300"></i>
+                        </summary>
+                        <div class="px-4 pb-4 pt-0 text-slate-600 dark:text-slate-300 text-sm sm:text-base leading-relaxed border-t border-slate-100 dark:border-slate-700">
+                            <p class="mt-3">വ്യവസായം (Business) എന്നാൽ ലാഭം ലക്ഷ്യമാക്കി ചരക്കുകളുടെയും സേവനങ്ങളുടെയും നിരന്തരമായ ഉൽപാദനവും വിതരണവും നടത്തുന്ന മനുഷ്യ പ്രവർത്തനമാണ്.</p>
+                            <p class="mt-2 font-semibold text-slate-700 dark:text-slate-200">വ്യവസായ സംഘടനകളുടെ വിവിധ രൂപങ്ങൾ:</p>
+
+                            <div class="mt-2 space-y-3">
+                                <div>
+                                    <p class="font-bold text-slate-700 dark:text-slate-200">1. ഏകമുടമാസ്വാമിത്വം (Sole Proprietorship)</p>
+                                    <ul class="list-disc list-inside ml-4 mt-1 space-y-1"><li>ഒരു വ്യക്തി മാത്രം ഉടമയും മാനേജറും. എളിമയുള്ള രൂപീകരണം, നേരിട്ടുള്ള നിയന്ത്രണം. അപരിമിതമായ ഉത്തരവാദിത്തം, പരിമിതമായ മൂലധനം. ഉദാ: ചെറുകടകൾ, വ്യാപാരികൾ.</li></ul>
+                                </div>
+                                <div>
+                                    <p class="font-bold text-slate-700 dark:text-slate-200">2. പങ്കാളിത്തം (Partnership)</p>
+                                    <ul class="list-disc list-inside ml-4 mt-1 space-y-1"><li>രണ്ടോ അതിലധികമോ പങ്കാളികൾ. കരാർ പ്രകാരം പ്രവർത്തനം. വിഭജിതമായ മൂലധനം, അപകടസാധ്യത. അപരിമിതമായ ഉത്തരവാദിത്തം (സാധാരണ). ഉദാ: നിയമ ഫർമ്മ, ഡോക്ടർമാരുടെ പങ്കാളിത്തം.</li></ul>
+                                </div>
+                                <div>
+                                    <p class="font-bold text-slate-700 dark:text-slate-200">3. ഹിന്ദു അവിഭക്ത കുടുംബം (HUF)</p>
+                                    <ul class="list-disc list-inside ml-4 mt-1 space-y-1"><li>ഹിന്ദു നിയമപ്രകാരം കുടുംബം. കർത്താവ് നിയന്ത്രിക്കുന്നു. കോപാർസനർമാർക്ക് പിറവിയാൽ അവകാശം. ഉദാ: കുടുംബ വ്യവസായങ്ങൾ.</li></ul>
+                                </div>
+                                <div>
+                                    <p class="font-bold text-slate-700 dark:text-slate-200">4. സഹകരണ സംഘം (Cooperative Society)</p>
+                                    <ul class="list-disc list-inside ml-4 mt-1 space-y-1"><li>സ്വയംപ്രേരിത അംഗങ്ങൾ. "ഒരാൾ, ഒരു വോട്ട്" - ഡെമോക്രാറ്റിക് ഭരണം. സേവന ലക്ഷ്യം, പരിമിതമായ ഉത്തരവാദിത്തം. സർക്കാർ നിയന്ത്രണം. ഉദാ: ബാങ്കുകൾ, സഹകരണ സംഘങ്ങൾ.</li></ul>
+                                </div>
+                                <div>
+                                    <p class="font-bold text-slate-700 dark:text-slate-200">5. കമ്പനി (Company)</p>
+                                    <ul class="list-disc list-inside ml-4 mt-1 space-y-1"><li>വേർതിരിഞ്ഞ നിയമപരമായ സ്ഥാനം. അപരിമിതമായ അംഗങ്ങൾ, അപരിമിതമായ ഉത്തരവാദിത്തം. ട്രാൻസ്ഫറബിൾ ഓഹരികൾ, തുടർച്ച. പ്രൊഫഷണൽ മാനേജ്മെന്റ്. ഉദാ: ടാറ്റ, റിലയൻസ്.</li></ul>
+                                </div>
+                                <div>
+                                    <p class="font-bold text-slate-700 dark:text-slate-200">6. ലിമിറ്റഡ് ലയബിലിറ്റി പാർട്ണർഷിപ്പ് (LLP)</p>
+                                    <ul class="list-disc list-inside ml-4 mt-1 space-y-1"><li>കമ്പനിയുടെയും പങ്കാളിത്തത്തിന്റെയും സംയോജനം. വേർതിരിഞ്ഞ നിയമപരമായ സ്ഥാനം. പരിമിതമായ ഉത്തരവാദിത്തം. ഒരു പങ്കാളിയുടെ തെറ്റിന് മറ്റുള്ളവർ ഉത്തരവാദികളല്ല. LLP Act, 2008 പ്രകാരം.</li></ul>
+                                </div>
+                            </div>
+
+                            <div class="overflow-x-auto mt-3">
+                                <table class="min-w-full text-xs sm:text-sm border border-slate-200 dark:border-slate-600">
+                                    <thead class="bg-slate-100 dark:bg-slate-700"><tr><th class="border p-2 text-left">ഘടകം</th><th class="border p-2 text-left">ഏകമുടമ</th><th class="border p-2 text-left">പങ്കാളിത്തം</th><th class="border p-2 text-left">HUF</th><th class="border p-2 text-left">സഹകരണം</th><th class="border p-2 text-left">കമ്പനി</th><th class="border p-2 text-left">LLP</th></tr></thead>
+                                    <tbody>
+                                        <tr><td class="border p-2 font-semibold">ഉടമകൾ</td><td class="border p-2">1</td><td class="border p-2">2+</td><td class="border p-2">കുടുംബം</td><td class="border p-2">10+</td><td class="border p-2">2+</td><td class="border p-2">2+</td></tr>
+                                        <tr class="bg-slate-50 dark:bg-slate-800/50"><td class="border p-2 font-semibold">ഉത്തരവാദിത്തം</td><td class="border p-2">അപരിമിതം</td><td class="border p-2">അപരിമിതം</td><td class="border p-2">കർത്താവ് അപരിമിതം</td><td class="border p-2">പരിമിതം</td><td class="border p-2">പരിമിതം</td><td class="border p-2">പരിമിതം</td></tr>
+                                        <tr><td class="border p-2 font-semibold">നിയമപരം</td><td class="border p-2">വേർതിരിവില്ല</td><td class="border p-2">വേർതിരിവില്ല</td><td class="border p-2">വേർതിരിവില്ല</td><td class="border p-2">വേർതിരിവുണ്ട്</td><td class="border p-2">വേർതിരിവുണ്ട്</td><td class="border p-2">വേർതിരിവുണ്ട്</td></tr>
+                                        <tr class="bg-slate-50 dark:bg-slate-800/50"><td class="border p-2 font-semibold">തുടർച്ച</td><td class="border p-2">ഇല്ല</td><td class="border p-2">ഇല്ല</td><td class="border p-2">ഉണ്ട്</td><td class="border p-2">ഉണ്ട്</td><td class="border p-2">ഉണ്ട്</td><td class="border p-2">ഉണ്ട്</td></tr>
+                                        <tr><td class="border p-2 font-semibold">മൂലധനം</td><td class="border p-2">കുറവ്</td><td class="border p-2">മിതം</td><td class="border p-2">കുറവ്</td><td class="border p-2">കുറവ്</td><td class="border p-2">കൂടുതൽ</td><td class="border p-2">മിതം</td></tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <p class="mt-3 font-semibold text-slate-700 dark:text-slate-200">ഉപസംഹാരം:</p>
+                            <p>ഓരോ സംഘടനാരൂപത്തിനും സ്വന്തം ഗുണങ്ങളും പരിമിതികളുമുണ്ട്. ബിസിനസിന്റെ വലിപ്പം, മൂലധനം, അപകടസാധ്യത, നിയന്ത്രണം, നികുതി എന്നിവ കണക്കിലെടുത്ത് യോജിച്ച രൂപം തിരഞ്ഞെടുക്കണം.</p>
+                        </div>
+                    </details>
+
+                    <details class="group bg-white dark:bg-slate-800 rounded-xl shadow-sm border border-slate-200 dark:border-slate-700 overflow-hidden" data-search="sole proprietorship features advantages ഏകമുടമാസ്വാമിത്വം">
+                        <summary class="flex items-center gap-3 p-4 cursor-pointer hover:bg-slate-50 dark:hover:bg-slate-700/50 transition-colors select-none">
+                            <span class="w-8 h-8 rounded-full bg-purple-100 dark:bg-purple-900/30 text-purple-600 dark:text-purple-400 text-xs font-bold flex items-center justify-center shrink-0">5</span>
+                            <h3 class="font-bold text-slate-800 dark:text-slate-100 text-sm sm:text-base flex-1">What is sole proprietorship? Explain the features and advantages.</h3>
+                            <i class="fas fa-chevron-down chevron text-slate-400 transition-transform duration-300"></i>
+                        </summary>
+                        <div class="px-4 pb-4 pt-0 text-slate-600 dark:text-slate-300 text-sm sm:text-base leading-relaxed border-t border-slate-100 dark:border-slate-700">
+                            <p class="mt-3">ഏകമുടമാസ്വാമിത്വം (Sole Proprietorship) എന്നാൽ ഒരു വ്യക്തി മാത്രം ഉടമസ്ഥനായും മാനേജറായും പ്രവർത്തിക്കുന്ന വ്യവസായ സംഘടനാരൂപമാണ്. ലാഭവും നഷ്ടവും മുഴുവൻ ആ ഒരാളുടേതായിരിക്കും. ഇത് ഏറ്റവും പഴയതും ലളിതവുമായ ബിസിനസ് രൂപമാണ്.</p>
+                            <p class="mt-2 font-semibold text-slate-700 dark:text-slate-200">സവിശേഷതകൾ (Features):</p>
+                            <ol class="list-decimal list-inside mt-2 space-y-2 ml-1">
+                                <li><strong>ഏക ഉടമ (Single Ownership):</strong> ഒരു വ്യക്തി മാത്രമേ ഉടമയായിരിക്കൂ. എല്ലാ അധികാരവും അയാളുടേതാണ്.</li>
+                                <li><strong>എളിമയുള്ള രൂപീകരണം (Easy Formation):</strong> രജിസ്ട്രേഷൻ ആവശ്യമില്ല. കുറഞ്ഞ മൂലധനം മതി. നിയമപരമായ ഔപചാരികതകൾ കുറവ്.</li>
+                                <li><strong>നേരിട്ടുള്ള നിയന്ത്രണം (Direct Control):</strong> ഉടമ തന്നെ മാനേജർ. വേഗത്തിലുള്ള തീരുമാനങ്ങൾ. ആരുടെയും അനുമതി വേണ്ട.</li>
+                                <li><strong>അപരിമിതമായ ഉത്തരവാദിത്തം (Unlimited Liability):</strong> വ്യക്തിഗത സ്വത്തുകൾ വരെ ഉത്തരവാദിത്തം. നഷ്ടം ഉണ്ടായാൽ സ്വന്തം സ്വത്ത് നഷ്ടപ്പെടാം.</li>
+                                <li><strong>ലാഭം-നഷ്ടം (Profit and Loss):</strong> ലാഭം മുഴുവൻ ഉടമയ്ക്ക്. നഷ്ടവും മുഴുവൻ ഉടമയുടേതാണ്.</li>
+                                <li><strong>നിയമപരമായ സ്ഥാനം (No Separate Legal Entity):</strong> ബിസിനസിനും ഉടമയ്ക്കും വേർതിരിവില്ല. ഉടമ മരിച്ചാൽ ബിസിനസ് അവസാനിക്കും.</li>
+                                <li><strong>രഹസ്യസ്വഭാവം (Secrecy):</strong> ബിസിനസ് രഹസ്യങ്ങൾ പരിമിതമായവർക്ക് മാത്രം അറിയാം. എതിരാളികൾക്ക് അറിയാൻ കഴിയില്ല.</li>
+                                <li><strong>തുടർച്ചയില്ലാത്ത പ്രകൃതം (Lack of Continuity):</strong> ഉടമയുടെ മരണം, അസ്വസ്ഥത എന്നിവയാൽ അവസാനിക്കാം.</li>
+                            </ol>
+                            <p class="mt-2 font-semibold text-slate-700 dark:text-slate-200">ഗുണങ്ങൾ (Advantages):</p>
+                            <ol class="list-decimal list-inside mt-2 space-y-2 ml-1">
+                                <li><strong>എളിമയുള്ള ആരംഭം:</strong> രജിസ്ട്രേഷൻ ആവശ്യമില്ല. കുറഞ്ഞ മൂലധനം മതി. വേഗത്തിൽ ആരംഭിക്കാം.</li>
+                                <li><strong>സ്വതന്ത്ര തീരുമാനം:</strong> ആരുടെയും അനുമതി വേണ്ട. വേഗത്തിലുള്ള തീരുമാനങ്ങൾ. മാറ്റങ്ങൾ വേഗത്തിൽ നടപ്പിലാക്കാം.</li>
+                                <li><strong>നേരിട്ടുള്ള പ്രചോദനം:</strong> ലാഭം മുഴുവൻ സ്വന്തം. കഠിനാധ്വാനത്തിന് പ്രേരണ. സ്വന്തം ബിസിനസിനോട് പ്രതിബദ്ധത.</li>
+                                <li><strong>രഹസ്യസ്വഭാവം:</strong> ബിസിനസ് രഹസ്യങ്ങൾ സംരക്ഷിക്കാം. എതിരാളികൾക്ക് അറിയാൻ കഴിയില്ല. മത്സര നേട്ടം.</li>
+                                <li><strong>വ്യക്തിഗത ബന്ധം:</strong> ഉപഭോക്താക്കളുമായി നേരിട്ട് ബന്ധം. അവരുടെ ആവശ്യങ്ങൾ മനസ്സിലാക്കാം. വ്യക്തിഗത സേവനം.</li>
+                                <li><strong>സാമ്പത്തിക രഹസ്യം:</strong> കണക്കുകൾ പരിശോധിക്കേണ്ടതില്ല. സ്വന്തം രീതിയിൽ കണക്ക് വയ്ക്കാം. ഓഡിറ്റ് ആവശ്യമില്ല.</li>
+                                <li><strong>സാമൂഹിക പ്രാധാന്യം:</strong> ചെറുകിട വ്യവസായങ്ങൾ പ്രോത്സാഹിപ്പിക്കുന്നു. സ്വയം തൊഴിൽ അവസരങ്ങൾ. സാമ്പത്തിക സ്വാതന്ത്ര്യം.</li>
+                                <li><strong>നികുതി നേട്ടം:</strong> വ്യക്തിഗത നികുതി നിരകൾ. കോർപ്പറേറ്റ് നികുതിയേക്കാൾ കുറവ്. സ്ലാബ് നിരകൾക്ക് പ്രയോജനം.</li>
+                            </ol>
+                            <p class="mt-3 font-semibold text-slate-700 dark:text-slate-200">ഉപസംഹാരം:</p>
+                            <p>ഏകമുടമാസ്വാമിത്വം ചെറുകിട വ്യവസായങ്ങൾക്ക് ഏറ്റവും അനുയോജ്യമായ രൂപമാണ്. എളിമ, സ്വാതന്ത്ര്യം, രഹസ്യസ്വഭാവം എന്നിവ ഇതിന്റെ പ്രധാന ഗുണങ്ങളാണ്. എന്നാൽ പരിമിതമായ മൂലധനവും അപരിമിതമായ ഉത്തരവാദിത്തവും ഇതിന്റെ പരിമിതികളാണ്.</p>
+                        </div>
+                    </details>
+
+                    <details class="group bg-white dark:bg-slate-800 rounded-xl shadow-sm border border-slate-200 dark:border-slate-700 overflow-hidden" data-search="partnership form of business advantages limitations പങ്കാളിത്തം">
+                        <summary class="flex items-center gap-3 p-4 cursor-pointer hover:bg-slate-50 dark:hover:bg-slate-700/50 transition-colors select-none">
+                            <span class="w-8 h-8 rounded-full bg-purple-100 dark:bg-purple-900/30 text-purple-600 dark:text-purple-400 text-xs font-bold flex items-center justify-center shrink-0">6</span>
+                            <h3 class="font-bold text-slate-800 dark:text-slate-100 text-sm sm:text-base flex-1">Explain partnership form of business. What are the advantages and limitations?</h3>
+                            <i class="fas fa-chevron-down chevron text-slate-400 transition-transform duration-300"></i>
+                        </summary>
+                        <div class="px-4 pb-4 pt-0 text-slate-600 dark:text-slate-300 text-sm sm:text-base leading-relaxed border-t border-slate-100 dark:border-slate-700">
+                            <p class="mt-3">പങ്കാളിത്തം (Partnership) എന്നാൽ രണ്ടോ അതിലധികമോ വ്യക്തികൾ ലാഭം നേടുന്നതിനായി ഒരു കരാർ പ്രകാരം സംയുക്തമായി വ്യവസായം നടത്തുന്ന സംഘടനാരൂപമാണ്. ഇവർ പങ്കാളികൾ (Partners) എന്ന് അറിയപ്പെടുന്നു. Indian Partnership Act, 1932 പ്രകാരം പങ്കാളിത്തം നിയന്ത്രിക്കപ്പെടുന്നു.</p>
+                            <p class="mt-2 font-semibold text-slate-700 dark:text-slate-200">പങ്കാളിത്തത്തിന്റെ സവിശേഷതകൾ:</p>
+                            <ol class="list-decimal list-inside mt-2 space-y-2 ml-1">
+                                <li><strong>കരാർ (Agreement):</strong> എഴുതിയതോ വാക്കാലോ ആയ കരാർ. പങ്കാളികളുടെ അവകാശങ്ങളും കടമുകളും നിർണയിക്കുന്നു.</li>
+                                <li><strong>രണ്ടോ അതിലധികമോ പങ്കാളികൾ:</strong> കുറഞ്ഞത് രണ്ട് പങ്കാളികൾ വേണം. പരമാവധി 50 വരെ (LLP-യിൽ).</li>
+                                <li><strong>ലാഭലക്ഷ്യം:</strong> ലാഭം നേടുന്നതിനായുള്ള പ്രവർത്തനം. ലാഭം പങ്കുവയ്ക്കുന്നു.</li>
+                                <li><strong>പരസ്പര വിശ്വാസം:</strong> പങ്കാളികൾ തമ്മിൽ വിശ്വാസം അവശ്യം. ഏജന്റ്-പ്രിൻസിപ്പൽ ബന്ധം.</li>
+                                <li><strong>അപരിമിതമായ ഉത്തരവാദിത്തം (General Partners):</strong> പങ്കാളികളുടെ സ്വത്തുകൾ വരെ ഉത്തരവാദിത്തം.</li>
+                                <li><strong>നിയമപരമായ സ്ഥാനം:</strong> പങ്കാളികളും ബിസിനസും വേർതിരിവില്ല (സാധാരണ പങ്കാളിത്തത്തിൽ).</li>
+                                <li><strong>തുടർച്ച:</strong> പങ്കാളിയുടെ മരണത്താൽ പങ്കാളിത്തം അവസാനിക്കാം.</li>
+                                <li><strong>പങ്കാളികളുടെ ഏജൻസി:</strong> ഓരോ പങ്കാളിയും മറ്റുള്ളവരുടെ ഏജന്റ്. ഒരാളുടെ പ്രവർത്തനം എല്ലാവരെയും ബാധിക്കും.</li>
+                            </ol>
+                            <p class="mt-2 font-semibold text-slate-700 dark:text-slate-200">ഗുണങ്ങൾ (Advantages):</p>
+                            <ol class="list-decimal list-inside mt-2 space-y-2 ml-1">
+                                <li><strong>എളിമയുള്ള രൂപീകരണം:</strong> രജിസ്ട്രേഷൻ നിർബന്ധമല്ല. കുറഞ്ഞ ഔപചാരികതകൾ. വേഗത്തിൽ ആരംഭിക്കാം.</li>
+                                <li><strong>കൂടുതൽ മൂലധനം:</strong> പലരുടെ മൂലധനം സംയുക്തമായി. വിപുലീകരണം സാധ്യം. ബാങ്ക് വായ്പ ലഭിക്കാൻ എളുപ്പം.</li>
+                                <li><strong>വിഭജിതമായ ഉത്തരവാദിത്തം:</strong> ഓരോരുത്തരും വ്യത്യസ്ത മേഖലകൾ നോക്കുന്നു. കാര്യക്ഷമത വർദ്ധിക്കുന്നു. വിദഗ്ധത.</li>
+                                <li><strong>വിഭജിതമായ അപകടസാധ്യത:</strong> അപകടം പലരിൽ പങ്കുവയ്ക്കുന്നു. ഒരാളുടെ ഭാരം കുറയുന്നു. ധൈര്യത്തോടെ പ്രവർത്തിക്കാം.</li>
+                                <li><strong>രഹസ്യസ്വഭാവം:</strong> പങ്കാളികൾ മാത്രം അറിയുന്നു. പൊതുജനങ്ങൾക്ക് അറിയാൻ കഴിയില്ല. മത്സര നേട്ടം.</li>
+                                <li><strong>വേഗത്തിലുള്ള തീരുമാനങ്ങൾ:</strong> ചെറിയ സംഘം, വേഗത്തിലുള്ള ചർച്ച. ആവശ്യമായ മാറ്റങ്ങൾ വേഗത്തിൽ.</li>
+                                <li><strong>നേരിട്ടുള്ള പ്രചോദനം:</strong> ലാഭത്തിൽ പങ്കുണ്ട്. കഠിനാധ്വാനത്തിന് പ്രേരണ. സ്വന്തം ബിസിനസിനോട് പ്രതിബദ്ധത.</li>
+                                <li><strong>സാമൂഹിക ബന്ധം:</strong> പങ്കാളികൾ തമ്മിൽ നല്ല ബന്ധം. തൊഴിലാളികളുമായി നേരിട്ട് ബന്ധം. വ്യക്തിഗത സേവനം.</li>
+                                <li><strong>നികുതി നേട്ടം:</strong> പങ്കാളികളുടെ വ്യക്തിഗത നികുതി നിരകൾ. കോർപ്പറേറ്റ് നികുതിയേക്കാൾ കുറവ്.</li>
+                            </ol>
+                            <p class="mt-2 font-semibold text-slate-700 dark:text-slate-200">പരിമിതികൾ (Limitations):</p>
+                            <ol class="list-decimal list-inside mt-2 space-y-2 ml-1">
+                                <li><strong>അപരിമിതമായ ഉത്തരവാദിത്തം:</strong> പങ്കാളികളുടെ സ്വത്തുകൾ വരെ ഉത്തരവാദിത്തം. അപകടസാധ്യത കൂടുതൽ. പുതിയ പങ്കാളികൾ ഭയപ്പെടും.</li>
+                                <li><strong>പരിമിതമായ മൂലധനം:</strong> കമ്പനിയേക്കാൾ കുറവ്. വലിയ പദ്ധതികൾക്ക് പ്രയാസം. വിപുലീകരണം പരിമിതം.</li>
+                                <li><strong>തുടർച്ചയില്ലാത്ത പ്രകൃതം:</strong> പങ്കാളിയുടെ മരണം, അസ്വസ്ഥത, പിൻവാങ്ങൽ എന്നിവയാൽ അവസാനിക്കാം. നിക്ഷേപകർ ഭയപ്പെടും.</li>
+                                <li><strong>പരസ്പര വിശ്വാസത്തിന്റെ അഭാവം:</strong> പങ്കാളികൾ തമ്മിൽ തർക്കം. ബിസിനസ് തകരാറിലാകാം. രഹസ്യങ്ങൾ പുറത്തുപോകാം.</li>
+                                <li><strong>പരിമിതമായ മാനേജ്മെന്റ് കഴിവ്:</strong> പങ്കാളികളുടെ എണ്ണം പരിമിതം. എല്ലാ മേഖലകളിലും വിദഗ്ധത ലഭിക്കില്ല.</li>
+                                <li><strong>അപകടസാധ്യത:</strong> ഒരു പങ്കാളിയുടെ തെറ്റിന് എല്ലാവരും ഉത്തരവാദികൾ. ഏജന്റ്-പ്രിൻസിപ്പൽ ബന്ധം. അപകടസാധ്യത കൂടുതൽ.</li>
+                                <li><strong>ക്രെഡിറ്റ് പരിമിതി:</strong> ബാങ്കുകൾ കുറഞ്ഞ വായ്പ നൽകും. മൂലധനക്കുറവ്. വലിയ പദ്ധതികൾ പ്രയാസം.</li>
+                                <li><strong>പങ്കാളികളുടെ തർക്കങ്ങൾ:</strong> ലാഭവിഹിതത്തിൽ തർക്കം. തീരുമാനങ്ങളിൽ അഭിപ്രായവ്യത്യാസം. ബിസിനസ് തകരാറിലാകാം.</li>
+                            </ol>
+                            <p class="mt-3 font-semibold text-slate-700 dark:text-slate-200">ഉപസംഹാരം:</p>
+                            <p>പങ്കാളിത്തം ചെറുകിടയും മധ്യകിടയും വ്യവസായങ്ങൾക്ക് അനുയോജ്യമായ രൂപമാണ്. കൂടുതൽ മൂലധനവും വിഭജിതമായ അപകടസാധ്യതയും വിദഗ്ധ മാനേജ്മെന്റും ഇതിന്റെ ഗുണങ്ങളാണ്. എന്നാൽ അപരിമിതമായ ഉത്തരവാദിത്തവും തുടർച്ചയില്ലാത്ത പ്രകൃതവും തർക്കങ്ങളും പ്രധാന പരിമിതികളാണ്.</p>
+                        </div>
+                    </details>
+
+                    <details class="group bg-white dark:bg-slate-800 rounded-xl shadow-sm border border-slate-200 dark:border-slate-700 overflow-hidden" data-search="company form of organisation features merits കമ്പനി">
+                        <summary class="flex items-center gap-3 p-4 cursor-pointer hover:bg-slate-50 dark:hover:bg-slate-700/50 transition-colors select-none">
+                            <span class="w-8 h-8 rounded-full bg-purple-100 dark:bg-purple-900/30 text-purple-600 dark:text-purple-400 text-xs font-bold flex items-center justify-center shrink-0">7</span>
+                            <h3 class="font-bold text-slate-800 dark:text-slate-100 text-sm sm:text-base flex-1">What is a company form of organisation? Explain its features and merits.</h3>
+                            <i class="fas fa-chevron-down chevron text-slate-400 transition-transform duration-300"></i>
+                        </summary>
+                        <div class="px-4 pb-4 pt-0 text-slate-600 dark:text-slate-300 text-sm sm:text-base leading-relaxed border-t border-slate-100 dark:border-slate-700">
+                            <p class="mt-3">കമ്പനി (Company) എന്നാൽ നിയമപ്രകാരം രൂപീകരിക്കപ്പെട്ട ഒരു കൃത്രിമ വ്യക്തിയാണ്. ഇതിന് സ്വന്തം പേരും മുദ്രയും സ്വത്തും അവകാശങ്ങളും കടമുകളുമുണ്ട്. ഓഹരി ഉടമകളുടെ മരണത്താൽ കമ്പനി അവസാനിക്കില്ല. Companies Act, 2013 പ്രകാരം കമ്പനികൾ രൂപീകരിക്കപ്പെടുന്നു.</p>
+                            <p class="mt-2 font-semibold text-slate-700 dark:text-slate-200">കമ്പനിയുടെ സവിശേഷതകൾ (Features):</p>
+                            <ol class="list-decimal list-inside mt-2 space-y-2 ml-1">
+                                <li><strong>വേർതിരിഞ്ഞ നിയമപരമായ സ്ഥാനം (Separate Legal Entity):</strong> കമ്പനിക്ക് സ്വന്തം പേരും അവകാശവും. ഓഹരി ഉടമകളിൽ നിന്ന് വേർതിരിവ്. സ്വന്തം പേരിൽ കേസുകൾ ഫയൽ ചെയ്യാം.</li>
+                                <li><strong>അപരിമിതമായ അംഗങ്ങൾ (Unlimited Members):</strong> പബ്ലിക് കമ്പനിക്ക് പരിമിതിയില്ല. പ്രൈവറ്റ് കമ്പനിക്ക് 200 വരെ. വലിയ മൂലധനം സമാഹരിക്കാം.</li>
+                                <li><strong>അപരിമിതമായ ഉത്തരവാദിത്തം (Limited Liability):</strong> ഓഹരി മൂല്യം വരെ മാത്രം. വ്യക്തിഗത സ്വത്ത് സുരക്ഷിതം. നിക്ഷേപകർക്ക് സുരക്ഷ.</li>
+                                <li><strong>ട്രാൻസ്ഫറബിൾ ഓഹരികൾ (Transferable Shares):</strong> ഓഹരികൾ വിൽക്കാം/കൈമാറാം. ദ്രവത്വം (Liquidity). പബ്ലിക് കമ്പനിയിൽ സ്വതന്ത്രമായി.</li>
+                                <li><strong>തുടർച്ച (Perpetual Succession):</strong> ഓഹരി ഉടമകളുടെ മരണത്താൽ അവസാനിക്കില്ല. "കമ്പനി മരിക്കുന്നില്ല." സ്ഥിരത.</li>
+                                <li><strong>സാധാരണ മുദ്ര (Common Seal):</strong> സ്വന്തം മുദ്ര. രേഖകൾ സാധുവാക്കാൻ. കമ്പനിയുടെ ഒപ്പ്.</li>
+                                <li><strong>വേർതിരിഞ്ഞ സ്വത്ത് (Separate Property):</strong> കമ്പനിയുടെ സ്വന്തം സ്വത്ത്. ഓഹരി ഉടമകൾക്ക് അവകാശമില്ല. കമ്പനിയുടെ പേരിൽ സ്വത്ത് വാങ്ങാം.</li>
+                                <li><strong>പ്രൊഫഷണൽ മാനേജ്മെന്റ് (Professional Management):</strong> ഡയറക്ടർമാർ, മാനേജർമാർ. വിദഗ്ധ ഭരണം. കാര്യക്ഷമത.</li>
+                                <li><strong>കോർപ്പറേറ്റ് നികുതി (Corporate Tax):</strong> കമ്പനി നികുതി അടയ്ക്കുന്നു. ഡബിൾ ടാക്സേഷൻ (ഡിവിഡന്റിൽ).</li>
+                            </ol>
+                            <p class="mt-2 font-semibold text-slate-700 dark:text-slate-200">കമ്പനിയുടെ ഗുണങ്ങൾ (Merits):</p>
+                            <ol class="list-decimal list-inside mt-2 space-y-2 ml-1">
+                                <li><strong>വലിയ മൂലധനം (Huge Capital):</strong> പൊതുജനങ്ങളിൽ നിന്ന് മൂലധനം. ഓഹരികൾ, ഡിബെഞ്ചറുകൾ. വലിയ പദ്ധതികൾ സാധ്യം.</li>
+                                <li><strong>അപരിമിതമായ ഉത്തരവാദിത്തം (Limited Liability):</strong> ഓഹരി മൂല്യം വരെ മാത്രം. നിക്ഷേപകർക്ക് സുരക്ഷ. അപകടസാധ്യത കുറവ്.</li>
+                                <li><strong>തുടർച്ച (Perpetual Existence):</strong> ഓഹരി ഉടമകളുടെ മരണത്താൽ അവസാനിക്കില്ല. സ്ഥിരത. ദീർഘകാല പദ്ധതികൾ.</li>
+                                <li><strong>ഓഹരി കൈമാറ്റം (Transferability of Shares):</strong> ഓഹരികൾ വിൽക്കാം. ദ്രവത്വം. നിക്ഷേപകർക്ക് പണം തിരിച്ചുകിട്ടും.</li>
+                                <li><strong>പ്രൊഫഷണൽ മാനേജ്മെന്റ് (Professional Management):</strong> വിദഗ്ധർ ഭരിക്കുന്നു. കാര്യക്ഷമത. ശാസ്ത്രീയ മാനേജ്മെന്റ്.</li>
+                                <li><strong>വിപുലമായ വിപണി (Large Scale Operations):</strong> വലിയ തോതിൽ ഉൽപാദനം. സാമ്പത്തികത. കുറഞ്ഞ ചെലവ്.</li>
+                                <li><strong>പൊതുജന വിശ്വാസം (Public Confidence):</strong> നിയമപരമായ നിയന്ത്രണം. കണക്കുകൾ പരിശോധിക്കുന്നു. ഓഡിറ്റ്. വിശ്വസനീയത.</li>
+                                <li><strong>സാമൂഹിക പ്രാധാന്യം (Social Benefits):</strong> തൊഴിലവസരങ്ങൾ. സാമ്പത്തിക വളർച്ച. സാമൂഹിക ക്ഷേമം.</li>
+                                <li><strong>ഗവേഷണ-വികസനം (R&D):</strong> പുതിയ സാങ്കേതികവിദ്യകൾ. മത്സരക്ഷമത. നൂതനത.</li>
+                            </ol>
+                            <p class="mt-3 font-semibold text-slate-700 dark:text-slate-200">ഉപസംഹാരം:</p>
+                            <p>കമ്പനി രൂപം വലിയ വ്യവസായങ്ങൾക്കും ബഹുരാഷ്ട്ര സംരംഭങ്ങൾക്കും ഏറ്റവും അനുയോജ്യമാണ്. വലിയ മൂലധനം, അപരിമിതമായ ഉത്തരവാദിത്തം, തുടർച്ച, പ്രൊഫഷണൽ മാനേജ്മെന്റ് എന്നിവ ഇതിന്റെ പ്രധാന ഗുണങ്ങളാണ്. എന്നാൽ കഠിനമായ രൂപീകരണം, ഡബിൾ ടാക്സേഷൻ, അമിതമായ ഔപചാരികതകൾ എന്നിവ പരിമിതികളാണ്.</p>
+                        </div>
+                    </details>
+
+                    <details class="group bg-white dark:bg-slate-800 rounded-xl shadow-sm border border-slate-200 dark:border-slate-700 overflow-hidden" data-search="stakeholders of business ഹിതാധികാരികൾ internal external">
+                        <summary class="flex items-center gap-3 p-4 cursor-pointer hover:bg-slate-50 dark:hover:bg-slate-700/50 transition-colors select-none">
+                            <span class="w-8 h-8 rounded-full bg-purple-100 dark:bg-purple-900/30 text-purple-600 dark:text-purple-400 text-xs font-bold flex items-center justify-center shrink-0">8</span>
+                            <h3 class="font-bold text-slate-800 dark:text-slate-100 text-sm sm:text-base flex-1">Who are the stakeholders of a business?</h3>
+                            <i class="fas fa-chevron-down chevron text-slate-400 transition-transform duration-300"></i>
+                        </summary>
+                        <div class="px-4 pb-4 pt-0 text-slate-600 dark:text-slate-300 text-sm sm:text-base leading-relaxed border-t border-slate-100 dark:border-slate-700">
+                            <p class="mt-3">ഹിതാധികാരികൾ (Stakeholders) എന്നാൽ ബിസിനസിന്റെ പ്രവർത്തനങ്ങളിൽ താൽപ്പര്യമുള്ള വ്യക്തികളെയോ സംഘങ്ങളെയോ സൂചിപ്പിക്കുന്നു. ഇവർ ബിസിനസിന്റെ നേട്ടങ്ങളും നഷ്ടങ്ങളും അനുഭവിക്കുന്നു.</p>
+                            <p class="mt-2 font-semibold text-slate-700 dark:text-slate-200">ഹിതാധികാരികളുടെ തരങ്ങൾ:</p>
+
+                            <div class="mt-2 space-y-3">
+                                <div>
+                                    <p class="font-bold text-slate-700 dark:text-slate-200">ആന്തരിക ഹിതാധികാരികൾ (Internal Stakeholders):</p>
+                                    <ol class="list-decimal list-inside ml-4 mt-1 space-y-1">
+                                        <li><strong>ഉടമകൾ/ഓഹരി ഉടമകൾ (Owners/Shareholders):</strong> ബിസിനസിന്റെ ഉടമകൾ. ലാഭവും ഡിവിഡന്റും ലക്ഷ്യമാക്കുന്നു. ബിസിനസിന്റെ വളർച്ചയും മൂല്യവും ആഗ്രഹിക്കുന്നു.</li>
+                                        <li><strong>മാനേജ്മെന്റ്/ഡയറക്ടർമാർ (Management/Directors):</strong> ബിസിനസ് നിയന്ത്രിക്കുന്നു. തീരുമാനങ്ങൾ എടുക്കുന്നു. ബിസിനസിന്റെ വിജയത്തിൽ താൽപ്പര്യം.</li>
+                                        <li><strong>തൊഴിലാളികൾ/ജീവനക്കാർ (Employees):</strong> ബിസിനസിൽ ജോലി ചെയ്യുന്നു. വേതനം, തൊഴിൽസുരക്ഷ, വികസനം ലക്ഷ്യമാക്കുന്നു. തൊഴിൽസ്ഥിരത ആഗ്രഹിക്കുന്നു.</li>
+                                    </ol>
+                                </div>
+                                <div>
+                                    <p class="font-bold text-slate-700 dark:text-slate-200">ബാഹ്യ ഹിതാധികാരികൾ (External Stakeholders):</p>
+                                    <ol class="list-decimal list-inside ml-4 mt-1 space-y-1">
+                                        <li><strong>ഉപഭോക്താക്കൾ (Customers):</strong> ബിസിനസിന്റെ ഉൽപന്നങ്ങൾ/സേവനങ്ങൾ ഉപയോഗിക്കുന്നു. നിലവാരവും വിലയും ലക്ഷ്യമാക്കുന്നു. നല്ല സേവനം ആഗ്രഹിക്കുന്നു.</li>
+                                        <li><strong>വിതരണക്കാർ/പങ്കാളികൾ (Suppliers):</strong> ചരക്കുകൾ/സേവനങ്ങൾ നൽകുന്നു. സമയാസമയം പണം ലഭിക്കണം. ദീർഘകാല ബന്ധം ആഗ്രഹിക്കുന്നു.</li>
+                                        <li><strong>ബാങ്കുകൾ/വായ്പ നൽകുന്നവർ (Creditors/Banks):</strong> പണം വായ്പയ്ക്ക് നൽകുന്നു. പലിശയും തിരിച്ചുപണവും ലക്ഷ്യമാക്കുന്നു. ബിസിനസിന്റെ ആരോഗ്യത്തിൽ താൽപ്പര്യം.</li>
+                                        <li><strong>സർക്കാർ (Government):</strong> നികുതി വരുമാനം ലക്ഷ്യമാക്കുന്നു. നിയമങ്ങൾ പാലിക്കണം. തൊഴിലവസരങ്ങൾ, സാമ്പത്തിക വളർച്ച.</li>
+                                        <li><strong>പൊതുജനം/സമൂഹം (Public/Society):</strong> പരിസ്ഥിതി സംരക്ഷണം. സാമൂഹിക ക്ഷേമം. ബിസിനസിന്റെ സാമൂഹിക ഉത്തരവാദിത്തം.</li>
+                                        <li><strong>എതിരാളികൾ (Competitors):</strong> നിയമപരമായ മത്സരം. വ്യവസായത്തിന്റെ ആരോഗ്യം. നിയമപരമായ പ്രവർത്തനം.</li>
+                                        <li><strong>പരിസ്ഥിതി (Environment):</strong> മലിനീകരണം ഇല്ലാതിരിക്കൽ. sustainable പ്രവർത്തനങ്ങൾ. പരിസ്ഥിതി സൗഹാർദം.</li>
+                                    </ol>
+                                </div>
+                            </div>
+                            <p class="mt-2 font-semibold text-slate-700 dark:text-slate-200">ഹിതാധികാരികളുടെ പ്രാധാന്യം:</p>
+                            <ol class="list-decimal list-inside mt-2 space-y-2 ml-1">
+                                <li><strong>ബിസിനസിന്റെ നിലനിൽപ്പിന് അവശ്യം:</strong> ഉപഭോക്താക്കളില്ലാതെ ബിസിനസ് ഇല്ല. തൊഴിലാളികളില്ലാതെ ഉൽപാദനം ഇല്ല.</li>
+                                <li><strong>സാമ്പത്തിക സഹായം:</strong> ഓഹരി ഉടമകൾ മൂലധനം നൽകുന്നു. ബാങ്കുകൾ വായ്പ നൽകുന്നു.</li>
+                                <li><strong>സാമൂഹിക അംഗീകാരം:</strong> പൊതുജനങ്ങളുടെ അംഗീകാരം. സർക്കാർ പിന്തുണ.</li>
+                                <li><strong>മത്സരക്ഷമത:</strong> എതിരാളികൾ മെച്ചപ്പെടുത്താൻ പ്രേരണ.</li>
+                            </ol>
+                            <p class="mt-3 font-semibold text-slate-700 dark:text-slate-200">ഉപസംഹാരം:</p>
+                            <p>ഹിതാധികാരികൾ ബിസിനസിന്റെ ജീവനാഡിയാണ്. ഓരോ ഹിതാധികാരിയുടെയും താൽപ്പര്യങ്ങൾ പരിഗണിക്കാതെ ഒരു ബിസിനസും വിജയിക്കില്ല. ആന്തരികവും ബാഹ്യവുമായ ഹിതാധികാരികളുമായി നല്ല ബന്ധം പാലിക്കുന്നത് ബിസിനസിന്റെ ദീർഘകാല വിജയത്തിന് അവശ്യമാണ്.</p>
+                        </div>
+                    </details>
+
+                    <details class="group bg-white dark:bg-slate-800 rounded-xl shadow-sm border border-slate-200 dark:border-slate-700 overflow-hidden" data-search="business environment features advantages പരിസ്ഥിതി">
+                        <summary class="flex items-center gap-3 p-4 cursor-pointer hover:bg-slate-50 dark:hover:bg-slate-700/50 transition-colors select-none">
+                            <span class="w-8 h-8 rounded-full bg-purple-100 dark:bg-purple-900/30 text-purple-600 dark:text-purple-400 text-xs font-bold flex items-center justify-center shrink-0">9</span>
+                            <h3 class="font-bold text-slate-800 dark:text-slate-100 text-sm sm:text-base flex-1">What is business environment? Explain its features and advantages?</h3>
+                            <i class="fas fa-chevron-down chevron text-slate-400 transition-transform duration-300"></i>
+                        </summary>
+                        <div class="px-4 pb-4 pt-0 text-slate-600 dark:text-slate-300 text-sm sm:text-base leading-relaxed border-t border-slate-100 dark:border-slate-700">
+                            <p class="mt-3">ബിസിനസ് പരിസ്ഥിതി (Business Environment) എന്നാൽ ബിസിനസിനെ സ്വാധീനിക്കുന്നതും ബിസിനസ് സ്വാധീനിക്കുന്നതുമായ എല്ലാ ഘടകങ്ങളുടെയും സമഷ്ടിയാണ്. ഇത് ബിസിനസിന് പുറത്തുള്ള ഘടകങ്ങളെ ഉൾക്കൊള്ളുന്നു.</p>
+                            <p class="mt-2 font-semibold text-slate-700 dark:text-slate-200">ബിസിനസ് പരിസ്ഥിതിയുടെ സവിശേഷതകൾ (Features):</p>
+                            <ol class="list-decimal list-inside mt-2 space-y-2 ml-1">
+                                <li><strong>ബാഹ്യ സ്വഭാവം (External Nature):</strong> ബിസിനസിന് പുറത്തുള്ള ഘടകങ്ങൾ. നിയന്ത്രിക്കാൻ കഴിയില്ല. അനുസരിക്കേണ്ടത്.</li>
+                                <li><strong>അനിശ്ചിതത്വം (Uncertainty):</strong> മാറ്റങ്ങൾ പ്രവചിക്കാൻ പ്രയാസം. അപകടസാധ്യതയും അവസരവും ഒരേപോലെ.</li>
+                                <li><strong>ബഹുമുഖത (Multi-faceted):</strong> വിവിധ ഘടകങ്ങൾ - സാമ്പത്തികം, സാമൂഹികം, രാഷ്ട്രീയം, സാങ്കേതികം. പരസ്പര ബന്ധം.</li>
+                                <li><strong>സങ്കീർണ്ണത (Complexity):</strong> പല ഘടകങ്ങൾ ഒരേസമയം പ്രവർത്തിക്കുന്നു. മനസ്സിലാക്കാൻ പ്രയാസം.</li>
+                                <li><strong>ഡൈനാമിക് സ്വഭാവം (Dynamic Nature):</strong> നിരന്തരം മാറുന്നു. പുതിയ പ്രവണതകൾ. സ്ഥിരതയില്ല.</li>
+                                <li><strong>പരസ്പര ബന്ധം (Inter-related):</strong> ഓരോ ഘടകവും മറ്റുള്ളവയെ ബാധിക്കുന്നു. ഒന്ന് മാറിയാൽ മറ്റുള്ളവയും മാറും.</li>
+                                <li><strong>ദീർഘകാല സ്വാധീനം (Long-term Impact):</strong> പരിസ്ഥിതിയുടെ മാറ്റങ്ങൾ ദീർഘകാലം നിലനിൽക്കും.</li>
+                                <li><strong>പ്രത്യേകതയും സാർവത്രികതയും (Specific and General):</strong> സൂക്ഷ്മ പരിസ്ഥിതി - പ്രത്യേകം (നേരിട്ട് ബാധിക്കുന്നു). സമഗ്ര പരിസ്ഥിതി - സാർവത്രികം (പരോക്ഷമായി ബാധിക്കുന്നു).</li>
+                            </ol>
+                            <p class="mt-2 font-semibold text-slate-700 dark:text-slate-200">ബിസിനസ് പരിസ്ഥിതിയുടെ പ്രാധാന്യം/ഗുണങ്ങൾ (Importance/Advantages):</p>
+                            <ol class="list-decimal list-inside mt-2 space-y-2 ml-1">
+                                <li><strong>അവസരങ്ങൾ കണ്ടെത്തൽ (Identifying Opportunities):</strong> പുതിയ വിപണികൾ, ഉൽപന്നങ്ങൾ, സാങ്കേതികവിദ്യകൾ. വളർച്ചയ്ക്കുള്ള അവസരങ്ങൾ.</li>
+                                <li><strong>അപകടസാധ്യതകൾ തിരിച്ചറിയൽ (Identifying Threats):</strong> എതിരാളികളുടെ നീക്കങ്ങൾ. മാറ്റങ്ങളുടെ പ്രതികൂല ഫലങ്ങൾ. മുൻകരുതൽ.</li>
+                                <li><strong>ആസൂത്രണം (Planning):</strong> ഭാവി ആസൂത്രണത്തിന് സഹായകം. ലക്ഷ്യങ്ങൾ നിർണയിക്കൽ. തന്ത്രങ്ങൾ തയ്യാറാക്കൽ.</li>
+                                <li><strong>കാര്യക്ഷമമായ പ്രവർത്തനം (Efficient Performance):</strong> പരിസ്ഥിതിയനുസരിച്ച് പ്രവർത്തനങ്ങൾ ക്രമീകരിക്കൽ. കാര്യക്ഷമത വർദ്ധിപ്പിക്കൽ.</li>
+                                <li><strong>മത്സരക്ഷമത (Competitive Advantage):</strong> പരിസ്ഥിതി മനസ്സിലാക്കി മുന്നേറൽ. മത്സരത്തിൽ മികവ്. ബ്രാൻഡ് വില.</li>
+                                <li><strong>ചലനാത്മകത (Dynamism):</strong> മാറ്റങ്ങളോട് അനുസരിക്കൽ. പുതുമ നിലനിർത്തൽ. നൂതനത.</li>
+                                <li><strong>ചിത്രീകരണം (Image Building):</strong> സാമൂഹിക-സാംസ്കാരിക പരിസ്ഥിതി മനസ്സിലാക്കി. നല്ല പൊതുചിത്രം. CSR.</li>
+                                <li><strong>പരിസ്ഥിതി സൗഹാർദ പ്രവർത്തനങ്ങൾ:</strong> പരിസ്ഥിതി മാറ്റങ്ങൾ മനസ്സിലാക്കി. sustainable പ്രവർത്തനങ്ങൾ. പച്ചവ്യവസായം.</li>
+                                <li><strong>സർക്കാർ ബന്ധം മെച്ചപ്പെടുത്തൽ:</strong> രാഷ്ട്രീയ-നിയമപര പരിസ്ഥിതി മനസ്സിലാക്കി. നിയമങ്ങൾ പാലിക്കൽ. നികുതി നേട്ടം.</li>
+                            </ol>
+                            <p class="mt-3 font-semibold text-slate-700 dark:text-slate-200">ഉപസംഹാരം:</p>
+                            <p>ബിസിനസ് പരിസ്ഥിതി ബിസിനസിന്റെ ജീവിതശ്വാസമാണ്. പരിസ്ഥിതിയെ മനസ്സിലാക്കി അതിനനുസരിച്ച് പ്രവർത്തിക്കുന്ന ബിസിനസ് മാത്രമേ ദീർഘകാലം നിലനിൽക്കൂ. അവസരങ്ങളും അപകടസാധ്യതകളും തിരിച്ചറിഞ്ഞ് കാര്യക്ഷമമായി പ്രവർത്തിക്കുന്നത് വിജയത്തിന്റെ കാരണമാണ്.</p>
+                        </div>
+                    </details>
+
+                    <details class="group bg-white dark:bg-slate-800 rounded-xl shadow-sm border border-slate-200 dark:border-slate-700 overflow-hidden" data-search="business environment components micro macro PESTLE">
+                        <summary class="flex items-center gap-3 p-4 cursor-pointer hover:bg-slate-50 dark:hover:bg-slate-700/50 transition-colors select-none">
+                            <span class="w-8 h-8 rounded-full bg-purple-100 dark:bg-purple-900/30 text-purple-600 dark:text-purple-400 text-xs font-bold flex items-center justify-center shrink-0">10</span>
+                            <h3 class="font-bold text-slate-800 dark:text-slate-100 text-sm sm:text-base flex-1">What is business environment? Explain the components of business environment.</h3>
+                            <i class="fas fa-chevron-down chevron text-slate-400 transition-transform duration-300"></i>
+                        </summary>
+                        <div class="px-4 pb-4 pt-0 text-slate-600 dark:text-slate-300 text-sm sm:text-base leading-relaxed border-t border-slate-100 dark:border-slate-700">
+                            <p class="mt-3">ബിസിനസ് പരിസ്ഥിതി (Business Environment) എന്നാൽ ബിസിനസിനെ സ്വാധീനിക്കുന്നതും ബിസിനസ് സ്വാധീനിക്കുന്നതുമായ എല്ലാ ഘടകങ്ങളുടെയും സമഷ്ടിയാണ്. ഇത് ബിസിനസിന് പുറത്തുള്ള ഘടകങ്ങളെ ഉൾക്കൊള്ളുന്നു. ബിസിനസ് പരിസ്ഥിതി മാറുന്നതനുസരിച്ച് ബിസിനസും മാറണം.</p>
+                            <p class="mt-2 font-semibold text-slate-700 dark:text-slate-200">ബിസിനസ് പരിസ്ഥിതിയുടെ ഘടകങ്ങൾ (Components):</p>
+
+                            <div class="mt-2 space-y-3">
+                                <div>
+                                    <p class="font-bold text-slate-700 dark:text-slate-200">ഒന്ന്. സൂക്ഷ്മ പരിസ്ഥിതി (Micro Environment)</p>
+                                    <p class="ml-4 mt-1">ബിസിനസിന് നേരിട്ട് സ്വാധീനം ചെലുത്തുന്ന ഘടകങ്ങൾ:</p>
+                                    <ol class="list-decimal list-inside ml-6 mt-1 space-y-1">
+                                        <li><strong>ഉപഭോക്താക്കൾ (Customers):</strong> ബിസിനസിന്റെ രാജാവ്. ആവശ്യങ്ങൾ മനസ്സിലാക്കി തൃപ്തിപ്പെടുത്തണം. ഉപഭോക്തൃ സന്തോഷം പ്രധാനം.</li>
+                                        <li><strong>എതിരാളികൾ (Competitors):</strong> ഒരേ വിപണിയിൽ പ്രവർത്തിക്കുന്നവർ. മത്സരത്തിൽ മികവ് നേടണം. എതിരാളികളുടെ നീക്കങ്ങൾ ശ്രദ്ധിക്കണം.</li>
+                                        <li><strong>വിതരണക്കാർ (Suppliers):</strong> അസംസ്കൃത വസ്തുക്കൾ നൽകുന്നവർ. നല്ല ബന്ധം പാലിക്കണം. സമയാസമയം വിതരണം അവശ്യം.</li>
+                                        <li><strong>പങ്കാളികൾ (Intermediaries):</strong> ഏജന്റുമാർ, വ്യാപാരികൾ, വിതരണക്കാർ. ഉൽപന്നങ്ങൾ ഉപഭോക്താക്കളിലേക്ക് എത്തിക്കുന്നു.</li>
+                                        <li><strong>തൊഴിലാളികൾ (Employees):</strong> ബിസിനസിന്റെ പ്രധാന വിഭവം. തൃപ്തിപ്പെട്ട തൊഴിലാളികൾ = തൃപ്തിപ്പെട്ട ഉപഭോക്താക്കൾ.</li>
+                                        <li><strong>ഓഹരി ഉടമകൾ (Shareholders):</strong> ബിസിനസിന്റെ ഉടമകൾ. ലാഭവും ഡിവിഡന്റും ലക്ഷ്യമാക്കുന്നു.</li>
+                                    </ol>
+                                </div>
+                                <div>
+                                    <p class="font-bold text-slate-700 dark:text-slate-200">രണ്ട്. സമഗ്ര പരിസ്ഥിതി (Macro Environment)</p>
+                                    <p class="ml-4 mt-1">ബിസിനസിന് പരോക്ഷമായി സ്വാധീനം ചെലുത്തുന്ന വിശാലമായ ഘടകങ്ങൾ:</p>
+                                    <ol class="list-decimal list-inside ml-6 mt-1 space-y-1">
+                                        <li><strong>രാഷ്ട്രീയ-നിയമപര പരിസ്ഥിതി (Political-Legal Environment):</strong> സർക്കാർ നയങ്ങൾ, രാഷ്ട്രീയ സ്ഥിരത. നിയമങ്ങൾ, ചട്ടങ്ങൾ, കോടതി വിധികൾ. നികുതി നയം, വ്യവസായ നയം. ഉദാ: GST, ലേബർ നിയമങ്ങൾ.</li>
+                                        <li><strong>സാമ്പത്തിക പരിസ്ഥിതി (Economic Environment):</strong> ദേശീയ വരുമാനം, ആഗോള സമ്പദ്‌വ്യവസ്ഥ. വിലക്കയറ്റം, പണനയം, വ്യാജ നയം. തൊഴിലവസരങ്ങൾ, നാണയ നയം. ഉദാ: RBI-യുടെ പലിശനിരകൾ, ബജറ്റ്.</li>
+                                        <li><strong>സാമൂഹിക-സാംസ്കാരിക പരിസ്ഥിതി (Socio-Cultural Environment):</strong> ജനസംഖ്യ, ജനവിതരണം. വിദ്യാഭ്യാസം, മതം, സംസ്കാരം. ജീവിതശൈലി, വിലകൾ, വിശ്വാസങ്ങൾ. ഉദാ: യുവജന വിപണി, നഗരവൽക്കരണം.</li>
+                                        <li><strong>സാങ്കേതിക പരിസ്ഥിതി (Technological Environment):</strong> പുതിയ സാങ്കേതികവിദ്യകൾ. ഗവേഷണ-വികസനം. ഓട്ടോമേഷൻ, ഡിജിറ്റലൈസേഷൻ. ഉദാ: AI, ഇന്റർനെറ്റ്, മൊബൈൽ ടെക്നോളജി.</li>
+                                        <li><strong>പരിസ്ഥിതി/പ്രകൃതി (Natural Environment):</strong> പ്രകൃതി വിഭവങ്ങൾ. കാലാവസ്ഥ, ഭൂമിശാസ്ത്രം. പരിസ്ഥിതി മലിനീകരണം. ഉദാ: കാലാവസ്ഥാ വ്യതിയാനം, പ്രകൃതി ദുരന്തങ്ങൾ.</li>
+                                        <li><strong>അന്താരാഷ്ട്ര പരിസ്ഥിതി (International Environment):</strong> ആഗോള വ്യാപാരം, WTO. വിദേശ നിക്ഷേപം, കയറ്റുമതി-ഇറക്കുമതി. അന്താരാഷ്ട്ര സംഘടനകൾ. ഉദാ: FDI, FTA, Brexit.</li>
+                                    </ol>
+                                </div>
+                            </div>
+                            <div class="mt-3 p-3 bg-slate-100 dark:bg-slate-700/50 rounded-lg">
+                                <p class="font-bold text-slate-700 dark:text-slate-200">PESTLE അനാലിസിസ്:</p>
+                                <p class="mt-1 text-sm">Political - രാഷ്ട്രീയം | Economic - സാമ്പത്തികം | Social - സാമൂഹികം | Technological - സാങ്കേതികം | Legal - നിയമപരം | Environmental - പരിസ്ഥിതി</p>
+                            </div>
+                            <p class="mt-3 font-semibold text-slate-700 dark:text-slate-200">ഉപസംഹാരം:</p>
+                            <p>ബിസിനസ് പരിസ്ഥിതി സൂക്ഷ്മവും സമഗ്രവുമായ രണ്ട് തലങ്ങളിലാണ് നിലകൊള്ളുന്നത്. സൂക്ഷ്മ പരിസ്ഥിതി നേരിട്ട് ബാധിക്കുമ്പോൾ സമഗ്ര പരിസ്ഥിതി പരോക്ഷമായി സ്വാധീനിക്കുന്നു. ഒരു വിജയകരമായ ബിസിനസ് ഇവ രണ്ടും മനസ്സിലാക്കി അതിനനുസരിച്ച് തന്ത്രങ്ങൾ തയ്യാറാക്കണം. PESTLE അനാലിസിസ് വഴി ഓരോ ഘടകവും വിശകലനം ചെയ്ത് അവസരങ്ങളും അപകടസാധ്യതകളും തിരിച്ചറിയാൻ കഴിയും.</p>
+                        </div>
+                    </details>
+
+                </div>
+            </section>
+
+            <!-- Footer -->
+            <footer class="mt-12 pt-8 border-t border-slate-200 dark:border-slate-700 text-center text-slate-500 dark:text-slate-400 text-sm">
+                <p>ബിസിനസ് സ്റ്റഡീസ് - മോഡ്യൂൾ 1 | വിശദീകരണങ്ങൾ മാർക്കിന് അനുസരിച്ച്</p>
+                <p class="mt-1">പരീക്ഷയ്ക്ക് വിജയം നേടാൻ ആശംസകൾ! 📚✨</p>
+                <p class="mt-4 text-xs text-slate-400 dark:text-slate-500">Created by Albin Baby, Chennattu (H), anchelpe tty (P.o), Onakkoor, city piravom</p>
+            </footer>
+
+        </main>
+    </div>
+
+    <!-- Back to top -->
+    <button id="backToTop" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="fixed bottom-6 right-6 w-12 h-12 bg-primary-600 hover:bg-primary-700 text-white rounded-full shadow-lg flex items-center justify-center transition-all transform translate-y-20 opacity-0 no-print z-40">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script>
+        // Dark mode toggle
+        function toggleDark() {
+            document.documentElement.classList.toggle('dark');
+            localStorage.setItem('theme', document.documentElement.classList.contains('dark') ? 'dark' : 'light');
+        }
+
+        // Initialize theme
+        if (localStorage.getItem('theme') === 'dark' || (!localStorage.getItem('theme') && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+        }
+
+        // Search functionality
+        function setupSearch(inputId) {
+            const input = document.getElementById(inputId);
+            if (!input) return;
+
+            input.addEventListener('input', function(e) {
+                const term = e.target.value.toLowerCase().trim();
+                const allDetails = document.querySelectorAll('details[data-search]');
+
+                allDetails.forEach(detail => {
+                    const searchText = detail.getAttribute('data-search').toLowerCase();
+                    const summary = detail.querySelector('summary');
+                    const questionText = summary.innerText.toLowerCase();
+
+                    if (term === '') {
+                        detail.style.display = '';
+                        detail.classList.remove('ring-2', 'ring-primary-500');
+                        // Remove highlights
+                        const title = summary.querySelector('h3');
+                        if (title) title.innerHTML = title.innerText;
+                    } else if (searchText.includes(term) || questionText.includes(term)) {
+                        detail.style.display = '';
+                        detail.classList.add('ring-2', 'ring-primary-500');
+                        detail.open = true;
+
+                        // Highlight in title
+                        const title = summary.querySelector('h3');
+                        if (title) {
+                            const regex = new RegExp(`(${term})`, 'gi');
+                            title.innerHTML = title.innerText.replace(regex, '<span class="search-highlight">$1</span>');
+                        }
+                    } else {
+                        detail.style.display = 'none';
+                        detail.classList.remove('ring-2', 'ring-primary-500');
+                    }
+                });
+
+                // Show section headers if any visible
+                ['section1', 'section2', 'section3'].forEach(id => {
+                    const section = document.getElementById(id);
+                    const visible = section.querySelectorAll('details[data-search]:not([style*="display: none"])');
+                    section.style.display = visible.length > 0 ? '' : 'none';
+                });
+            });
+        }
+
+        setupSearch('searchInput');
+        setupSearch('searchInputMobile');
+
+        // Back to top button
+        const backToTop = document.getElementById('backToTop');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 500) {
+                backToTop.classList.remove('translate-y-20', 'opacity-0');
+            } else {
+                backToTop.classList.add('translate-y-20', 'opacity-0');
+            }
+        });
+
+        // Active nav link on scroll
+        const sections = document.querySelectorAll('section[id]');
+        const navLinks = document.querySelectorAll('.nav-link');
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                if (scrollY >= sectionTop - 200) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('bg-primary-50', 'dark:bg-slate-700', 'text-primary-600', 'dark:text-primary-400', 'font-semibold');
+                if (link.getAttribute('href') === '#' + current) {
+                    link.classList.add('bg-primary-50', 'dark:bg-slate-700', 'text-primary-600', 'dark:text-primary-400', 'font-semibold');
+                }
+            });
+        });
+    </script>
+</body>
+                      </html>
